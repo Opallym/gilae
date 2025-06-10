@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services | Gilae Conciergerie{% endblock %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/service.css') }}">
+    {% endblock %}
+
+{% block body %}
+    <div class="service-hero">
+        <div class="hero-overlay">
+            <h1>FIDMITU</h1>
+            <p class="subtitle">Gilae Conciergerie</p>
+        </div>
+    </div>
+
+    <section class="services-section">
+        <div class="container">
+            <h2>Nos Services Exclusifs</h2>
+            <div class="service-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="icon">🏨</div>
+                    <h3>Réservations VIP</h3>
+                    <p>Accès privilégié aux meilleurs hôtels et restaurants.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="icon">✈️</div>
+                    <h3>Voyages Sur Mesure</h3>
+                    <p>Organisation de voyages clé en main avec itinéraires personnalisés.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="icon">🎟️</div>
+                    <h3>Événements Privés</h3>
+                    <p>Accès aux événements culturels et sportifs les plus exclusifs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
