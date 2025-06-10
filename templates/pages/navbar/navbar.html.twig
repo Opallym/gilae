@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<nav class="navbar">
+    <div class="navbar-container">
+        <img src="../assets/images/logo/logo-white.png" alt="Logo de Gilaë" height="80">
+        <button class="navbar-toggle" id="navbar-toggle">☰</button>
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="{{ path('app_home') }}">Accueil</a></li>
+            <li><a href="{{ path('app_about') }}">À propos</a></li>
+            <li><a href="{{ path('app_tarifs') }}">Tarifs</a></li>
+            <li><a href="{{ path('app_blog') }}">Blog</a></li>
+            <li><a href="{{ path('app_contact') }}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.getElementById("navbar-toggle");
+            const menu = document.getElementById("navbar-menu");
+            if (toggle && menu) {
+                toggle.addEventListener("click", function () {
+                menu.classList.toggle("show");
+            });
+        }
+    });
+</script>
+{% endblock %}

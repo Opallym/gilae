@@ -1,10 +1,10 @@
 body {
   margin: 0;
-  background-color: rgb(201, 198, 148);
+  background-color: #5C7151;
 }
 
 .background-container {
-  background-image: url('/assets/images/logo/IMG_20250610_110134.png');
+  background-image: url('/assets/images/logo/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
