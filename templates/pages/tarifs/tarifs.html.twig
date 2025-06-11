@@ -3,54 +3,8 @@
 {% block title %}Services | Gilae Conciergerie
 {% endblock %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/service.css') }}">
-    <style>
-        .service-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .service-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        .service-info {
-            flex-grow: 1;
-        }
-        
-        .hours-selector {
-            display: none;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .price-display {
-            font-weight: bold;
-            min-width: 80px;
-            text-align: right;
-        }
-        
-        .total-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            font-size: 24px;
-        }
-    </style>
-{% endblock %}
 
 {% block body %}
-
-{{ include('pages/navbar/navbar.html.twig') }}
 
 <div class="container">
     <h1>Nos Services</h1>
