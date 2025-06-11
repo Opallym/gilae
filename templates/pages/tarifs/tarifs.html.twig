@@ -1,11 +1,238 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gilaë{% endblock %}
+{% block title %}Services | Gilae Conciergerie
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/service.css') }}">
+    <style>
+        .service-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .service-info {
+            flex-grow: 1;
+        }
+        
+        .hours-selector {
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-display {
+            font-weight: bold;
+            min-width: 80px;
+            text-align: right;
+        }
+        
+        .total-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+    </style>
+{% endblock %}
 
 {% block body %}
+{{ include('pages/navbar/navbar.html.twig') }}
 
-    {{ include('pages/navbar/navbar.html.twig') }}
-    <div><h1>Bienvenue Page tarif</h1></div>
-    <div class="background-container"></div>
+<div class="container">
+    <h1>Nos Services</h1>
     
+    <div class="service-container">
+        <div class="service-item" data-base-price="50">
+            <input type="checkbox" class="service-checkbox" id="service1" name="services[]" value="Gestion de locations courte durée">
+            <div class="service-info">
+                <label for="service1">Gestion de locations courte durée</label>
+                <div class="hours-selector">
+                    <span>Heures:</span>
+                    <select class="hours-select">
+                        <option value="1">1h</option>
+                        <option value="2">2h</option>
+                        <option value="3">3h</option>
+                        <option value="4">4h</option>
+                    </select>
+                </div>
+            </div>
+            <div class="price-display">0€</div>
+        </div>
+        
+        <div class="service-item" data-base-price="30">
+            <input type="checkbox" class="service-checkbox" id="service2" name="services[]" value="Accueil des voyageurs">
+            <div class="service-info">
+                <label for="service2">Accueil des voyageurs</label>
+                <div class="hours-selector">
+                    <span>Heures:</span>
+                    <select class="hours-select">
+                        <option value="1">1h</option>
+                        <option value="2">2h</option>
+                        <option value="3">3h</option>
+                        <option value="4">4h</option>
+                    </select>
+                </div>
+            </div>
+            <div class="price-display">0€</div>
+        </div>
+        
+        <div class="service-item" data-base-price="40">
+            <input type="checkbox" class="service-checkbox" id="service3" name="services[]" value="Ménage & blanchisserie">
+            <div class="service-info">
+                <label for="service3">Ménage & blanchisserie</label>
+                <div class="hours-selector">
+                    <span>Heures:</span>
+                    <select class="hours-select">
+                        <option value="1">1h</option>
+                        <option value="2">2h</option>
+                        <option value="3">3h</option>
+                        <option value="4">4h</option>
+                    </select>
+                </div>
+            </div>
+            <div class="price-display">0€</div>
+        </div>
+        
+        <div class="service-item" data-base-price="20">
+            <input type="checkbox" class="service-checkbox" id="service4" name="services[]" value="Remise des clés">
+            <div class="service-info">
+                <label for="service4">Remise des clés</label>
+                <div class="hours-selector">
+                    <span>Heures:</span>
+                    <select class="hours-select">
+                        <option value="1">1h</option>
+                        <option value="2">2h</option>
+                        <option value="3">3h</option>
+                        <option value="4">4h</option>
+                    </select>
+                </div>
+            </div>
+            <div class="price-display">0€</div>
+        </div>
+        
+        <div class="service-item" data-base-price="35">
+            <input type="checkbox" class="service-checkbox" id="service5" name="services[]" value="Maintenance & petits travaux">
+            <div class="service-info">
+                <label for="service5">Maintenance & petits travaux</label>
+                <div class="hours-selector">
+                    <span>Heures:</span>
+                    <select class="hours-select">
+                        <option value="1">1h</option>
+                        <option value="2">2h</option>
+                        <option value="3">3h</option>
+                        <option value="4">4h</option>
+                    </select>
+                </div>
+            </div>
+            <div class="price-display">0€</div>
+        </div>
+        
+        <div class="service-item" data-base-price="60">
+            <input type="checkbox" class="service-checkbox" id="service6" name="services[]" value="Services personnalisés">
+            <div class="service-info">
+                <label for="service6">Services personnalisés (courses, transferts, etc.)</label>
+                <div class="hours-selector">
+                    <span>Heures:</span>
+                    <select class="hours-select">
+                        <option value="1">1h</option>
+                        <option value="2">2h</option>
+                        <option value="3">3h</option>
+                        <option value="4">4h</option>
+                    </select>
+                </div>
+            </div>
+            <div class="price-display">0€</div>
+        </div>
+    </div>
+    
+    <div class="total-section">
+        Total: <span id="total-price">0</span>€
+    </div>
+</div>
+
+{% block javascripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceItems = document.querySelectorAll('.service-item');
+    const totalElement = document.getElementById('total-price');
+    
+    // Activer/désactiver le sélecteur d'heures quand la case est cochée
+    serviceItems.forEach(item => {
+        const checkbox = item.querySelector('.service-checkbox');
+        const hoursSelector = item.querySelector('.hours-selector');
+        const hoursSelect = item.querySelector('.hours-select');
+        const priceDisplay = item.querySelector('.price-display');
+        const basePrice = parseFloat(item.dataset.basePrice);
+        
+        // Clic sur l'élément de service
+        item.addEventListener('click', function(e) {
+            // Ne pas interférer avec les clics sur les éléments enfants
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT') {
+                checkbox.checked = !checkbox.checked;
+                toggleService(checkbox, hoursSelector, hoursSelect, priceDisplay, basePrice);
+                updateTotal();
+            }
+        });
+        
+        // Changement de la checkbox
+        checkbox.addEventListener('change', function() {
+            toggleService(checkbox, hoursSelector, hoursSelect, priceDisplay, basePrice);
+            updateTotal();
+        });
+        
+        // Changement du nombre d'heures
+        hoursSelect.addEventListener('change', function() {
+            updateServicePrice(checkbox, priceDisplay, basePrice, hoursSelect.value);
+            updateTotal();
+        });
+    });
+    
+    function toggleService(checkbox, hoursSelector, hoursSelect, priceDisplay, basePrice) {
+        if (checkbox.checked) {
+            hoursSelector.style.display = 'flex';
+            updateServicePrice(checkbox, priceDisplay, basePrice, hoursSelect.value);
+        } else {
+            hoursSelector.style.display = 'none';
+            priceDisplay.textContent = '0€';
+        }
+    }
+    
+    function updateServicePrice(checkbox, priceDisplay, basePrice, hours) {
+        if (checkbox.checked) {
+            const total = basePrice * parseInt(hours);
+            priceDisplay.textContent = total + '€';
+        }
+    }
+    
+    function updateTotal() {
+        let total = 0;
+        
+        document.querySelectorAll('.service-checkbox:checked').forEach(checkbox => {
+            const serviceItem = checkbox.closest('.service-item');
+            const hoursSelect = serviceItem.querySelector('.hours-select');
+            const basePrice = parseFloat(serviceItem.dataset.basePrice);
+            const hours = parseInt(hoursSelect.value);
+            
+            total += basePrice * hours;
+        });
+        
+        totalElement.textContent = total;
+    }
+});
+</script>
+{% endblock %}
+
 {% endblock %}

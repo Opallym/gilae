@@ -3,49 +3,33 @@
 {% block title %}Services | Gilae Conciergerie
 {% endblock %}
 
-{% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('assets/css/service.css') }}">
-{% endblock %}
-
 {% block body %}
-{{ include('pages/navbar/navbar.html.twig') }}
 
-<div style="display: flex; flex-direction: column; gap: 10px;">
+	<style>
+		.container-inline {
+			font-size: 0; /* Supprime l'espace blanc entre les éléments inline-block */
+		}
 
-	<button type="button" class="btn btn-primary">
-			<input type="checkbox" id="myCheckbox" name="myCheckbox">
-			<label for="myCheckbox">Gestion de locations courte durée</label>
-		</button>
-	</button>
-    
-    <button type="button" class="btn btn-primary">
-			<input type="checkbox" id="myCheckbox" name="myCheckbox">
-			<label for="myCheckbox">Accueil des voyageurs</label>
-		</button>
-	</button>
-    
-    <button type="button" class="btn btn-primary">
-			<input type="checkbox" id="myCheckbox" name="myCheckbox">
-			<label for="myCheckbox">Ménage & blanchisserie</label>
-		</button>
-	</button>
-    
-    <button type="button" class="btn btn-primary">
-			<input type="checkbox" id="myCheckbox" name="myCheckbox">
-			<label for="myCheckbox">Remise des clés</label>
-		</button>
-	</button>
-   
-    <button type="button" class="btn btn-primary">
-			<input type="checkbox" id="myCheckbox" name="myCheckbox">
-			<label for="myCheckbox"> Maintenance & petits travaux</label>
-		</button>
-	</button>
-    
-    <button type="button" class="btn btn-primary">
-			<input type="checkbox" id="myCheckbox" name="myCheckbox">
-			<label for="myCheckbox">Services personnalisés (courses, transferts, etc.)</label>
-		</button>
-	</button>
-</div>
+		.image-inline,
+		.text-inline {
+			display: inline-block;
+			vertical-align: middle; /* Alignement vertical */
+			font-size: 16px; /* Réinitialise la taille du texte */
+		}
+
+		.image-inline {
+			width: 150px;
+			margin-right: 15px; /* Espacement */
+		}
+	</style>
+	{{ include('pages/navbar/navbar.html.twig') }}
+
+	<img src="{{ asset('assets/images/logo/serviceup.png') }}" alt="Logo" style="display: block; margin: 0 auto; width: 800px; height: auto;">
+
+	<div class="container-inline">
+		<img src="{{ asset('assets/images/logo/text1s.png') }}" alt="Logo" style="display: block; margin: 0 auto; width: 800px; height: auto;">
+		<img src="{{ asset('assets/images/logo/calendar.png') }}" alt="Logo" style="display: block; margin: 0 auto; width: 800px; height: auto;">
+
+		
+	</div>
 {% endblock %}
