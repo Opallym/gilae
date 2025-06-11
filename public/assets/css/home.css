@@ -1,0 +1,29 @@
+.row-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 400px;
+  row-gap: 20px;
+  padding: 20px;
+}
+
+
+.svg-block {
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.svg-block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.svg-block p {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+}
