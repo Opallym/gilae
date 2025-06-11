@@ -49,6 +49,7 @@
 {% endblock %}
 
 {% block body %}
+
 {{ include('pages/navbar/navbar.html.twig') }}
 
 <div class="container">
@@ -209,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
             priceDisplay.textContent = '0€';
         }
     }
+
     
     function updateServicePrice(checkbox, priceDisplay, basePrice, hours) {
         if (checkbox.checked) {
