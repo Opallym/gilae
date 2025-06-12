@@ -1,39 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gilaë{% endblock %}
+{% block title %}Gilaë
+{% endblock %}
 
 {% block body %}
-    <div class="background-container"></div>
+	<div class="background-container"></div>
 
-    <div><h2>Votre alliée du quotidien pour une vie simplifiée, sereine et élégante.</h2></div>
-    <div><p>Parce que chaque instant mérite votre pleine attention, nous vous proposons des services de conciergerie sur mesure, pensés pour alléger votre charge mentale et vous offrir le luxe de la tranquillité.</p></div>
-    <div><h1>Résumé des services</h1></div>
-    <div class="row-container">
-        <div class="svg-block">
-            <img src="{{ asset('assets/images/home/images.png') }}" alt="Description de l'image">
-            <p>
-                Investir dans la tranquillité, c’est rentable. Faire appel à notre conciergerie, c’est gagner un temps précieux et optimiser chaque aspect de votre organisation. Moins de stress, plus d'efficacité, une meilleure qualité de vie. Une valeur ajoutée concrète pour vous ou vos biens.
-            </p>
-        </div>
-        <div class="svg-block">
-            <img src="{{ asset('assets/images/home/images1.png') }}" alt="Description de l'image">
-            <p>
-                On s’occupe de tout. Notre mission : vous libérer de la charge mentale. Confiez-nous ce qui vous encombre, et retrouvez la légèreté de journées simples et sereines. Moins de préoccupations, plus d’instants pour vous.
-            </p>
-        </div>
-        <div class="svg-block">
-            <img src="{{ asset('assets/images/home/images2.png') }}" alt="Description de l'image">
-            <p>
-                Une conciergerie qui s’adapte à vous. Parce que chaque personne est unique, Gilaë propose des services modulables, ajustés à vos priorités, vos rythmes et vos envies. Avec nous, rien n’est figé. Vous avez le contrôle, sans les contraintes.
-            </p>
-        </div>
-    </div>
+	<div class="section-centrale">
+		<h2>Votre alliée du quotidien pour une vie simplifiée, sereine et élégante.</h2>
+		<p>
+			Parce que chaque instant mérite votre pleine attention, nous vous proposons des services de conciergerie sur mesure, pensés pour alléger votre charge mentale et vous offrir le luxe de la tranquillité.
+		</p>
+	</div>
+	<img src="{{ asset('assets/images/home/separation1.png') }}" alt="separation" class="img-responsive">
+	<div class="row-container">
+		<div class="svg-block">
+			<img src="{{ asset('assets/images/home/images.png') }}" alt="Description de l'image">
+			<p>
+				Investir dans la tranquillité, c’est rentable. Faire appel à notre conciergerie, c’est gagner un temps précieux et optimiser chaque aspect de votre organisation. Moins de stress, plus d'efficacité, une meilleure qualité de vie. Une valeur ajoutée concrète pour vous ou vos biens.
+			</p>
+		</div>
+		<div class="svg-block">
+			<img src="{{ asset('assets/images/home/images1.png') }}" alt="Description de l'image">
+			<p>
+				On s’occupe de tout. Notre mission : vous libérer de la charge mentale. Confiez-nous ce qui vous encombre, et retrouvez la légèreté de journées simples et sereines. Moins de préoccupations, plus d’instants pour vous.
+			</p>
+		</div>
+		<div class="svg-block">
+			<img src="{{ asset('assets/images/home/images2.png') }}" alt="Description de l'image">
+			<p>
+				Une conciergerie qui s’adapte à vous. Parce que chaque personne est unique, Gilaë propose des services modulables, ajustés à vos priorités, vos rythmes et vos envies. Avec nous, rien n’est figé. Vous avez le contrôle, sans les contraintes.
+			</p>
+		</div>
+	</div>
+	<img src="{{ asset('assets/images/home/separation2.png') }}" alt="separation" class="img-responsive">
+	<div class="section-container">
+		<h1 class="titre">Gilaë, la conciergerie sur mesure à votre écoute :</h1>
 
-            <div><h1>Gilaë, la conciergerie sur mesure à votre écoute :</h1></div>
-            <div><p>Votre temps est précieux. Gilaë vous propose une gestion raffinée et complète de votre résidence pour que vous n’ayez plus jamais à vous en soucier.  Gilaë, c’est avant tout une philosophie de service alliant bienveillance, discrétion et efficacité. Notre équipe vous accompagne avec exigence et humanité, en adaptant chaque prestation à vos besoins, vos rythmes et vos attentes. Nous conjuguons art de vivre et rigueur professionnelle pour valoriser vos biens et alléger votre quotidien.  Nous savons que chaque lieu raconte une histoire, et que chaque propriétaire mérite une solution unique. C’est pourquoi nous concevons des services de conciergerie haut de gamme, pensés pour sublimer votre vie ou celle de vos hôtes.  Grâce à notre approche personnalisée, nos clients constatent une hausse significative de la rentabilité, une réduction du stress quotidien, et surtout, plus de liberté pour se consacrer à l’essentiel.</p></div>
-            <div><h1>Encore des questions ?</h1></div>
-            <div><p>Pret a commencer l’avanture mais encore des question ? Voici les question les plus posée :</p></div>
+		<div class="contenu">
+			<div class="texte">
+				<p>
+					Votre temps est précieux. Gilaë vous propose une gestion raffinée et complète de votre résidence pour que vous n’ayez plus jamais à vous en soucier. Gilaë, c’est avant tout une philosophie de service alliant bienveillance, discrétion et efficacité. Notre équipe vous accompagne avec exigence et humanité, en adaptant chaque prestation à vos besoins, vos rythmes et vos attentes. Nous conjuguons art de vivre et rigueur professionnelle pour valoriser vos biens et alléger votre quotidien. Nous savons que chaque lieu raconte une histoire, et que chaque propriétaire mérite une solution unique. C’est pourquoi nous concevons des services de conciergerie haut de gamme, pensés pour sublimer votre vie ou celle de vos hôtes. Grâce à notre approche personnalisée, nos clients constatent une hausse significative de la rentabilité, une réduction du stress quotidien, et surtout, plus de liberté pour se consacrer à l’essentiel.
+				</p>
+                <a href="{{ path('app_about') }}">Découvrir plus</a>
+			</div>
+			<div class="image">
+				<img src="{{ asset('assets/images/home/imagenosengagements.png') }}" alt="image des engagements">
+			</div>
+		</div>
+        
+	</div>
+	<img src="{{ asset('assets/images/home/separation3.png') }}" alt="separation" class="img-responsive">
+	<div>
+		<p>Augmentez votre sérénité (et vos revenus) avec Gilaë.</p>
+	</div>
+	<img src="{{ asset('assets/images/home/separation4.png') }}" alt="separation" class="img-responsive">
+	<div>
+		<h1>Encore des questions ?</h1>
+	</div>
+	<div>
+		<p>Pret a commencer l’avanture mais encore des question ? Voici les question les plus posée :</p>
+	</div>
 
-
-    {% include 'pages/footer/footer.html.twig' %}
+	{% include 'pages/footer/footer.html.twig' %}
 {% endblock %}

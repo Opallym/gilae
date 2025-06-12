@@ -25,4 +25,118 @@
   text-align: center;
   font-size: 16px;
   line-height: 1.5;
+  color: rgb(255, 255, 255);
+}
+
+.h2 {
+  color: rgb(255, 255, 255);
+}
+
+.section-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titre {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.contenu {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  color: white; 
+}
+
+.texte {
+  flex: 1;
+  min-width: 300px;
+}
+
+.texte a {
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 12px 24px;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 40px;
+}
+
+
+
+.image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-responsive {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  height: auto;
+}
+
+.section-centrale {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-centrale h2 {
+  font-size: 2rem; 
+  margin-bottom: 20px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.section-centrale p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.texte p {
+  font-size: 25px; 
+  line-height: 1.7;  
+  color: #ffffff;
+  text-align: center;
+}
+
+
+@media (max-width: 600px) {
+  .section-centrale h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-centrale p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-centrale h2 {
+    font-size: 2.5rem; 
+  }
+
+  .section-centrale p {
+    font-size: 1.25rem;
+  }
 }
