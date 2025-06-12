@@ -1,0 +1,38 @@
+.custom-footer {
+        background-color: #007bf5;
+        color: #333;
+        margin-top: 50px;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-top div {
+        flex: 1 1 150px;
+        margin: 10px;
+    }
+
+    .footer-bottom {
+        background-color: #343a40;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-top {
+            flex-direction: column;
+        }
+
+        .footer-top div {
+            margin: 10px 0;
+        }
+    }

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: #5C7151;
+  padding-top: 100px;
 }
 .background-container {
   background-image: url('/assets/images/logo/background1.png');
