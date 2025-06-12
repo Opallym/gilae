@@ -1,0 +1,102 @@
+.policy {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Main container */
+.main-container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Title section */
+.title-section {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #FFFFFF;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-style: italic;
+    color: #FFFFFF;
+}
+
+/* Content sections */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.content-section {
+    margin-bottom: 100px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+.section-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+.botanical-decoration {
+    position: absolute;
+}
+
+
+
+.botanical-decoration img{
+    width: 600px;
+    height: 500px;
+}
+
+/* Coin haut gauche */
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+/* Coin haut droit */
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+/* Coin bas gauche */
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+/* Coin bas droit */
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/* Pour que le contenu passe au-dessus des images */
+.main-container {
+    position: relative;
+    z-index: 1;
+}
