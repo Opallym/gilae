@@ -71,51 +71,53 @@
 
 		<section class="faq-section">
   <h2>Encore des questions ?</h2>
-  <p>Pret à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :</p>
-
+  <p>Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :</p>
+<div class="faq-container">
   <div class="faq-item">
-    <button class="faq-question1">Puis-je louer mon logement en RBNB toute l’année ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+    <button class="faq-question light">Puis-je louer mon logement en RBNB toute l’année ?</button>
+    <div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
   </div>
 
   <div class="faq-item">
-    <button class="faq-question2">Suis-je couvert(e) par l’assurance ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+    <button class="faq-question dark">Suis-je couvert(e) par l’assurance ?</button>
+    <div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+  
+  <div class="faq-item">
+    <button class="faq-question dark">Comment fonctionne la gestion des arrivées et départs ?</button>
+    <div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
   </div>
 
   <div class="faq-item">
-    <button class="faq-question1">Puis-je louer uniquement ma chambre ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+    <button class="faq-question light">Puis-je louer uniquement ma chambre ?</button>
+    <div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
   </div>
 
   <div class="faq-item">
-    <button class="faq-question2">Comment fonctionne la gestion des arrivées et départs ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+    <button class="faq-question light">Qui fournit le linge de maison et les produits d’accueil ?</button>
+    <div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
   </div>
 
   <div class="faq-item">
-    <button class="faq-question1">Qui fournit le linge de maison et les produits d’accueil ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+    <button class="faq-question dark">Y a-t-il un engagement minimum ?</button>
+    <div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+  
+  <div class="faq-item">
+    <button class="faq-question dark">Intervenez-vous en cas de problème ou d’urgence ?</button>
+    <div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
   </div>
 
   <div class="faq-item">
-    <button class="faq-question2">Y a-t-il un engagement minimum ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+    <button class="faq-question light">À qui s’adresse Gilaë ?</button>
+    <div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question1">À qui s’adresse Gilaë ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question2">Intervenez-vous en cas de problème ou d’urgence ?</button>
-    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-  </div>
+</div>
 </section>
 
 <script>
-  document.querySelectorAll('.faq-question1, .faq-question2' ).forEach(button => {
+  document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const answer = button.nextElementSibling;
       answer.classList.toggle('open');
