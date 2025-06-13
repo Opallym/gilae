@@ -17,27 +17,26 @@
 
 		.pricing-header {
 			text-align: center;
-			margin-bottom: 50px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			gap: 20px;
 		}
 
 		.pricing-header h1 {
-			font-size: 2.5rem;
+			font-size: 3.5rem;
 			color: #333;
 			margin-bottom: 10px;
 			flex-shrink: 0;
+			color:#ffffff;
 		}
 
 		.header-image {
-			max-width: 300px; /* Ajustez cette valeur selon vos besoins */
+			max-width: 400px; /* Ajustez cette valeur selon vos besoins */
 			height: auto;
 		}
 
-        .header-image-left {
-			max-width: 400px; /* Ajustez cette valeur selon vos besoins */
+		.header-image-left {
+			max-width: 500px; /* Ajustez cette valeur selon vos besoins */
 			height: auto;
 		}
 
@@ -45,53 +44,51 @@
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			gap: 30px;
+			gap: 60px;
 		}
 
 		.pricing-card {
 			flex: 1;
 			min-width: 50px;
 			background: white;
-			border-radius: 10px;
+			border-radius: 30px;
 			box-shadow: 0 5px 15px rgb(0, 0, 0);
 			padding: 30px;
 			text-align: center;
-			transition: transform 0.3s ease;
 		}
 
-		.pricing-card:hover {
-			transform: translateY(-10px);
-		}
 
 		.pricing-card h2 {
-			font-size: 1.8rem;
+			font-size: 3rem;
 			color: #2c3e50;
 			margin-bottom: 5px;
 		}
 
 		.price {
+			padding: 60px 0;
 			font-size: 2.5rem;
 			font-weight: bold;
-			color: #e74c3c;
-			margin: 15px 0;
+			color: #2c3e50;
+			margin: 5px 0;
 		}
 
 		.price small {
-			font-size: 1rem;
-			color: #7f8c8d;
+			font-size: 2rem;
+			color: #2c3e50;
 		}
 
 		.features {
+			font-size: 1.7rem;
 			list-style: none;
 			padding: 0;
 			margin: 30px 0;
-			text-align: left;
+			text-align: center;
 		}
 
 		.features li {
-			padding: 8px 0;
+			padding: 40px 0;
 			border-bottom: 1px solid #ecf0f1;
-			color: #34495e;
+			color: #2c3e50;
 		}
 
 		.divider {
@@ -104,11 +101,11 @@
 			.pricing-cards {
 				flex-direction: column;
 			}
-			
+
 			.pricing-header {
 				flex-direction: column;
 			}
-			
+
 			.header-image {
 				max-width: 100px;
 			}
@@ -121,13 +118,16 @@
 			<h1>Tarifs / Packs</h1>
 			<img src="{{ asset('assets/images/logo/flowerright.png') }}" class="header-image" alt="Fleur droite">
 		</div>
-		
-		<div class="pricing-cards">
+
+		<div
+			class="pricing-cards">
 			<!-- Carte Basic -->
 			<div class="pricing-card">
 				<h2>Basic</h2>
 				<div class="price">90 €
-					<small>/mois</small>
+					<div class="price-text">
+						<small>/mois</small>
+					</div>
 				</div>
 
 				<ul class="features">
@@ -142,7 +142,9 @@
 			<div class="pricing-card">
 				<h2>Confort</h2>
 				<div class="price">7%
-					<small>des réservations</small>
+					<div class="price-text">
+						<small>réservations</small>
+					</div>
 				</div>
 
 				<div class="divider"></div>
@@ -159,7 +161,9 @@
 			<div class="pricing-card">
 				<h2>Privilège</h2>
 				<div class="price">15%
-					<small>des réservations</small>
+					<div class="price-text">
+						<small>réservations</small>
+					</div>
 				</div>
 
 				<div class="divider"></div>
