@@ -48,17 +48,79 @@
 				<img src="{{ asset('assets/images/home/imagenosengagements.png') }}" alt="image des engagements">
 			</div>
 		</div>
-        
 	</div>
+
 	<img src="{{ asset('assets/images/home/separation3.png') }}" alt="separation" class="img-responsive">
-	<div>
-		<p>Augmentez votre sérénité (et vos revenus) avec Gilaë.</p>
+
+	<div class="section-container">
+		<h1 class="titre"class="titre">Augmentez votre sérénité (et vos revenus) avec Gilaë.</h1>
+
+		<div class="contenu">
+			<div class="texte">
+				<p>◦ Valorisation optimale de votre bien grâce à une veille quotidienne des tarifs et des tendances locales.</p>
+        		<p>◦ Taux d’occupation maximisé par une stratégie locative intelligente alliant court et moyen séjour.</p>
+        		<p>◦ Accompagnement humain et discret avec un gestionnaire dédié, expert en hôtellerie de charme et immobilier.</p>
+			</div>
+			<div class="image">
+				<img src="{{ asset('assets/images/home/commentaire.png') }}" alt="espace commentaire" class="img-commentaire">
+			</div>
+		</div>
 	</div>
-	<img src="{{ asset('assets/images/home/separation4.png') }}" alt="separation" class="img-responsive">
-	<div>
-		<h1>Encore des questions ?</h1>
-	</div>
-	<div>
-		<p>Pret a commencer l’avanture mais encore des question ? Voici les question les plus posée :</p>
-	</div>
+
+<img src="{{ asset('assets/images/home/separation4.png') }}" alt="séparation" class="img-responsive">
+
+		<section class="faq-section">
+  <h2>Encore des questions ?</h2>
+  <p>Pret à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :</p>
+
+  <div class="faq-item">
+    <button class="faq-question1">Puis-je louer mon logement en RBNB toute l’année ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question2">Suis-je couvert(e) par l’assurance ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question1">Puis-je louer uniquement ma chambre ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question2">Comment fonctionne la gestion des arrivées et départs ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question1">Qui fournit le linge de maison et les produits d’accueil ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question2">Y a-t-il un engagement minimum ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question1">À qui s’adresse Gilaë ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question2">Intervenez-vous en cas de problème ou d’urgence ?</button>
+    <div class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question1, .faq-question2' ).forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      answer.classList.toggle('open');
+    });
+  });
+</script>
+
 {% endblock %}
