@@ -4,99 +4,53 @@
     padding: 0;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh; /* Assure que le conteneur prend toute la hauteur */
 }
 
-/* Main container */
-.main-container {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Title section */
-.title-section {
-    text-align: center;
-    margin-bottom: 50px;
+.decoration-container {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.main-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    color: #FFFFFF;
-}
-
-.subtitle {
-    font-size: 1rem;
-    opacity: 0.9;
-    font-style: italic;
-    color: #FFFFFF;
-}
-
-/* Content sections */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.content-section {
-    margin-bottom: 100px;
-}
-
-.section-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-decoration: underline;
-    color: #FFFFFF;
-}
-
-.section-content {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #FFFFFF;
+.main-container {
+    margin: 0 auto;
+    position: relative;
 }
 
 .botanical-decoration {
     position: absolute;
 }
 
-
-
-.botanical-decoration img{
-    width: 600px;
-    height: 500px;
+.botanical-decoration img {
+    width: 300px; /* Réduisez la taille si nécessaire */
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
 }
 
-/* Coin haut gauche */
+/* Positions des décorations */
 .top-left {
     top: 0;
     left: 0;
+    transform: translate(-30%, -30%);
 }
 
-/* Coin haut droit */
 .top-right {
     top: 0;
     right: 0;
+    transform: translate(30%, -30%);
 }
 
-/* Coin bas gauche */
 .bottom-left {
     bottom: 0;
     left: 0;
+    transform: translate(-30%, 30%);
 }
 
-/* Coin bas droit */
 .bottom-right {
     bottom: 0;
     right: 0;
-}
-
-/* Pour que le contenu passe au-dessus des images */
-.main-container {
-    position: relative;
-    z-index: 1;
+    transform: translate(30%, 30%);
 }
