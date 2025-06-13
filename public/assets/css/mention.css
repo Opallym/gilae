@@ -4,53 +4,93 @@
     padding: 0;
     position: relative;
     overflow-x: hidden;
-    min-height: 100vh; /* Assure que le conteneur prend toute la hauteur */
+    min-height: 100vh;
 }
 
 .decoration-container {
     position: relative;
-    width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 40px;
 }
 
 .main-container {
-    margin: 0 auto;
     position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    color: #ffff;
+}
+
+.title-section {
+    margin-bottom: 40px;
+    color: #ffff;
+}
+
+.main-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    line-height: 1.0;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.content-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.section-content p,
+.section-content ul {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.contact-info p {
+    margin: 3px 0;
+}
+
+.disclaimer {
+    font-style: italic;
+    text-align: center;
+    flex-basis: 100%;
+    margin-top: 20px;
 }
 
 .botanical-decoration {
     position: absolute;
+    
 }
 
 .botanical-decoration img {
-    width: 300px; /* Réduisez la taille si nécessaire */
     height: auto;
-    max-height: 500px;
-    object-fit: contain;
-    display: block;
+    width: 500px;
+    height: 400px;
 }
 
-/* Positions des décorations */
 .top-left {
     top: 0;
     left: 0;
-    transform: translate(-30%, -30%);
 }
 
 .top-right {
     top: 0;
     right: 0;
-    transform: translate(30%, -30%);
 }
 
 .bottom-left {
     bottom: 0;
     left: 0;
-    transform: translate(-30%, 30%);
 }
 
 .bottom-right {
     bottom: 0;
     right: 0;
-    transform: translate(30%, 30%);
 }

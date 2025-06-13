@@ -3,88 +3,95 @@
 {% block title %}Mentions légales & Politique de confidentialité
 {% endblock %}
 
-
 {% block body %}
-	<!-- Décorations coin haut gauche -->
-	<div class="botanical-decoration top-left">
-		<img src="{{ asset('assets/images/mention/plantegauche.png') }}" alt="Décoration coin haut gauche">
-	</div>
+	<div
+		class="decoration-container">
 
-	<!-- Décorations coin haut droit -->
-	<div class="botanical-decoration top-right">
-		<img src="{{ asset('assets/images/mention/plantedroite.png') }}" alt="Décoration coin haut droit">
-	</div>
-
-	<!-- Décorations coin bas gauche -->
-	<div class="botanical-decoration bottom-left">
-		<img src="{{ asset('assets/images/mention/plantegauchebas.png') }}" alt="Décoration coin bas gauche">
-	</div>
-
-	<!-- Décorations coin bas droit -->
-	<div class="botanical-decoration bottom-right">
-		<img src="{{ asset('assets/images/mention/plantedroitebas.png') }}" alt="Décoration coin bas droit">
-	</div>
-	<div class="policy main-container">
-		<div class="title-section">
-			<h1 class="main-title">Mentions légales<br>&
-				<br>Politique de confidentialité</h1>
-			<p class="subtitle">Dernière mise à jour : 2025</p>
+		<!-- Décorations coin haut gauche -->
+		<div class="botanical-decoration top-left">
+			<img src="{{ asset('assets/images/mention/plantegauche.png') }}" alt="Décoration coin haut gauche">
 		</div>
-		<div class="content-grid">
-			<div class="content-section">
-				<h3 class="section-title">Éditeur du site</h3>
-				<div class="section-content contact-info">
-					<p>Conciergerie</p>
-					<p>Représentée par :
-					</p>
-					<p>Adresse :
-					</p>
-					<p>SIRET :</p>
-					<p>Email : exemple@gilae.fr</p>
-					<p>Responsable de publication :</p>
-				</div>
-			</div>
-			<div class="policy content-section">
-				<h3 class="section-title">Hébergement du site</h3>
-				<div class="section-content contact-info">
-					<p>Nom de l'hébergeur</p>
-					<p>Adresse : adresse de l'hébergeur</p>
-					<p>Téléphone : +06 00 00 00 00</p>
-					<p>Site web : URL de l'hébergeur</p>
-				</div>
-			</div>
-			<div class="policy content-section">
-				<h3 class="section-title">Propriété intellectuelle</h3>
-				<div class="section-content">
-					<p>L'ensemble des contenus présents sur le site (textes, images, graphismes, logos, icônes…) sont la propriété exclusive de Gilaë Conciergerie, sauf mention contraire. Toute reproduction, diffusion ou utilisation sans autorisation préalable est interdite.</p>
-				</div>
-			</div>
-			<div class="policy content-section">
-				<h3 class="section-title">Utilisation des données personnelles</h3>
-				<div class="section-content">
-					<p>Nous collectons uniquement les données nécessaires pour :</p>
-					<p>- Vous contacter suite à une demande via le formulaire.</p>
-					<p>- Gérer vos réservations et prestations.</p>
-					<p>- Vous informer sur nos services, si vous y avez consenti</p>
-					<p>Ces données ne sont ni vendues, ni cédées à des tiers. Elles sont conservées de manière sécurisée pour une durée maximale de 3 ans. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression de vos données. Pour exercer vos droits, envoyez-nous un email à : exemple@gilae.fr</p>
-				</div>
-			</div>
-			<div class="policy content-section">
-				<h3 class="section-title">Limitation de responsabilité</h3>
-				<div class="section-content">
-					<p>Malgré le soin apporté à l'actualisation du contenu, des erreurs ou omissions peuvent apparaître. Gilaë Conciergerie ne saurait être tenue responsable d'une mauvaise utilisation des informations diffusées sur ce site.</p>
-				</div>
-			</div>
-			<div class="policy content-section">
-				<h3 class="section-title">Cookies</h3>
-				<div class="section-content">
-					<p>Notre site utilise des cookies pour améliorer votre navigation et mesurer l'audience. Vous pouvez à tout moment paramétrer leur utilisation via votre navigateur.</p>
-				</div>
-			</div>
+
+		<!-- Décorations coin haut droit -->
+		<div class="botanical-decoration top-right">
+			<img src="{{ asset('assets/images/mention/plantedroite.png') }}" alt="Décoration coin haut droit">
 		</div>
-		<div class="policy content-section">
-			<div class="section-content" style="text-align: center; font-style: italic; padding: 20px 0;">
-				<p>Ces données ne sont ni vendues, ni cédées à des tiers. Elles sont conservées de manière sécurisée pour une durée maximale de 3 ans, sauf mention contraire.</p>
+
+		<!-- Décorations coin bas gauche -->
+		<div class="botanical-decoration bottom-left">
+			<img src="{{ asset('assets/images/mention/plantegauchebas.png') }}" alt="Décoration coin bas gauche">
+		</div>
+
+		<!-- Décorations coin bas droit -->
+		<div class="botanical-decoration bottom-right">
+			<img src="{{ asset('assets/images/mention/plantedroitebas.png') }}" alt="Décoration coin bas droit">
+		</div>
+
+		<!-- Contenu principal -->
+		<div class="main-container">
+			<div class="title-section">
+				<h1 class="main-title">Mentions légales<br>&<br>Politique de confidentialité</h1>
+				<p class="subtitle">Dernière mise à jour : 2025</p>
+			</div>
+
+			<div class="content-grid">
+				<div class="content-section">
+					<h3 class="section-title">Éditeur du site</h3>
+					<div class="section-content contact-info">
+						<p>Conciergerie</p>
+						<p>Représentée par :</p>
+						<p>Adresse :</p>
+						<p>SIRET :</p>
+						<p>Email : exemple@gilae.fr</p>
+						<p>Responsable de publication :</p>
+					</div>
+				</div>
+
+				<div class="content-section">
+					<h3 class="section-title">Hébergement du site</h3>
+					<div class="section-content contact-info">
+						<p>Nom de l'hébergeur</p>
+						<p>Adresse : adresse de l'hébergeur</p>
+						<p>Téléphone : +06 00 00 00 00</p>
+						<p>Site web : URL de l'hébergeur</p>
+					</div>
+				</div>
+
+				<div class="content-section">
+					<h3 class="section-title">Propriété intellectuelle</h3>
+					<div class="section-content">
+						<p>L'ensemble des contenus présents sur le site (textes, images, graphismes, logos, icônes…) sont la propriété exclusive de Gilaë Conciergerie, sauf mention contraire. Toute reproduction, diffusion ou utilisation sans autorisation préalable est interdite.</p>
+					</div>
+				</div>
+
+				<div class="content-section">
+					<h3 class="section-title">Utilisation des données personnelles</h3>
+					<div class="section-content">
+						<p>Nous collectons uniquement les données nécessaires pour :</p>
+						<p>- Vous contacter suite à une demande via le formulaire.</p>
+						<p>- Gérer vos réservations et prestations.</p>
+						<p>- Vous informer sur nos services, si vous y avez consenti</p>
+						<p>Ces données ne sont ni vendues, ni cédées à des tiers. Elles sont conservées de manière sécurisée pour une durée maximale de 3 ans. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression de vos données. Pour exercer vos droits, envoyez-nous un email à : exemple@gilae.fr</p>
+					</div>
+				</div>
+
+				<div class="content-section">
+					<h3 class="section-title">Limitation de responsabilité</h3>
+					<div class="section-content">
+						<p>Malgré le soin apporté à l'actualisation du contenu, des erreurs ou omissions peuvent apparaître. Gilaë Conciergerie ne saurait être tenue responsable d'une mauvaise utilisation des informations diffusées sur ce site.</p>
+					</div>
+				</div>
+
+				<div class="content-section">
+					<h3 class="section-title">Cookies</h3>
+					<div class="section-content">
+						<p>Notre site utilise des cookies pour améliorer votre navigation et mesurer l'audience. Vous pouvez à tout moment paramétrer leur utilisation via votre navigateur.</p>
+					</div>
+				</div>
+
+				<div class="content-section" style="text-align: center; font-style: italic; padding: 20px 0;">
+					<p>Ces données ne sont ni vendues, ni cédées à des tiers. Elles sont conservées de manière sécurisée pour une durée maximale de 3 ans, sauf mention contraire.</p>
+				</div>
 			</div>
 		</div>
 	</div>
