@@ -73,6 +73,27 @@
   font-size: 40px;
 }
 
+.contenufaq {
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* aligne à droite */
+  align-items: center;       /* centre verticalement */
+  padding-right: 40px;       /* optionnel : espace à droite */
+}
+
+.liensfaq a {
+  color: #ffffff;       /* ou white, selon ton fond */
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.liensfaq a:hover {
+  color: #7A8B75; /* couleur au survol */
+}
+
+
 .image {
   flex: 1;
   min-width: 300px;
