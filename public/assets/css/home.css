@@ -76,13 +76,13 @@
 .contenufaq {
   position: relative;
   display: flex;
-  justify-content: flex-end; /* aligne à droite */
-  align-items: center;       /* centre verticalement */
-  padding-right: 40px;       /* optionnel : espace à droite */
+  justify-content: flex-end; 
+  align-items: center;
+  padding-right: 40px;
 }
 
 .liensfaq a {
-  color: #ffffff;       /* ou white, selon ton fond */
+  color: #ffffff;
   font-size: 1.2rem;
   text-decoration: none;
   font-weight: bold;
@@ -90,7 +90,7 @@
 }
 
 .liensfaq a:hover {
-  color: #7A8B75; /* couleur au survol */
+  color: #7A8B75;
 }
 
 

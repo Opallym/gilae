@@ -5,13 +5,16 @@
     font-family: Arial, sans-serif;
 }
 
+.footer-top, .footer-bottom {
+    text-align: center;
+}
+
 .footer-top {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    text-align: center;
 }
 
 .footer-top div {
@@ -19,12 +22,28 @@
     margin: 10px;
 }
 
+.footer-top a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-top a:hover {
+    opacity: 0.8;
+}
+
 .footer-bottom {
     background-color: #81927C;
-    color: #fff;
-    text-align: center;
     padding: 10px 0;
-    font-size: 30px;
+    font-size: 18px;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
 
 @media (max-width: 768px) {

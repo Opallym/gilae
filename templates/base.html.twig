@@ -6,7 +6,6 @@
 			{% block title %}Welcome!
 			{% endblock %}
 		</title>
-
 		{% block stylesheets %}
 
 			<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}?v=1">
@@ -18,11 +17,8 @@
       		<link rel="stylesheet" href="{{ asset('assets/css/about.css') }}?v=1">
 
 		{% endblock %}
-
 	</head>
-
 	<body>
-
 		{% include 'pages/navbar/navbar.html.twig' %}
 		{% block body %}{% endblock %}
         {% include 'pages/footer/footer.html.twig' %}
@@ -39,7 +35,6 @@
                     });
                 });
 			</script>
-
 		{% endblock %}
 	</body>
 </html>
