@@ -61,18 +61,8 @@
     transform: rotate(10deg);
 }
 
-.bottom-left {
-    bottom: 20px;
-    left: 20px;
-    width: 160px;
-    transform: rotate(-5deg);
-}
-
-.bottom-right {
-    bottom: 20px;
-    right: 20px;
-    width: 170px;
-    transform: rotate(5deg);
+.idbas {
+    top: 20px;
 }
 
 /* Responsive */
