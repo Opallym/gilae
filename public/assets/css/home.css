@@ -142,17 +142,20 @@
 .faq-section {
   color: #ffffff;
   padding: 2rem;
+  font-family: 'Instrument Serif';
 }
 
 .faq-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  
 }
 
 .faq-section h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  
 }
 
 .faq-section p {
@@ -173,6 +176,7 @@
   padding: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: 'Instrument Serif'
 }
 
 .faq-question.light {
