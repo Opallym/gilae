@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts - Conciergerie Gilae{% endblock %}
+
+{% block body %}
+<main class="formulaire-container">
+    <div class="formulaire-content">
+        <h1 class="formulaire-title">Contacts</h1>
+        
+        <div class="formulaire-info">
+            <div class="formulaire-item">
+            <div class="contact-icon">✉</div>
+                <p>info@gilae-consiergerie.fr</p>
+            </div>
+            
+            <div class="formulaire-item">
+            <div class="contact-icon">☎</div>
+                <p>+ 06 00 00 00 00 00</p>
+            </div>
+            
+            <div class="formulaire-item">
+            <div class="contact-icon">📍</div>
+                <p>La Baleine, Le Bourg 54450</p>
+            </div>
+        </div>
+        <button class="formulaire-button" onclick="window.location.href='/contacter'">Nous contacter</button>
+    </div>
+    <img src="{{ asset('assets/images/formulaire/plantesf.png') }}" class="decorative-imageformulaire" alt="Décoration">
+</main>
+{% endblock %}

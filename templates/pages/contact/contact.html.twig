@@ -1,8 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gilaë{% endblock %}
+{% block title %}Gilaë
+{% endblock %}
 
 {% block body %}
-    <div><h1>Bienvenue Page contact</h1></div>
-    
-{% endblock %}
+	<div class="v1">
+			<div class="container">
+				<h1>Contacts</h1>
+				<form class="contact-form">
+					<div class="input-group">
+						<div class="icon">✉</div>
+						<input type="email" placeholder="Entrer votre adresse mail..." required>
+					</div>
+
+					<div class="input-group">
+						<div class="icon">📞</div>
+						<input type="tel" placeholder="Entrer votre numéro de téléphone..." required>
+					</div>
+
+					<div class="textarea-group">
+						<textarea placeholder="Entrez votre demande..." rows="8" required></textarea>
+					</div>
+
+					<button type="submit">Envoyez</button>
+				</form>
+			</div>
+		</div>
+	{% endblock %}
