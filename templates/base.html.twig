@@ -34,15 +34,42 @@
 		{% block javascripts %}
 			<script>
 				document.addEventListener('DOMContentLoaded', function () {
-                    const toggle = document.getElementById('navbar-toggle');
-                    const menu = document.getElementById('navbar-menu');    
-                    const navbar = document.querySelector('.navbar');   
+					const toggle = document.getElementById('navbar-toggle');
+					const menu = document.getElementById('navbar-menu');
+					const navbar = document.querySelector('.navbar');
 
-                    toggle.addEventListener('click', () => {
-                    menu.classList.toggle('show');
-                    navbar.classList.toggle('menu-open');
-                    });
-                });
+					toggle.addEventListener('click', () => {
+						menu.classList.toggle('show');
+						navbar.classList.toggle('menu-open');
+					});
+
+					// DARK/LIGHT MODE
+					const themeToggle = document.getElementById('theme-toggle');
+					const themeIcon = document.getElementById('theme-icon');
+					const currentTheme = localStorage.getItem('theme');
+
+					if (currentTheme === 'dark') {
+						document.body.classList.add('dark-mode');
+						themeIcon.src = '{{ asset("assets/images/icons/sun.png") }}';
+					}
+
+					themeToggle.addEventListener('click', () => {
+						document.body.classList.toggle('dark-mode');
+						const isDark = document.body.classList.contains('dark-mode');
+						themeIcon.src = isDark
+							? '{{ asset("assets/images/icons/sun.png") }}'
+							: '{{ asset("assets/images/icons/moon.png") }}';
+						localStorage.setItem('theme', isDark ? 'dark' : 'light');
+					});
+
+					// LANGUE (à personnaliser selon ton système i18n)
+					const languageSelector = document.getElementById('language-selector');
+					languageSelector.addEventListener('change', function () {
+						const selectedLang = this.value;
+						// Ici tu peux rediriger ou gérer la langue via l'URL ou une requête
+						window.location.href = '/' + selectedLang + window.location.pathname;
+					});
+				});
 			</script>
 		{% endblock %}
 	</body>

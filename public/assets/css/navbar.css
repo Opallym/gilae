@@ -9,6 +9,42 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.theme-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.theme-button img {
+  height: 60px;
+  width: 60px;
+}
+
+.language-select select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+.language-select {
+  margin-right: 10px;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+}
+
+body.dark-mode .navbar-menu li a {
+  color: #fff;
+}
+
 .navbar-container {
   display: flex;
   align-items: center;
