@@ -2,16 +2,11 @@
 
 {% block title %}À propos{% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
-{% endblock %}
-
 {% block body %}
 <div class="about-page">
     <!-- Images décoratives -->
-    <img src="{{ asset('assets/images/about/plante2g.png') }}" class="decorative-image bottom-left" alt="Décoration">
-    <img src="{{ asset('assets/images/about/plante1d.png') }}" class="decorative-image bottom-right" alt="Décoration">
+    <img src="{{ asset('assets/images/about/plante2g.png') }}" class="decorative-image top-left" alt="Décoration">
+    <img src="{{ asset('assets/images/about/plante1d.png') }}" class="decorative-image top-right" alt="Décoration">
 
     <div class="main-container">
         <h1 class="main-title">À propos :</h1>

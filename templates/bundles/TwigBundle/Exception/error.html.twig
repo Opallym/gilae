@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}404 - Page non trouvée{% endblock %}
+
+{% block body %}
+    <div class="error-container">
+        <img src="{{ asset('assets/images/erreur/404.webp') }}" alt="Page non trouvée">
+
+        <button class="error-button" onclick="window.location.href='/'">Accueil</button>
+    </div>
+{% endblock %}
