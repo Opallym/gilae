@@ -62,7 +62,7 @@
 
 .idbas {
     position: absolute;
-    bottom: 0;
+    top: 400px;
     left: 50%;
     transform: translateX(-50%);
 }
