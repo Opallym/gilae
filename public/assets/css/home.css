@@ -62,9 +62,21 @@ a {
   font-family: 'Instrument Serif', serif;
 }
 
+body.dark-mode .titre,
+body.dark-mode .h2,
+body.dark-mode .section-centrale h2,
+body.dark-mode .faq-section h2 {
+  color: #625F55;
+}
+
 .elegant-underline {
   display: inline;
   box-shadow: inset 0 -6px 0 #7A8B75;
+}
+
+body.dark-mode .elegant-underline {
+  display: inline;
+  box-shadow: inset 0 -6px 0 #B3B04C;
 }
 
 .section-centrale h2 {
@@ -130,6 +142,156 @@ a {
   margin: 0 auto;
 }
 
+.img-responsive1 {
+  background-image: url('../images/home/separation1.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.dark-mode .img-responsive1 {
+  background-image: url('../images/home/separation1light.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img-responsive2 {
+  background-image: url('../images/home/separation2.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.dark-mode .img-responsive2 {
+  background-image: url('../images/home/separation2light.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img-responsive3 {
+  background-image: url('../images/home/separation3.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.dark-mode .img-responsive3 {
+  background-image: url('../images/home/separation3light.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img-responsive4 {
+  background-image: url('../images/home/separation4.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.dark-mode .img-responsive4 {
+  background-image: url('../images/home/separation4light.png');
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-size: contain; 
+  height: 27vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.image-graphique {
+  background-image: url('../images/home/images.png');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  height: 27vh;
+}
+
+body.dark-mode .image-graphique {
+  background-image: url('../images/home/imageslight.png');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  height: 27vh;
+}
+
+.stress{
+  background-image: url('../images/home/images1.png');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  height: 27vh;
+}
+
+body.dark-mode .stress {
+  background-image: url('../images/home/images1light.png');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  height: 27vh;
+}
+
+.flexibilité{
+  background-image: url('../images/home/images2.png');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  height: 27vh;
+}
+
+body.dark-mode .flexibilité {
+  background-image: url('../images/home/images2light.png');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  height: 27vh;
+}
+
 .img-responsive {
   max-width: 500px;
 }
@@ -183,6 +345,10 @@ a {
   font-size: 20px;
   line-height: 1.5;
   color: white;
+}
+
+body.dark-mode .svg-block p {
+  color: #625F55;
 }
 
 /* ========================
@@ -240,7 +406,7 @@ a {
 }
 
 .faq-answer.dark {
-  background-color: #72826d;
+  background-color: #B3B04C;
   color: white;
 }
 

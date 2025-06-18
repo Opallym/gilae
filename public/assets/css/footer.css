@@ -6,12 +6,12 @@
 }
 
 body.dark-mode .custom-footer {
-    background-color: #2d2d2d;
-    color: #eeeeee;
+    background-color: #efede7;
+    color: #625F55;
 }
 
 body.dark-mode .footer-bottom {
-    background-color: #444;
+    background-color: #EAE6DA;
 }
 
 .footer-top, .footer-bottom {
