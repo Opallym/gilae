@@ -14,3 +14,15 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+body.dark-mode .background-container{
+  background-image: url('/assets/images/home/imagefondgilae.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
