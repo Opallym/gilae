@@ -2,68 +2,13 @@
 
 {% block title %}Services | Gilae Conciergerie{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/service.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+{% endblock %}
+
 {% block body %}
-    {{ include('pages/navbar/navbar.html.twig') }}
-
-    <style>
-        .service-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .service-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .service-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-        
-        .service-text {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .service-image {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .service-header img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .service-item img {
-            max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-        
-        @media (max-width: 768px) {
-            .service-item {
-                flex-direction: column;
-            }
-            
-            .service-text, .service-image {
-                min-width: 100%;
-            }
-            
-            .service-item:nth-child(even) .service-text {
-                order: 2;
-            }
-        }
-    </style>
-
     <div class="service-container">
         <div class="service-header">
             <img src="{{ asset('assets/images/logo/serviceup.png') }}" alt="Services Gilae Conciergerie">
