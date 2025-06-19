@@ -35,8 +35,9 @@
 	</div>
 	<div class='img-responsive2'></div>
 	<div class="section-container">
-		<h1 class="titre elegant-underline">Gilaë, la conciergerie sur mesure à votre écoute :</h1>
-
+		<div class="section-centrale">
+			<h1 class="titre elegant-underline">Gilaë, la conciergerie sur mesure à votre écoute :</h1>
+		</div>
 		<div class="contenu">
 			<div class="texte">
 				<p>
@@ -45,7 +46,7 @@
 				<a href="{{ path('app_about') }}">Découvrir plus</a>
 			</div>
 			<div class="image">
-				<img src="{{ asset('assets/images/home/imagenosengagements.png') }}" alt="image des engagements">
+				<div class='image-engagements'></div>
 			</div>
 		</div>
 	</div>
@@ -53,8 +54,9 @@
 	<div class='img-responsive3'></div>">
 
 	<div class="section-container">
-		<h1 class="elegant-underline titre ">Augmentez votre sérénité (et vos revenus) avec Gilaë.</h1>
-
+		<div class="section-centrale">
+			<h1 class="elegant-underline titre ">Augmentez votre sérénité (et vos revenus) avec Gilaë.</h1>
+		</div>
 		<div class="contenu">
 			<div class="texte">
 				<p>◦ Valorisation optimale de votre bien grâce à une veille quotidienne des tarifs et des tendances locales.</p>
@@ -62,7 +64,7 @@
 				<p>◦ Accompagnement humain et discret avec un gestionnaire dédié, expert en hôtellerie de charme et immobilier.</p>
 			</div>
 			<div class="image">
-				<img src="{{ asset('assets/images/home/commentaire.png') }}" alt="espace commentaire" class="img-commentaire">
+				<div class="img-commentaire"></div>
 			</div>
 		</div>
 	</div>
@@ -71,14 +73,17 @@
 
 
 	<section class="faq-section">
-		<h2 class="elegant-underline titre ">Encore des questions ?</h2>
-		<p>Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :</p>
-		<div class="contenufaq">
-			<div class="liensfaq">
-				<a href="{{ path('app_faq') }}">FAQ</a>
+		<div class="faq-container">
+			<h2 class="elegant-underline titre">Encore des questions ?</h2>
+			<p class="faq-description">
+				Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :
+			</p>
+			<div class="contenufaq">
+				<div class="liensfaq">
+					<a href="{{ path('app_faq') }}">FAQ</a><br>
+				</div>
 			</div>
 		</div>
-
 		<div class="faq-container">
 			<div class="faq-item">
 				<button class="faq-question light">Puis-je louer mon logement en RBNB toute l’année ?</button>
