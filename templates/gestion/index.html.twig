@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GestionController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/gestion.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="gestion-container">
+		<div class="pricing-header">
+			<h1>Gestion du site</h1>
+			<img src="{{ asset('assets/images/gestion/flower.png') }}" class="header-image" alt="Fleur droite">
+		</div>
+
+<div class="boutons-container">
+  <!-- Première ligne -->
+  <button class="bouton">Acceuil</button>
+  <button class="bouton">FAQ</button>
+  <button class="bouton">A propos</button>
+  <button class="bouton">Avis</button>
+  
+  <!-- Deuxième ligne -->
+  <button class="bouton">Services</button>
+  <button class="bouton">Contact</button>
+  <button class="bouton">Tarif/Pack</button>
+  <button class="bouton">Formulaire</button>
+</div>
+{% endblock %}

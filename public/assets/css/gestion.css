@@ -1,0 +1,37 @@
+.boutons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 4 colonnes */
+    gap: 10px;
+    /* Espace entre les boutons */
+    width: 100%;
+    /* ou une largeur fixe selon vos besoins */
+}
+
+.bouton {
+    cursor: pointer;
+    max-width: 250px;
+    min-height: 60px;
+     padding: 15px 25px;
+    border-color: #ffffff;
+    background-color: #4caf4f00;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boutons-container {
+            gap: 20px;
+            justify-items: center; /* Centre les boutons dans chaque cellule */
+            max-width: 500px;
+            margin: 40px auto; /* Centre le conteneur */
+            padding: 0 20px;
+        }
+
+
+.gestion-container {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
