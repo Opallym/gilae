@@ -1,23 +1,71 @@
 .conseils-ligne {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   margin: 40px 0;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.conseils-ligne img {
-  max-width: 180px;
-  height: auto;
-  transition: transform 0.3s ease;
+.feuille1,
+.feuille2 {
+  width: 180px;
+  height: 20vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Images par défaut */
+.feuille1 {
+  background-image: url('../images/conseils/feuille1.png');
+}
+
+.feuille2 {
+  background-image: url('../images/conseils/feuille2.png');
+}
+
+/* Images en mode sombre */
+body.dark-mode .feuille1 {
+  background-image: url('../images/conseils/feuille1light.png');
+}
+
+body.dark-mode .feuille2 {
+  background-image: url('../images/conseils/feuille2light.png');
+}
+
+/* Responsive ajustement de taille */
+@media (max-width: 992px) {
+  .feuille1, .feuille2 {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feuille1, .feuille2 {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feuille1, .feuille2 {
+    width: 80px;
+  }
 }
 
 .conseils-ligne h1 {
   font-size: 100px;
   font-family: 'Jacques Francois', serif;
   color: #ffffff;
+  margin: 0 20px;
+  transition: font-size 0.3s ease;
+}
+
+body.dark-mode .conseils-ligne h1 {
+  font-size: 100px;
+  font-family: 'Jacques Francois', serif;
+  color: #625F55;
   margin: 0 20px;
   transition: font-size 0.3s ease;
 }
@@ -43,6 +91,14 @@
   color: #ffffff;
   margin-bottom: 10px;
   border-left: 4px solid #7A8B75;
+  padding-left: 10px;
+  font-family: 'Jacques Francois', serif;
+}
+
+body.dark-mode .conseils-section h2 {
+  color: #625F55;
+  margin-bottom: 10px;
+  border-left: 4px solid #B3B04C;
   padding-left: 10px;
   font-family: 'Jacques Francois', serif;
 }

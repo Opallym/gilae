@@ -1,88 +1,182 @@
-/* Base Styles */
-.about-page {
-    font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-    color: #FFFFFF;
-    min-height: 100vh;
+.apropos-container {
     position: relative;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* Main container */
-.main-container {
-    max-width: 600px;
-    padding: 60px 40px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-/* Title */
-.main-title {
-    font-size: 2.2rem;
-    font-weight: normal;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
+.apropos-texte {
+    max-width: 700px;
     text-align: center;
-}
-
-/* Content */
-.content-text {
-    font-size: 1.1rem;
+    z-index: 2;
+    padding: 1rem;
+    position: relative;
+    font-size: 1.2rem;
     line-height: 1.8;
-    font-weight: 300;
-    text-align: center;
+}
+
+.decor-gauche {
+    background-image: url('../images/about/plante2g.png');
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-size: contain; 
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode .decor-gauche {
+    background-image: url('../images/about/plante2glight.png');
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-size: contain; 
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.decor-droite {
+    background-image: url('../images/about/plante1d.png');
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-size: contain; 
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode .decor-droite {
+    background-image: url('../images/about/plante1dlight.png');
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-size: contain; 
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.decor-bas {
+    background-image: url('../images/about/plante.png');
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-size: contain; 
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode .decor-bas {
+    background-image: url('../images/about/plantelight.png');
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-size: contain; 
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.decor-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     position: relative;
-    z-index: 2;
+    gap: 1rem;
+    flex-wrap: nowrap;
 }
 
-.content-text p {
-    margin-bottom: 25px;
+.decor-gauche,
+.decor-droite {
+    flex-shrink: 0;
+    width: 150px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/* Images décoratives */
-.decorative-image {
-    z-index: 1;
+.decor-gauche {
+    background-image: url('../images/about/plante2g.png');
+}
+body.dark-mode .decor-gauche {
+    background-image: url('../images/about/plante2glight.png');
 }
 
-.top-left {
-    position: absolute;
-    top: 20px;
-    left: 90px;
-    transform: rotate(-10deg);
+.decor-droite {
+    background-image: url('../images/about/plante1d.png');
+}
+body.dark-mode .decor-droite {
+    background-image: url('../images/about/plante1dlight.png');
 }
 
-.top-right {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    transform: rotate(10deg);
+.decor-bas {
+    margin-top: 2rem;
+    width: 300px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../images/about/plante.png');
+}
+body.dark-mode .decor-bas {
+    background-image: url('../images/about/plantelight.png');
 }
 
-.idbas {
-    position: absolute;
-    top: 400px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-/* Responsive */
-@media (max-width: 768px) {
-    .main-container {
-        padding: 40px 20px;
+/* Mobile */
+@media (max-width: 767px) {
+    .decor-gauche,
+    .decor-droite {
+        display: none;
     }
-    
-    .main-title {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
+
+    .apropos-texte {
+        padding: 0.5rem;
     }
-    
-    .content-text {
-        font-size: 1rem;
+
+    .decor-bas {
+        width: 250px;
+        margin-top: 1rem;
     }
-    
-    .decorative-image {
-        width: 100px !important;
+}
+
+/* Tablette */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .decor-gauche,
+    .decor-droite {
+        width: 140px;
+    }
+
+    .decor-bas {
+        width: 280px;
+    }
+
+    .apropos-texte {
+        max-width: 600px;
+    }
+}
+
+/* Très grands écrans */
+@media (min-width: 1440px) {
+    .decor-gauche,
+    .decor-droite {
+        width: 250px;
+    }
+
+    .decor-bas {
+        width: 400px;
+    }
+
+    .apropos-texte {
+        max-width: 900px;
     }
 }
