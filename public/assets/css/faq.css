@@ -1,0 +1,87 @@
+.decorative-imagefaq {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    z-index: 0;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+.faq-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #ffffff;
+}
+
+.faq-item {
+    color: #ffffff;
+    margin-bottom: 3rem; /* Utilisation de rem au lieu de px pour une meilleure échelle */
+    max-width: 1200px; /* Largeur maximale pour les grands écrans */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem; /* Padding pour les petits écrans */
+}
+
+.faq-question {
+    color: #ffffff;
+    margin-bottom: 2rem;
+    padding-left: 2rem; /* Remplace margin-left par padding pour une meilleure gestion responsive */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.faq-reponse {
+    color: #ffffff;
+    padding-left: 2rem; /* Utilisation de padding au lieu de margin pour l'indentation */
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-link {
+    display: block;
+    margin-top: 40px;
+    font-weight: bold;
+    color: #e74c3c;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.contact-text {
+    text-align: center;
+    margin-top: 400px;
+    font-weight: bold;
+    color: #e74c3c;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+    .faq-question,
+    .faq-reponse {
+        padding-left: 8rem; /* Encore plus d'espace sur les grands écrans */
+    }
+}
+
+@media (min-width: 1200px) {
+    .faq-question,
+    .faq-reponse {
+        padding-left: 10rem; /* Valeur maximale pour les très grands écrans */
+    }
+}

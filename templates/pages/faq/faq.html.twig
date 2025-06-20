@@ -2,85 +2,48 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}FAQ - Conciergerie{% endblock %}
+{% block title %}FAQ - Conciergerie
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/faq.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+{% endblock %}
 
 {% block body %}
-    {{ include('pages/navbar/navbar.html.twig') }}
-    <style>
-        .faq-container {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+	<h1 class="faq-title">FAQ</h1>
 
-        .faq-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
+	<div class="faq-item">
+		<div class="faq-question">Qu'est-ce qu'une conciergerie ?</div>
+		<div class="faq-reponse">Une conciergerie gère votre location saisonnière</div>
+		<div class="faq-reponse">du début à la fin du séjour des voyageurs.</div>
+	</div>
 
-        .faq-item {
-             text-align: center;
-            margin-bottom: 50px;
-        }
+	<div class="faq-item">
+		<div class="faq-question">Quels sont vos services ?</div>
+		<div class="faq-reponse">Nous proposons la création et la gestion</div>
+		<div class="faq-reponse">de votre annonce, la communication avec les</div>
+		<div class="faq-reponse">voyageurs, le ménage, et bien plus.</div>
+	</div>
 
-        .faq-question {
-             text-align: center;
-            color:rgb(255, 255, 255);
-            margin-bottom: 50px;
-        }
+	<div class="faq-item">
+		<div class="faq-question">Comment se déroule la gestion ?</div>
+		<div class="faq-reponse">Nous nous occupons de l'accueil des voyageurs,</div>
+		<div class="faq-reponse">de l'assistance pendant leur séjour, ainsi que du</div>
+		<div class="faq-reponse">ménage entre les locations.</div>
+	</div>
 
-        .contact-link {
-            display: block;
-            text-align: center;
-            margin-top: 40px;
-            font-weight: bold;
-            color: #e74c3c;
-            text-decoration: none;
-            font-size: 1.1em;
-        }
+	<div class="faq-item">
+		<div class="faq-question">Quel est le coût d'une conciergerie ?</div>
+		<div class="faq-reponse">Nous percevons une commission en tant que</div>
+		<div class="faq-reponse">pourcentage des revenus locatifs.</div>
+	</div>
 
-        .contact-text {
-            text-align: center;
-            margin-top: 40px;
-            font-weight: bold;
-            color: #e74c3c;
-            text-decoration: none;
-            font-size: 1.1em;
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-    
-        <h1 class="faq-title">FAQ</h1>
-        
-        <div class="faq-item">
-            <div class="faq-question">Qu'est-ce qu'une conciergerie ?</div>
-            <div>Une conciergerie gère votre location saisonnière du début à la fin du séjour des voyageurs.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">Quels sont vos services ?</div>
-            <div>Nous proposons la création et la gestion de votre annonce, la communication avec les voyageurs, le ménage, et bien plus.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">Comment se déroule la gestion ?</div>
-            <div>Nous nous occupons de l'accueil des voyageurs, de l'assistance pendant leur séjour, ainsi que du ménage entre les locations.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">Quel est le coût d'une conciergerie ?</div>
-            <div>Nous percevons une commission en tant que pourcentage des revenus locatifs.</div>
-        </div>
-
-        <div class="faq-item text-center mt-4">
-            <div class="contact-text">D'autres questions ? Envoyez-les nous</div>
-            <button class="contact-link">Nous contacter</button>
-        </div>
+	<div class="faq-item text-center mt-4">
+		<div class="contact-text">D'autres questions ? Envoyez-les nous</div>
+		<button class="contact-link">Nous contacter</button>
+	</div>
+	<img src="{{ asset('assets/images/faq/plantesf.png') }}" class="decorative-imagefaq" alt="Décoration">
 {% endblock %}
