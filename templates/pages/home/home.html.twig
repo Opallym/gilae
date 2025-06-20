@@ -43,7 +43,9 @@
 				<p>
 					Votre temps est précieux. Gilaë vous propose une gestion raffinée et complète de votre résidence pour que vous n’ayez plus jamais à vous en soucier. Gilaë, c’est avant tout une philosophie de service alliant bienveillance, discrétion et efficacité. Notre équipe vous accompagne avec exigence et humanité, en adaptant chaque prestation à vos besoins, vos rythmes et vos attentes. Nous conjuguons art de vivre et rigueur professionnelle pour valoriser vos biens et alléger votre quotidien. Nous savons que chaque lieu raconte une histoire, et que chaque propriétaire mérite une solution unique. C’est pourquoi nous concevons des services de conciergerie haut de gamme, pensés pour sublimer votre vie ou celle de vos hôtes. Grâce à notre approche personnalisée, nos clients constatent une hausse significative de la rentabilité, une réduction du stress quotidien, et surtout, plus de liberté pour se consacrer à l’essentiel.
 				</p>
-				<a href="{{ path('app_about') }}">Découvrir plus</a>
+				<div class="liensfaq">
+					<a href="{{ path('app_about') }}">Découvrir plus</a>
+				</div>
 			</div>
 			<div class="image">
 				<div class='image-engagements'></div>
@@ -75,15 +77,17 @@
 	<section class="faq-section">
 		<div class="faq-container">
 			<h2 class="elegant-underline titre">Encore des questions ?</h2>
-			<p class="faq-description">
-				Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :
-			</p>
-			<div class="contenufaq">
+
+			<div class="faq-row">
+				<p class="faq-description">
+					Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :
+				</p>
 				<div class="liensfaq">
-					<a href="{{ path('app_faq') }}">FAQ</a><br>
+					<a href="{{ path('app_faq') }}">FAQ</a>
 				</div>
 			</div>
 		</div>
+
 		<div class="faq-container">
 			<div class="faq-item">
 				<button class="faq-question light">Puis-je louer mon logement en RBNB toute l’année ?</button>

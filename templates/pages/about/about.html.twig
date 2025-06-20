@@ -1,34 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}À propos{% endblock %}
+{% block title %}À propos
+{% endblock %}
 
 {% block body %}
-<div class="about-page">
-    <!-- Images décoratives -->
-    <img src="{{ asset('assets/images/about/plante2g.png') }}" class="decorative-image top-left" alt="Décoration">
-    <img src="{{ asset('assets/images/about/plante1d.png') }}" class="decorative-image top-right" alt="Décoration">
-
-    <div class="main-container">
-        <h1 class="main-title">À propos :</h1>
-        
-        <div class="content-text">
-            <p>
-                Née d'une passion pour le service, la qualité et l'élégance. Gilaé est une 
-                conciergerie qui anticipe tous vos besoins avec disponibilité et bienveillance.
-            </p>
-            
-            <p>
-                Entre discrétion et engagement, exigence et empathie, nous vous accompagnons 
-                avec le plus haut niveau de professionnalisme, permettant ainsi à nos clients 
-                de vivre une expérience la plus simple et sereine possible.
-            </p>
-            
-            <p>
-                Au delà de la gestion logistique, nous nous attachons aux moindres détails 
-                pour une vie sublimée au quotidien.
-            </p>
+<div class="apropos-container">
+    <div class="decor-wrapper">
+        <div class="decor-gauche"></div>
+        <div class="apropos-texte">
+            <h1 class="elegant-underline">À propos :</h1>
+            <div>
+                <p>
+                    Née d'une passion pour le service, la qualité et l'élégance, Gilaé est une 
+                    conciergerie qui anticipe tous vos besoins avec disponibilité et bienveillance.
+                </p>
+                <p>
+                    Entre discrétion et engagement, exigence et empathie, nous vous accompagnons 
+                    avec le plus haut niveau de professionnalisme, permettant ainsi à nos clients 
+                    de vivre une expérience la plus simple et sereine possible.
+                </p>
+                <p>
+                    Au-delà de la gestion logistique, nous nous attachons aux moindres détails 
+                    pour une vie sublimée au quotidien.
+                </p>
+            </div>
         </div>
+        <div class="decor-droite"></div>
     </div>
-    <img src="{{ asset('assets/images/about/plante.png') }}" class="decorative-image idbas" alt="Décoration">
+    <div class="decor-bas"></div>
 </div>
 {% endblock %}
+

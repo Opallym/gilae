@@ -496,3 +496,22 @@ body.dark-mode .faq-answer.dark {
   padding-right: 40px;
   width: 100%;
 }
+
+.faq-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.faq-description {
+  flex: 1;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.liensfaq {
+  padding: 10px 20px;
+}
