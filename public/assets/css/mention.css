@@ -1,88 +1,168 @@
-.page-container {
+/* === Structure globale === */
+.mention-container {
   position: relative;
   max-width: 100vw;
 }
 
-.imagebotanical {
+.mention-botanical {
   position: absolute;
   pointer-events: none;
 }
 
-.imagebotanical img {
-    display: block;
+.mention-botanical img {
+  display: block;
 }
 
-.ib-left {
-    top: 0;
-    left: 0;
+/* Position des éléments décoratifs */
+.mention-left {
+  top: 0;
+  left: 0;
 }
 
-.ib-right {
-    top: 0;
-    right: 0;
-    
+.mention-right {
+  top: 0;
+  right: 0;
 }
 
-.ibbottom-left {
-    bottom: -90px;
-    left: 0px;
-    width: 300px;
+.mention-bottom-left {
+  bottom: -90px;
+  left: 0;
+  width: 300px;
 }
 
-.ibbottom-right {
-    bottom: -90px;
-    right: -25px;
-    width : 300px;
+.mention-bottom-right {
+  bottom: -90px;
+  right: -25px;
+  width: 300px;
+}
+
+/* === Contenu principal === */
+.mention-content {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.mention-title {
+  font-size: 4rem;
+  color: #ffffff;
+  font-family: 'Jacques Francois', serif;
+  margin-bottom: 20px;
+}
+
+body.dark-mode .mention-title {
+  color: #625F55;
+}
+
+.mention-subtitle {
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  font-family: 'Jacques Francois', serif;
+}
+
+body.dark-mode .mention-subtitle {
+  color: #625F55;
+}
+
+.mention-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mention-section {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.mention-section h2 {
+  color: #ffffff;
+  border-left: 4px solid #7A8B75;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-family: 'Jacques Francois', serif;
+}
+
+body.dark-mode .mention-section h2 {
+  color: #625F55;
+  border-left: 4px solid #B3B04C;
+}
+
+.mention-text {
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-family: 'Jacques Francois', serif;
+}
+
+body.dark-mode .mention-text {
+  color: #625F55;
+}
+
+/* Notice finale */
+.mention-notice {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  max-width: 32rem;
+  margin: 30px auto 0;
+  line-height: 1.7;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Jacques Francois', serif;
+}
+
+body.dark-mode .mention-notice {
+  color: #625F55;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .mention-title {
+    font-size: 3rem;
+  }
+
+  .mention-grid {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-    .botanical-decoration {
-        height: 80px;
-    }
+  .mention-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mention-title {
+    font-size: 2.5rem;
+  }
+
+  .mention-subtitle {
+    font-size: 1rem;
+  }
+
+  .mention-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .mention-text {
+    font-size: 1rem;
+  }
 }
 
-.main-content {
-    padding: 40px 0;
-    /*text-align: center;*/
+@media (max-width: 480px) {
+  .mention-title {
+    font-size: 2rem;
+  }
+
+  .mention-grid {
+    padding: 0 15px;
+  }
+
+  .mention-bottom-left,
+  .mention-bottom-right {
+    width: 200px;
+    bottom: -60px;
+  }
 }
-.main-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-.subtitle {
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 40px;
-}
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.content-section {
-    margin-bottom: 30px;
-}
-.content-section h2 {
-    color: #ffffff;
-    padding-bottom: 10px;
-}
-.section-content {
-    line-height: 1.6;
-    color: #ffffff;
-}
-.bottom-notice {
-    font-size: 0.875rem;
-    opacity: 0.9;
-    max-width: 32rem;
-    margin: 0 auto;
-    line-height: 1.7;
-    color: #ffffff;
-    text-align: center;
-}
-.ampersand {
-    font-family: serif;
-}  
