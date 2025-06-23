@@ -2,6 +2,7 @@
 .mention-container {
   position: relative;
   max-width: 100vw;
+  overflow: hidden;
 }
 
 .mention-botanical {
@@ -11,6 +12,8 @@
 
 .mention-botanical img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Position des éléments décoratifs */
@@ -25,21 +28,24 @@
 }
 
 .mention-bottom-left {
-  bottom: -90px;
+  bottom: 0vh;
   left: 0;
-  width: 300px;
+  width: 25vw;
+  max-width: 300px;
 }
 
 .mention-bottom-right {
-  bottom: -90px;
-  right: -25px;
-  width: 300px;
+  bottom: 0vh;
+  right: -2vw;
+  width: 25vw;
+  max-width: 300px;
 }
 
 /* === Contenu principal === */
-.mention-content {
+.mention-main {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 40px 20px;
-  text-align: center;
 }
 
 .mention-title {
@@ -47,6 +53,7 @@
   color: #ffffff;
   font-family: 'Jacques Francois', serif;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 body.dark-mode .mention-title {
@@ -58,6 +65,7 @@ body.dark-mode .mention-title {
   margin-bottom: 40px;
   font-size: 1.2rem;
   font-family: 'Jacques Francois', serif;
+  text-align: center;
 }
 
 body.dark-mode .mention-subtitle {
@@ -149,6 +157,15 @@ body.dark-mode .mention-notice {
   .mention-text {
     font-size: 1rem;
   }
+
+  .mention-bottom-left,
+  .mention-bottom-right {
+   display: none;
+  }
+  .mention-left,
+  .mention-right {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -160,9 +177,25 @@ body.dark-mode .mention-notice {
     padding: 0 15px;
   }
 
+  .mention-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .mention-section h2 {
+    font-size: 1.0rem;
+  }
+
+  .mention-text {
+    font-size: 0.95rem;
+  }
+
   .mention-bottom-left,
   .mention-bottom-right {
-    width: 200px;
-    bottom: -60px;
+    display: none;
+  }
+
+  .mention-left,
+  .mention-right {
+    display: none;
   }
 }
