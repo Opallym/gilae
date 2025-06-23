@@ -149,7 +149,7 @@ body.dark-mode .elegant-underline {
   height: auto;
   margin: 0 auto;
   background-size: contain; 
-  height: 100vh;
+  height: 75vh;
   background-repeat: no-repeat;
 }
 
@@ -160,7 +160,7 @@ body.dark-mode .image-engagements{
   height: auto;
   margin: 0 auto;
   background-size: contain; 
-  height: 100vh;
+  height: 75vh;
   background-repeat: no-repeat;
 }
 
