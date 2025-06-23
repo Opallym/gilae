@@ -1,58 +1,63 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Services | Gilae Conciergerie{% endblock %}
+{% block title %}Services | Gilae Conciergerie
+{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/service.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/service.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
 {% endblock %}
 
 {% block body %}
-    <div class="service-container">
-        <div class="service-header">
-            <img src="{{ asset('assets/images/logo/serviceup.png') }}" alt="Services Gilae Conciergerie">
-        </div>
-        
-        <!-- Premier service -->
-        <div class="service-item">
-            <div class="service-text">
-                <img src="{{ asset('assets/images/logo/text1s.png') }}" alt="Description service 1">
-            </div>
-            <div class="service-image">
-                <img src="{{ asset('assets/images/logo/calendar.png') }}" alt="Icône calendrier">
-            </div>
-        </div>
-        
-        <!-- Deuxième service -->
-        <div class="service-item">
-            <div class="service-image">
-                <img src="{{ asset('assets/images/logo/tarif.png') }}" alt="Icône tarif">
-            </div>
-            <div class="service-text">
-                <img src="{{ asset('assets/images/logo/text2s.png') }}" alt="Description service 2">
-            </div>
-        </div>
-        
-        <!-- Troisième service -->
-        <div class="service-item">
-            <div class="service-text">
-                <img src="{{ asset('assets/images/logo/text3s.png') }}" alt="Description service 3">
-            </div>
-            <div class="service-image">
-                <img src="{{ asset('assets/images/logo/menage.png') }}" alt="Icône ménage">
-            </div>
-        </div>
-        
-        <!-- Quatrième service -->
-        <div class="service-item">
-            <div class="service-image">
-                <img src="{{ asset('assets/images/logo/telephone.png') }}" alt="Icône téléphone">
-            </div>
-            <div class="service-text">
-                <img src="{{ asset('assets/images/logo/text4s.png') }}" alt="Description service 4">
-            </div>
-        </div>
-    </div>
+	<main class="service-container">
+		<header class="service-header">
+			<img src="{{ asset('assets/images/logo/serviceup.png') }}" alt="Bannière des services Gilae Conciergerie">
+		</header>
+
+		<!-- Premier service -->
+		<section class="service-item">
+			<div class="service-text">
+				<h2>Gestion des Locataires</h2>
+				<p>Prise en charge de communication et de l'accueil des voyageurs.</p>
+			</div>
+			<div class="service-image">
+				<img src="{{ asset('assets/images/logo/calendar.png') }}" alt="Icône représentant un calendrier pour la gestion des locataires">
+			</div>
+		</section>
+
+		<!-- Deuxième service -->
+		<section class="service-item">
+			<div class="service-image">
+				<img src="{{ asset('assets/images/logo/tarif.png') }}" alt="Icône représentant des euros pour l'optimisation des tarifs">
+			</div>
+			<div class="service-text">
+				<h2>Optimisation des tarifs</h2>
+				<p>Ajustement dynamique de vos prix de location.</p>
+			</div>
+		</section>
+
+		<!-- Troisième service -->
+		<section class="service-item">
+			<div class="service-text">
+				<h2>Entretien et ménage</h2>
+				<p>Service nettoyage complet entre chaque séjour.</p>
+			</div>
+			<div class="service-image">
+				<img src="{{ asset('assets/images/logo/menage.png') }}" alt="Icône représentant un produit ménager pour le service d'entretien">
+			</div>
+		</section>
+
+		<!-- Quatrième service -->
+		<section class="service-item">
+			<div class="service-image">
+				<img src="{{ asset('assets/images/logo/telephone.png') }}" alt="Icône représentant un téléphone pour l'assistance des voyageurs">
+			</div>
+			<div class="service-text">
+				<h2>Assistance des voyageurs</h2>
+				<p>Soutien et aide 7j/7 pendant la durée du séjour.</p>
+			</div>
+		</section>
+	</main>
 {% endblock %}

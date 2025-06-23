@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-final class GestionController extends AbstractController
+final class ConnexionadminController extends AbstractController
 {
-    #[Route('/gestion', name: 'app_gestion')]
+    #[Route('/connexionadmin', name: 'app_connexionadmin')]
     public function index(): Response
     {
-        return $this->render('pages/gestion/index.html.twig', [
-            'controller_name' => 'GestionController',
+        return $this->render('pages/connexionadmin/index.html.twig', [
+            'controller_name' => 'ConnexionadminController',
         ]);
     }
 }

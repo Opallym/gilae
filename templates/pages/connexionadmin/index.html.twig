@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion du site - Administration
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="gestion-container">
+		<div class="pricing-header">
+			<h1>Gestion du site</h1>
+			<img src="{{ asset('assets/images/gestion/flower.png') }}" class="header-image" alt="Fleur droite">
+		</div>
+		<div class="admin-login-container">
+			<div class="admin-login-card">
+				<h2 class="admin-subtitle">Administrateur</h2>
+
+				<form method="post" class="admin-form">
+					<div
+						class="form-group">
+						<!-- Input avec valeur par défaut -->
+						<input type="text" id="username" name="_username" class="form-control" placeholder="Nom de l’administrateur">
+					</div>
+
+					<div
+						class="form-group">
+						<!-- Input avec placeholder seulement -->
+						<input type="password" id="password" name="_password" class="form-control" placeholder="Mot de passe">
+					</div>
+
+					<button type="submit" class="admin-login-btn">Se connecter</button>
+				</form>
+			</div>
+		</div>
+	{% endblock %}

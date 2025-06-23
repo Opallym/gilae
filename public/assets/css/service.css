@@ -1,56 +1,93 @@
+/* Styles généraux pour la page des services */
 .service-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .service-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .service-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-        
-        .service-text {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .service-image {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .service-header img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .service-item img {
-            max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-        
-        @media (max-width: 768px) {
-            .service-item {
-                flex-direction: column;
-            }
-            
-            .service-text, .service-image {
-                min-width: 100%;
-            }
-            
-            .service-item:nth-child(even) .service-text {
-                order: 2;
-            }
-        }
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.service-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.service-header img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles pour chaque élément de service */
+.service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-text {
+    flex: 1;
+    padding: 1rem;
+}
+
+.service-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.service-text div {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.service-image {
+    flex: 1;
+    text-align: center;
+}
+
+.service-image img {
+    max-width: 80%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Effet au survol */
+.service-item:hover .service-image img {
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column;
+    }
+    
+    .service-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .service-text, .service-image {
+        text-align: center;
+    }
+    
+    .service-image img {
+        max-width: 60%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .service-text div {
+        font-size: 1rem;
+    }
+}

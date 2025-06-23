@@ -1,0 +1,96 @@
+/* admin.css */
+.admin-login-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.admin-login-card {
+    background: #c2ccbc34;
+    border-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.admin-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.admin-subtitle {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #ffffff;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.form-control {
+    background: #c2ccbc34;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.admin-login-btn {
+    max-width: 40%;
+    background-color: #5C7151;
+    border-color: #ffffff;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+
+.admin-error {
+    color: #dc3545;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.gestion-container {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .admin-login-card {
+        padding: 30px 20px;
+    }
+}
