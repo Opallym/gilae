@@ -9,12 +9,17 @@
 }
 
 .feuille1,
-.feuille2 {
+.feuille2,
+.conseils-ampoule {
   width: 180px;
   height: 20vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.conseils-ampoule {
+    background-image: url('../images/conseils/ampoules.png');
 }
 
 /* Images par défaut */
@@ -33,6 +38,10 @@ body.dark-mode .feuille1 {
 
 body.dark-mode .feuille2 {
   background-image: url('../images/conseils/feuille2light.png');
+}
+
+body.dark-mode .conseils-ampoule {
+  background-image: url('../images/conseils/ampouleslight.png');
 }
 
 /* Responsive ajustement de taille */
@@ -68,14 +77,6 @@ body.dark-mode .conseils-ligne h1 {
   color: #625F55;
   margin: 0 20px;
   transition: font-size 0.3s ease;
-}
-
-/* Image ampoule */
-.conseils-ampoule {
-  display: block;
-  margin: 0 auto 30px auto;
-  max-width: 200px;
-  height: auto;
 }
 
 /* Sections de contenu */

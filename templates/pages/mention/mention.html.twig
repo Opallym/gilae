@@ -4,70 +4,67 @@
 {% block title %}Mentions légales & Politique de confidentialité{% endblock %}
 
 {% block body %}
-    <div class="page-container">
+    <div class="mention-container">
+
         <!-- Décorations végétales -->
-        <div class="imagebotanical ib-left">
+        <div class="mention-deco mention-deco-left-top">
             <img src="{{ asset('assets/images/mention/plantegauche.png') }}" alt="Décoration végétale">
         </div>
-
-        <div class="imagebotanical ib-right">
+        <div class="mention-deco mention-deco-right-top">
             <img src="{{ asset('assets/images/mention/plantedroite.png') }}" alt="Décoration végétale">
         </div>
-
-        <div class="imagebotanical ibbottom-left">
+        <div class="mention-deco mention-deco-left-bottom">
             <img src="{{ asset('assets/images/mention/plantegauchebas.png') }}" alt="Décoration végétale">
         </div>
-
-        <div class="imagebotanical ibbottom-right">
+        <div class="mention-deco mention-deco-right-bottom">
             <img src="{{ asset('assets/images/mention/plantedroitebas.png') }}" alt="Décoration végétale">
         </div>
 
         <!-- Contenu principal -->
-        <div class="main-content">
-            <h1 class="main-title">
+        <div class="mention-main">
+            <h1 class="mention-title">
                 Mentions légales<br/>
-                <span class="ampersand">&</span><br/>
+                <span class="mention-ampersand">&</span><br/>
                 Politique de confidentialité
             </h1>
-            <p class="subtitle">Dernière mise à jour : {{ "now"|date("Y") }}</p>
+            <p class="mention-subtitle">Dernière mise à jour : {{ "now"|date("Y") }}</p>
 
-            <div class="content-grid">
-                <!-- Colonne de gauche -->
-                <div class="column">
-                    <section class="content-section">
-                        <h2>Éditeur du site</h2>
-                        <div class="section-content">
+            <div class="mention-grid">
+                <!-- Colonne gauche -->
+                <div class="mention-column">
+                    <section class="mention-section">
+                        <h2 class="mention-heading">Éditeur du site</h2>
+                        <div class="mention-content">
                             <p>{{ site_editor.name }}</p>
                             <p>{{ site_editor.title }}</p>
                             <p>{{ site_editor.address }}</p>
                             <p>{{ site_editor.postal_code }} - {{ site_editor.city }}, {{ site_editor.region }}</p>
                             <p>SIRET : {{ site_editor.siret }}</p>
-                            <p>Responsable de publication :</p>
-                            <p>{{ site_editor.responsible }}</p>
+                            <p>Responsable de publication : {{ site_editor.responsible }}</p>
                         </div>
                     </section>
 
-                    <section class="content-section">
-                        <h2>Propriété intellectuelle</h2>
-                        <div class="section-content">
+                    <section class="mention-section">
+                        <h2 class="mention-heading">Propriété intellectuelle</h2>
+                        <div class="mention-content">
                             <p>Le site Internet, l'ensemble de ses contenus et les données qui s'y trouvent sont la propriété exclusive de {{ site_editor.name }}.</p>
                             <p>Affiliés en création graphique et conception réalisation graphique et sémiotic.</p>
                         </div>
                     </section>
 
-                    <section class="content-section">
-                        <h2>Cookies</h2>
-                        <div class="section-content">
+                    <section class="mention-section">
+                        <h2 class="mention-heading">Cookies</h2>
+                        <div class="mention-content">
                             <p>Ce site utilise des cookies pour améliorer votre expérience et analyser l'audience. Vous pouvez à tout moment modifier vos préférences concernant les cookies dans votre navigateur.</p>
                         </div>
                     </section>
                 </div>
 
-                <!-- Colonne de droite -->
-                <div class="column">
-                    <section class="content-section">
-                        <h2>Hébergement du site</h2>
-                        <div class="section-content">
+                <!-- Colonne droite -->
+                <div class="mention-column">
+                    <section class="mention-section">
+                        <h2 class="mention-heading">Hébergement du site</h2>
+                        <div class="mention-content">
                             <p>Nom de l'hébergeur :</p>
                             <p>{{ site_host.name }}</p>
                             <p>Téléphone : {{ site_host.phone }}</p>
@@ -75,24 +72,24 @@
                         </div>
                     </section>
 
-                    <section class="content-section">
-                        <h2>Utilisation des données personnelles</h2>
-                        <div class="section-content">
+                    <section class="mention-section">
+                        <h2 class="mention-heading">Utilisation des données personnelles</h2>
+                        <div class="mention-content">
                             <p>Vos informations sont collectées dans le respect des réglementations en vigueur concernant le traitement des données à caractère personnel.</p>
                             <p>Ces données ne sont ni vendues, ni cédées à des tiers. Elles sont conservées de manière sécurisée et utilisées exclusivement dans le cadre de nos services et conformément au RGPD ainsi qu'aux règles d'éthique et de confidentialité. La suppression est automatique. Vous disposez des droits d'accès, de rectification et de suppression de ces données.</p>
                         </div>
                     </section>
 
-                    <section class="content-section">
-                        <h2>Limitation de responsabilité</h2>
-                        <div class="section-content">
+                    <section class="mention-section">
+                        <h2 class="mention-heading">Limitation de responsabilité</h2>
+                        <div class="mention-content">
                             <p>Malgré le soin apporté à l'actualisation et à la vérification des informations diffusées sur notre site, nous ne garantissons pas leur contenu. Les informations diffusées ne sont pas contractuelles.</p>
                         </div>
                     </section>
                 </div>
             </div>
 
-            <div class="bottom-notice">
+            <div class="mention-bottom-notice">
                 <p>Ces données ne sont ni vendues, ni cédées à des tiers. Elles sont conservées de manière sécurisée et utilisées exclusivement dans le cadre de nos services, conformément au RGPD et à nos conditions générales d'utilisation, avec votre total contrôle.</p>
             </div>
         </div>
