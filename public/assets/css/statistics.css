@@ -1,0 +1,290 @@
+.containerstatistics {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
+    padding: 20px;
+}
+
+.stats-cardstatistics {
+    width: 100%;
+    max-width: 800px;
+    background-color: #4f6648; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px lab(9.26% 0 0 / 0.5);
+    text-align: center; 
+    }
+
+.headerstatistics {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.titlestatistics {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 28px;
+    color: #e8f5e8;
+    margin-bottom: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.decorative-arrowsstatistics {
+    background-image: url('../images/statistics/stat.webp');
+    background-size: contain;          /* adapte l’image sans la déformer */
+    background-repeat: no-repeat;      /* évite que l’image se répète */
+    background-position: center;       /* centre l’image dans le bloc */
+    height: 80px;                      /* ajustable selon ton image */
+    width: 100%;                       /* pleine largeur du conteneur parent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #c5d4a0;
+    font-size: 18px;
+    cursor: default;                  /* ou pointer si c'est cliquable */
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.decorative-arrows:hover .arrow:nth-child(-n+5) {
+    transform: translateX(2px);
+}
+
+.decorative-arrows:hover .arrow:nth-child(n+6) {
+    transform: translateX(-2px);
+}
+
+.stats-containerstatistics {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.section-titlestatistics {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    color: #e8f5e8;
+    margin-bottom: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.total-visitsstatistics {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.total-visitsstatistics h3 {
+    color: #e8f5e8;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.total-visitsstatistics .number {
+    color: #c5d4a0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.stats-liststatistics {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stat-itemstatistics {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* CENTRAGE du header de chaque stat */
+.stat-headerstatistics {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;
+    gap: 10px; /* espacement entre les éléments */
+    margin-bottom: 8px;
+}
+
+/* CENTRAGE des infos page et visite */
+.page-infostatistics {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centre horizontalement */
+    gap: 8px;
+}
+
+.page-namestatistics {
+    color: #e8f5e8;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.visit-countstatistics {
+    color: #c5d4a0;
+    font-size: 11px;
+    opacity: 0.7;
+    background: rgba(139, 169, 78, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.percentagestatistics {
+    color: #c5d4a0;
+    font-size: 12px;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+.progress-barstatistics {
+    width: 100%;
+    height: 8px;
+    background: rgba(83, 103, 44, 0.5);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fillstatistics {
+    height: 100%;
+    background: linear-gradient(90deg, #e8f5e8 0%, #ffffff 100%);
+    border-radius: 4px;
+    transition: all 1s ease-out;
+    animation: fillAnimation 2s ease-out;
+}
+
+.stat-itemstatistics:hover .progress-fillstatistics {
+    background: linear-gradient(90deg, #f0f8f0 0%, #e8f5e8 100%);
+    text-align: center;
+}
+
+@keyframes fillAnimation {
+    from {
+        width: 0 !important;
+    }
+}
+
+.footerstatistics {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.footerstatistics p {
+    color: #c5d4a0;
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+.test-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: rgba(139, 169, 78, 0.1);
+    border-radius: 8px;
+    justify-content: center; /* CENTRER les boutons */
+}
+
+.test-button {
+    background: rgba(139, 169, 78, 0.3);
+    color: #e8f5e8;
+    border: 1px solid rgba(156, 169, 131, 0.5);
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 11px;
+    transition: all 0.2s ease;
+}
+
+.test-button:hover {
+    background: rgba(139, 169, 78, 0.5);
+    transform: translateY(-1px);
+}
+
+.refresh-button {
+    background: rgba(139, 169, 78, 0.3);
+    color: #e8f5e8;
+    border: 1px solid rgba(139, 169, 78, 0.5);
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin: 0 auto 16px auto; /* centre horizontalement */
+    cursor: pointer;
+}
+
+.refresh-button:hover {
+    background: rgba(139, 169, 78, 0.5);
+    transform: translateY(-1px);
+}
+
+.nav-button {
+    background: rgba(139, 169, 78, 0.4);
+    color: #e8f5e8;
+    border: 1px solid rgba(139, 169, 78, 0.6);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.nav-button:hover {
+    background: rgba(139, 169, 78, 0.6);
+    transform: translateY(-1px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .containerstatistics {
+        padding: 10px;
+    }
+
+    .stats-cardstatistics {
+        text-align: center;
+    }
+
+    .titlestatistics {
+        font-size: 24px;
+    }
+
+    .section-titlestatistics {
+        font-size: 16px;
+    }
+
+    .page-namestatistics {
+        font-size: 13px;
+    }
+
+    .test-buttons {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
