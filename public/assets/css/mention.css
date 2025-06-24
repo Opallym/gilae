@@ -8,6 +8,7 @@
 .mention-botanical {
   position: absolute;
   pointer-events: none;
+  z-index: 0;
 }
 
 .mention-botanical img {
@@ -28,24 +29,72 @@
 }
 
 .mention-bottom-left {
-  bottom: 0vh;
+  bottom: 0;
   left: 0;
-  width: 25vw;
-  max-width: 300px;
+  width: 30vw;
+  max-width: 400px;
 }
 
 .mention-bottom-right {
-  bottom: 0vh;
-  right: -2vw;
-  width: 25vw;
-  max-width: 300px;
+  bottom: 0;
+  right: 0;
+  width: 30vw;
+  max-width: 400px;
+}
+
+.Décoration-gauche-haute,
+.Décoration-droite-haute,
+.Décoration-droite-bas,
+.Décoration-gauche-bas {
+  width: 300px;
+  height: 30vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Images */
+.Décoration-gauche-haute {
+  background-image: url('../images/mention/plantegauche.png');
+}
+
+.Décoration-droite-haute {
+  background-image: url('../images/mention/plantedroite.png');
+}
+
+.Décoration-droite-bas {
+  background-image: url('../images/mention/plantedroitebas.png');
+}
+
+.Décoration-gauche-bas {
+  background-image: url('../images/mention/plantegauchebas.png');
+}
+
+/* Dark mode */
+body.dark-mode .Décoration-gauche-haute {
+  background-image: url('../images/mention/plantegauchelight.png');
+}
+
+body.dark-mode .Décoration-droite-haute {
+  background-image: url('../images/mention/plantedroitelight.png');
+}
+
+body.dark-mode .Décoration-droite-bas {
+  background-image: url('../images/mention/plantegauchebaslight.png');
+}
+
+body.dark-mode .Décoration-gauche-bas {
+  background-image: url('../images/mention/plantedroitebaslight.png');
 }
 
 /* === Contenu principal === */
 .mention-main {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
+
 }
 
 .mention-title {
@@ -159,9 +208,7 @@ body.dark-mode .mention-notice {
   }
 
   .mention-bottom-left,
-  .mention-bottom-right {
-   display: none;
-  }
+  .mention-bottom-right,
   .mention-left,
   .mention-right {
     display: none;
@@ -182,20 +229,10 @@ body.dark-mode .mention-notice {
   }
 
   .mention-section h2 {
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 
   .mention-text {
     font-size: 0.95rem;
-  }
-
-  .mention-bottom-left,
-  .mention-bottom-right {
-    display: none;
-  }
-
-  .mention-left,
-  .mention-right {
-    display: none;
   }
 }
