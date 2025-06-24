@@ -1,20 +1,19 @@
 .containerstatistics {
     display: flex;
-    justify-content: center; /* centre horizontalement */
-    align-items: center;     /* centre verticalement */
-    min-height: 100vh;       /* prend toute la hauteur de la fenêtre */
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
     padding: 20px;
 }
 
 .stats-cardstatistics {
     width: 100%;
-    max-width: 800px; /* ajuste la largeur max selon ton design */
-    background-color: #4f6648; /* couleur de fond du bloc principal */
+    max-width: 800px;
+    background-color: #4f6648; 
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 20px lab(9.26% 0 0 / 0.5);
-    text-align: center; /* CENTRER tout le texte */
-}
+    text-align: center; 
 
 .headerstatistics {
     text-align: center;
@@ -32,13 +31,18 @@
 
 .decorative-arrowsstatistics {
     background-image: url('../images/statistics/stat.webp');
+    background-size: contain;          /* adapte l’image sans la déformer */
+    background-repeat: no-repeat;      /* évite que l’image se répète */
+    background-position: center;       /* centre l’image dans le bloc */
+    height: 80px;                      /* ajustable selon ton image */
+    width: 100%;                       /* pleine largeur du conteneur parent */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2px;
     color: #c5d4a0;
     font-size: 18px;
-    cursor: pointer;
+    cursor: default;                  /* ou pointer si c'est cliquable */
 }
 
 .arrow {
@@ -70,8 +74,8 @@
 }
 
 .total-visitsstatistics {
-    background: rgba(139, 169, 78, 0.2);
-    border: 1px solid rgba(139, 169, 78, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 24px;
@@ -145,7 +149,7 @@
 .progress-barstatistics {
     width: 100%;
     height: 8px;
-    background: rgba(74, 93, 35, 0.5);
+    background: rgba(83, 103, 44, 0.5);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -195,7 +199,7 @@
 .test-button {
     background: rgba(139, 169, 78, 0.3);
     color: #e8f5e8;
-    border: 1px solid rgba(139, 169, 78, 0.5);
+    border: 1px solid rgba(156, 169, 131, 0.5);
     padding: 6px 12px;
     border-radius: 4px;
     text-decoration: none;
