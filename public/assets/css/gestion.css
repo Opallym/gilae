@@ -12,12 +12,14 @@
 .button-column {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     /* Espace entre les boutons */
+    margin-top: 50px;
 }
 
 .menu-button {
-    padding: 12px 20px;
+
+    padding: 20px 90px;
     background: #f0f0f000;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -28,12 +30,13 @@
 }
 
 .menu-button:hover {
-    background: #e0e0e0;
+    background: #e0e0e033;
 }
 
 
 
 .pricing-header {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     /* Empile les éléments verticalement */

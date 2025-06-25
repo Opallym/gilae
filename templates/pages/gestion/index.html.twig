@@ -1,27 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GestionController!{% endblock %}
+{% block title %}Hello GestionController!
+{% endblock %}
 
 {% block body %}
 
-<div class="gestion-container">
+	<div class="gestion-container">
 		<div class="pricing-header">
 			<h1>Gestion du site</h1>
 			<img src="{{ asset('assets/images/gestion/flower.png') }}" class="header-image" alt="Fleur droite">
 		</div>
 
-<div class="button-grid">
-    <div class="button-column">
-        <a href="{{ path('app_home') }}" class="menu-button">Acceuil</a>
-        <a href="{{ path('app_faq') }}" class="menu-button">FAQ</a>
-        <a href="{{ path('app_about') }}" class="menu-button">A propos</a>
-        <a href="{{ path('app_temoiniage') }}" class="menu-button">Avis</a>
-    </div>
-    <div class="button-column">
-        <a href="{{ path('app_service') }}" class="menu-button">Services</a>
-        <a href="{{ path('app_contact') }}" class="menu-button">Contact</a>
-        <a href="{{ path('app_tarifs') }}" class="menu-button">Tarifs/PAsk</a>
-        <a href="{{ path('app_mention') }}" class="menu-button">Mention Legales</a>
-    </div>
-</div>
-{% endblock %}
+		<div class="button-grid">
+			<div class="button-column">
+				<a href="{{ path('app_home') }}" class="menu-button">Acceuil</a>
+				<a href="{{ path('app_about') }}" class="menu-button">A propos</a>
+				<a href="{{ path('app_service') }}" class="menu-button">Services</a>
+				<a href="{{ path('app_tarifs') }}" class="menu-button">Tarifs/PAsk</a>
+
+			</div>
+			<div class="button-column">
+				<a href="{{ path('app_faq') }}" class="menu-button">FAQ</a>
+				<a href="{{ path('app_temoiniage') }}" class="menu-button">Avis</a>
+				<a href="{{ path('app_contact') }}" class="menu-button">Contact</a>
+				<a href="{{ path('app_formulaire') }}" class="menu-button">Formulaire</a>
+			</div>
+		</div>
+	{% endblock %}
