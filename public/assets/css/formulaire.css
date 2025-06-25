@@ -23,6 +23,25 @@
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    width: 180px;
+    height: 50vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.decorative-imageformulairedroite {
+    background-image: url('../images/formulaire/plgdark.webp');
+}
+
+.decorative-imageformulairegauche {
+    background-image: url('../images/formulaire/plg1dark.webp');
+}
+
+body.dark-mode .decorative-imageformulairegauche {
+    background-image: url('../images/formulaire/plg1.webp');
+}
+
+body.dark-mode .decorative-imageformulairedroite {
+    background-image: url('../images/formulaire/plg.webp');
 }
 
 /* Conteneur central du texte */
@@ -108,7 +127,7 @@
 
     .decorative-imageformulairegauche,
     .decorative-imageformulairedroite {
-        max-height: 200px;
+        display: none;
     }
 }
 
@@ -125,5 +144,10 @@
 
     .formulaire-wrapper {
         padding: 1rem;
+    }
+
+    .decorative-imageformulairegauche,
+    .decorative-imageformulairedroite {
+        display: none;
     }
 }
