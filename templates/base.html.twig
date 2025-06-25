@@ -26,8 +26,6 @@
 			<link rel="stylesheet" href="{{ asset('assets/css/statistics.css') }}?v={{ "now"|date("U") }}">
 
 
-
-
 			<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
 
@@ -66,6 +64,11 @@ themeIcon.src = isDark ? '{{ asset("assets/images/icons/moon.png") }}' : '{{ ass
 localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 });
+
+function changeLanguage(selectElement) {
+        const selectedLocale = selectElement.value;  // récupère la langue choisie, 'fr' ou 'en'
+        window.location.href = '/change-locale/' + selectedLocale;  // redirige vers l’URL qui change la langue côté Symfony
+    }
 			</script>
 		{% endblock %}
 	</body>

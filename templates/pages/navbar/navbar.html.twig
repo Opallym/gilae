@@ -1,36 +1,49 @@
 <nav class="navbar">
-    <div class="navbar-container">
+	<div class="navbar-container">
 
-        <div class="navbar-left">
-            <img src="{{ asset('assets/images/logo/logo-white.png') }}" alt="Logo de Gilaë" height="80">
-        </div>
+		<div class="navbar-left">
+			<img src="{{ asset('assets/images/logo/logo-white.png') }}" alt="Logo de Gilaë" height="80">
+		</div>
 
-        <div class="navbar-center">
-            <ul class="navbar-menu" id="navbar-menu">
-                <li><a href="{{ path('app_home') }}">Accueil</a></li>
-                <li><a href="{{ path('app_about') }}">À propos</a></li>
-                <li><a href="{{ path('app_service') }}">Services</a></li>
-                <li><a href="{{ path('app_tarifs') }}">Tarifs / Packs</a></li>
-                <li><a href="{{ path('app_formulaire') }}">Contact</a></li>
-                <li><a href="{{ path('app_conseils') }}">Conseils</a></li>
-            </ul>
-        </div>
+		<div class="navbar-center">
+			<ul class="navbar-menu" id="navbar-menu">
+				<li>
+					<a href="{{ path('app_home') }}">Accueil</a>
+				</li>
+				<li>
+					<a href="{{ path('app_about') }}">À propos</a>
+				</li>
+				<li>
+					<a href="{{ path('app_service') }}">Services</a>
+				</li>
+				<li>
+					<a href="{{ path('app_tarifs') }}">Tarifs / Packs</a>
+				</li>
+				<li>
+					<a href="{{ path('app_formulaire') }}">Contact</a>
+				</li>
+				<li>
+					<a href="{{ path('app_conseils') }}">Conseils</a>
+				</li>
+			</ul>
+		</div>
 
-        <div class="navbar-right">
-            <!-- Bouton Dark/Light mode -->
-                <button id="theme-toggle" class="theme-button">
-                    <img id="theme-icon" src="{{ asset('assets/images/icons/sun.png') }}" alt="Mode">
-                </button>
+		<div
+			class="navbar-right">
+			<!-- Bouton Dark/Light mode -->
+			<button id="theme-toggle" class="theme-button">
+				<img id="theme-icon" src="{{ asset('assets/images/icons/sun.png') }}" alt="Mode">
+			</button>
 
-                <!-- Sélecteur de langue -->
-                <div class="language-select">
-                    <select id="language-selector">
-                        <option value="fr">Français</option>
-                        <option value="en">English</option>
-                    </select>
-                </div>
-            <button class="navbar-toggle" id="navbar-toggle">Menu ☰</button>
-        </div>
+			<!-- Sélecteur de langue -->
+			<div class="language-select">
+				<select id="language-selector" onchange="changeLanguage(this)">
+					<option value="fr" {% if app.request.locale == 'fr' %} selected {% endif %}>Français</option>
+					<option value="en" {% if app.request.locale == 'en' %} selected {% endif %}>English</option>
+				</select>
+			</div>
+			<button class="navbar-toggle" id="navbar-toggle">Menu ☰</button>
+		</div>
 
-    </div>
+	</div>
 </nav>
