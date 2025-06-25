@@ -29,7 +29,7 @@
     background-repeat: no-repeat;
 }
 .decorative-imageformulairedroite {
-    background-image: url('../images/formulaire/plgdark.webp');
+    background-image: url('../images/formulaire/plg2dark.webp');
 }
 
 .decorative-imageformulairegauche {
@@ -37,11 +37,11 @@
 }
 
 body.dark-mode .decorative-imageformulairegauche {
-    background-image: url('../images/formulaire/plg1.webp');
+    background-image: url('../images/formulaire/plg1.png');
 }
 
 body.dark-mode .decorative-imageformulairedroite {
-    background-image: url('../images/formulaire/plg.webp');
+    background-image: url('../images/formulaire/plg2.png');
 }
 
 /* Conteneur central du texte */
