@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class StatisticsController extends AbstractController
 {
     private StatisticsService $statisticsService;
-    
+
     public function __construct(StatisticsService $statisticsService)
     {
         $this->statisticsService = $statisticsService;
@@ -32,17 +32,18 @@ class StatisticsController extends AbstractController
         return $this->render('statistics/index.html.twig', [
             'stats' => $statsData,
             'pageNames' => $pageNames,
-            'lastUpdate' => date('H:i:s')
+            'lastUpdate' => $this->statisticsService->getLastUpdateTime()
         ]);
     }
+
     #[Route('/api/stats', name: 'stats_api')]
     public function api(): JsonResponse
     {
         $statsData = $this->statisticsService->getStatsWithPercentages();
-        
+
         return new JsonResponse([
             'stats' => $statsData,
-            'lastUpdate' => date('H:i:s')
+            'lastUpdate' => $this->statisticsService->getLastUpdateTime()
         ]);
     }
 }
