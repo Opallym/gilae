@@ -2,15 +2,17 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Service\StatisticsService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class MentionController extends AbstractController
 {
     #[Route('/mention', name: 'app_mention')]
-    public function index(): Response
+    public function index(StatisticsService $stats): Response
     {
+        $stats->recordVisit('app_mention');
         // Données de l'éditeur du site
         $siteEditor = [
             'name' => 'Gilae consiergerie',

@@ -17,3 +17,7 @@ services:
     App\Service\StatisticsService:
         arguments:
             $dataFile: '%kernel.project_dir%/var/stats.json'
+
+    App\EventListener\StatisticsListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
