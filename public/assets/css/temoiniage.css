@@ -1,0 +1,249 @@
+/* Container principal */
+.testimonials-containertemoiniage {
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+}
+
+
+.testimonials-wrappertemoiniage {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 64px 24px;
+}
+
+/* Header */
+.headertemoiniage {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.titletemoiniage {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 24px 0;
+    letter-spacing: 0.05em;
+    font-family: 'Georgia', serif;
+}
+
+/* Décorations florales */
+.leaf-decorationtemoignageleft,
+.leaf-decorationtemoiniageright {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.leaf-decorationtemoignageleft {
+    left: 0;
+}
+
+.leaf-decorationtemoiniageright {
+    right: 0;
+}
+
+.leaf-decorationtemoignageleft img,
+.leaf-decorationtemoiniageright img {
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+
+.leaf-decorationtemoiniage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin: 24px 0;
+}
+
+.leaf-decorationtemoiniage img {
+    width: 450px;
+    left: 450px;
+}
+
+.leaf {
+    fill: rgba(255, 255, 255, 0.3);
+    opacity: 0.6;
+}
+
+/* Liste des témoignages */
+.testimonials-listtemoiniage {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.testimonial-itemtemoiniage {
+    margin-bottom: 24px;
+}
+
+.testimonial-itemtemoiniage:last-child {
+    margin-bottom: 0;
+}
+
+/* Cartes de témoignages */
+.testimonial-cardtemoiniage {
+    background-color: rgba(107, 123, 90, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.testimonial-cardtemoiniage:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Texte du témoignage */
+.testimonial-texttemoiniage {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 16px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Étoiles */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 12px;
+}
+
+.star {
+    font-size: 14px;
+    color: #fbbf24;
+    transition: all 0.2s ease;
+}
+
+.star.filledtemoiniage {
+    color: #fbbf24;
+    text-shadow: 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.star:not(.filledtemoiniage) {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Nom du client */
+.testimonial-nametemoiniage {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Séparateurs */
+.separatortemoiniage {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.dottemoiniage {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Footer */
+.footertemoiniage {
+    text-align: center;
+    margin-top: 64px;
+}
+
+.brandtemoiniage {
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 24px 0;
+    letter-spacing: 0.1em;
+    font-family: 'Georgia', serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonials-wrappertemoiniage {
+        padding: 48px 16px;
+    }
+
+    .titletemoiniage {
+        font-size: 1.75rem;
+    }
+
+    .brandtemoiniage {
+        font-size: 1.5rem;
+    }
+
+    .testimonial-cardtemoiniage {
+        padding: 24px 20px;
+    }
+
+    .testimonial-texttemoiniage {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-wrappertemoiniage {
+        padding: 32px 12px;
+    }
+
+    .titletemoiniage {
+        font-size: 1.5rem;
+    }
+
+    .brandtemoiniage {
+        font-size: 1.25rem;
+    }
+
+    .testimonial-cardtemoiniage {
+        padding: 20px 16px;
+    }
+
+    .leaf-decorationtemoiniage {
+        gap: 2px;
+    }
+
+    .leaf {
+        width: 16px;
+        height: 10px;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial-itemtemoiniage:nth-child(1) .testimonial-cardtemoiniage {
+    animation-delay: 0.1s;
+}
+.testimonial-itemtemoiniage:nth-child(2) .testimonial-cardtemoiniage {
+    animation-delay: 0.2s;
+}
+.testimonial-itemtemoiniage:nth-child(3) .testimonial-cardtemoiniage {
+    animation-delay: 0.3s;
+}
+.testimonial-itemtemoiniage:nth-child(4) .testimonial-cardtemoiniage {
+    animation-delay: 0.4s;
+}
