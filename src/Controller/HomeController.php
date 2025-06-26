@@ -18,16 +18,22 @@ final class HomeController extends AbstractController
         // Récupération de la locale courante (ex: 'fr', 'en', etc.)
         $locale = $requestStack->getCurrentRequest()->getLocale();
 
-        // Recherche d'un contenu en fonction de la locale
-        $contenu = $homeRepository->findOneBy(['locale' => $locale]);
+        // Récupère tous les blocs de contenu pour la locale
+        $blocs = $homeRepository->findBy(['locale' => $locale]);
 
-        // Si aucun contenu trouvé pour la langue actuelle, tu peux ajouter un fallback
-        if (!$contenu) {
-            $contenu = $homeRepository->findOneBy(['locale' => 'fr']);
+        // Si aucun bloc trouvé pour cette langue, fallback en français
+        if (!$blocs) {
+            $blocs = $homeRepository->findBy(['locale' => 'fr']);
+        }
+
+        // Transformation en tableau associatif clé => contenu
+        $contenus = [];
+        foreach ($blocs as $bloc) {
+            $contenus[$bloc->getKey()] = $bloc->getContenu();
         }
 
         return $this->render('pages/home/home.html.twig', [
-            'contenu_home' => $contenu,
+            'contenus' => $contenus,
         ]);
     }
 }
