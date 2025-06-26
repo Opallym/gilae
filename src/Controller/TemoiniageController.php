@@ -13,7 +13,7 @@ final class TemoiniageController extends AbstractController
     public function index(StatisticsService $stats): Response
     {
         $stats->recordVisit('app_temoiniage');
-        return $this->render('pages/temoiniage/temoiniage.html.twig');
+        return $this->render('pages/temoiniages/temoiniages.html.twig');
     }
 
 }
