@@ -7,12 +7,10 @@
 	<div class="background-container"></div>
 
 	<div class="section-centrale">
-		
-			
-		
-			<h2 class="elegant-underline">Votre alliée du quotidien pour une vie simplifiée, sereine et élégante.</h2>
+
+			<h2 class="elegant-underline">{{ contenus.titreintro|default('Votre alliée du quotidien pour une vie simplifiée, sereine et élégante.') }}</h2>
 			<p>
-			Parce que chaque instant mérite votre pleine attention, nous vous proposons des services de conciergerie sur mesure, pensés pour alléger votre charge mentale et vous offrir le luxe de la tranquillité.
+			{{ contenus.intro|default('Parce que chaque instant mérite votre pleine attention, nous vous proposons des services de conciergerie sur mesure, pensés pour alléger votre charge mentale et vous offrir le luxe de la tranquillité.') }}
 		</p>
 				
 	</div>
@@ -21,34 +19,34 @@
 		<div class="svg-block">
 			<div class="image-graphique"></div>
 			<p>
-				Investir dans la tranquillité, c’est rentable. Faire appel à notre conciergerie, c’est gagner un temps précieux et optimiser chaque aspect de votre organisation. Moins de stress, plus d'efficacité, une meilleure qualité de vie. Une valeur ajoutée concrète pour vous ou vos biens.
+				{{ contenus.bloc1|default('Investir dans la tranquillité, c’est rentable. Faire appel à notre conciergerie, c’est gagner un temps précieux et optimiser chaque aspect de votre organisation. Moins de stress, plus d\'efficacité, une meilleure qualité de vie. Une valeur ajoutée concrète pour vous ou vos biens.')}}
 			</p>
 		</div>
 		<div class="svg-block">
 			<div class="stress"></div>
 			<p>
-				On s’occupe de tout. Notre mission : vous libérer de la charge mentale. Confiez-nous ce qui vous encombre, et retrouvez la légèreté de journées simples et sereines. Moins de préoccupations, plus d’instants pour vous.
+				{{ contenus.bloc2|default('On s’occupe de tout. Notre mission : vous libérer de la charge mentale. Confiez-nous ce qui vous encombre, et retrouvez la légèreté de journées simples et sereines. Moins de préoccupations, plus d’instants pour vous.')}}
 			</p>
 		</div>
 		<div class="svg-block">
 			<div class="flexibilité"></div>
 			<p>
-				Une conciergerie qui s’adapte à vous. Parce que chaque personne est unique, Gilaë propose des services modulables, ajustés à vos priorités, vos rythmes et vos envies. Avec nous, rien n’est figé. Vous avez le contrôle, sans les contraintes.
+				{{ contenus.bloc3|default('Une conciergerie qui s’adapte à vous. Parce que chaque personne est unique, Gilaë propose des services modulables, ajustés à vos priorités, vos rythmes et vos envies. Avec nous, rien n’est figé. Vous avez le contrôle, sans les contraintes.') }}
 			</p>
 		</div>
 	</div>
 	<div class='img-responsive2'></div>
 	<div class="section-container">
 		<div class="section-centrale">
-			<h1 class="titre elegant-underline">Gilaë, la conciergerie sur mesure à votre écoute :</h1>
+			<h1 class="titre elegant-underline">{{ contenus.titreengagement|default('Gilaë, la conciergerie sur mesure à votre écoute :')}}</h1>
 		</div>
 		<div class="contenu">
 			<div class="texte">
 				<p>
-					Votre temps est précieux. Gilaë vous propose une gestion raffinée et complète de votre résidence pour que vous n’ayez plus jamais à vous en soucier. Gilaë, c’est avant tout une philosophie de service alliant bienveillance, discrétion et efficacité. Notre équipe vous accompagne avec exigence et humanité, en adaptant chaque prestation à vos besoins, vos rythmes et vos attentes. Nous conjuguons art de vivre et rigueur professionnelle pour valoriser vos biens et alléger votre quotidien. Nous savons que chaque lieu raconte une histoire, et que chaque propriétaire mérite une solution unique. C’est pourquoi nous concevons des services de conciergerie haut de gamme, pensés pour sublimer votre vie ou celle de vos hôtes. Grâce à notre approche personnalisée, nos clients constatent une hausse significative de la rentabilité, une réduction du stress quotidien, et surtout, plus de liberté pour se consacrer à l’essentiel.
+					{{ contenus.pengagement|default('Votre temps est précieux. Gilaë vous propose une gestion raffinée et complète de votre résidence pour que vous n’ayez plus jamais à vous en soucier. Gilaë, c’est avant tout une philosophie de service alliant bienveillance, discrétion et efficacité. Notre équipe vous accompagne avec exigence et humanité, en adaptant chaque prestation à vos besoins, vos rythmes et vos attentes. Nous conjuguons art de vivre et rigueur professionnelle pour valoriser vos biens et alléger votre quotidien. Nous savons que chaque lieu raconte une histoire, et que chaque propriétaire mérite une solution unique. C’est pourquoi nous concevons des services de conciergerie haut de gamme, pensés pour sublimer votre vie ou celle de vos hôtes. Grâce à notre approche personnalisée, nos clients constatent une hausse significative de la rentabilité, une réduction du stress quotidien, et surtout, plus de liberté pour se consacrer à l’essentiel.')}}
 				</p>
 				<div class="liensfaq">
-					<a href="{{ path('app_about') }}">Découvrir plus</a>
+					<a href="{{ path('app_about') }}"> {{ contenus.bdecouvrir|default('Découvrir plus')}}</a>
 				</div>
 			</div>
 			<div class="image">
@@ -61,13 +59,13 @@
 
 	<div class="section-container">
 		<div class="section-centrale">
-			<h1 class="elegant-underline titre ">Augmentez votre sérénité (et vos revenus) avec Gilaë.</h1>
+			<h1 class="elegant-underline titre ">{{ contenus.titreserenite|default('Augmentez votre sérénité (et vos revenus) avec Gilaë.')}}</h1>
 		</div>
 		<div class="contenu">
 			<div class="texte">
-				<p>◦ Valorisation optimale de votre bien grâce à une veille quotidienne des tarifs et des tendances locales.</p>
-				<p>◦ Taux d’occupation maximisé par une stratégie locative intelligente alliant court et moyen séjour.</p>
-				<p>◦ Accompagnement humain et discret avec un gestionnaire dédié, expert en hôtellerie de charme et immobilier.</p>
+				<p>{{ contenus.p1serenite|default('◦ Valorisation optimale de votre bien grâce à une veille quotidienne des tarifs et des tendances locales.')}}</p>
+				<p>{{ contenus.p2serenite|default('◦ Taux d’occupation maximisé par une stratégie locative intelligente alliant court et moyen séjour.')}}</p>
+				<p>{{ contenus.p3serenite|default('◦ Accompagnement humain et discret avec un gestionnaire dédié, expert en hôtellerie de charme et immobilier.')}}</p>
 			</div>
 			<div class="image">
 				<div class="img-commentaire"></div>
@@ -80,11 +78,11 @@
 
 	<section class="faq-section">
 		<div class="faq-container">
-			<h2 class="elegant-underline titre">Encore des questions ?</h2>
+			<h2 class="elegant-underline titre">{{ contenus.titrefaq|default('Encore des questions ?')}}</h2>
 
 			<div class="faq-row">
 				<p class="faq-description">
-					Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :
+					{{ contenus.introfaq|default('Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :')}}
 				</p>
 				<div class="liensfaq">
 					<a href="{{ path('app_faq') }}">FAQ</a>

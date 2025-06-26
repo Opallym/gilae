@@ -3,7 +3,6 @@
 namespace App\EventListener;
 
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class LocaleListener
 {
