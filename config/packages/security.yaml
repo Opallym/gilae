@@ -1,44 +1,34 @@
 security:
-    # Configuration du hashage des mots de passe
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
 
-    # Configuration du provider d'utilisateurs
     providers:
         app_user_provider:
             entity:
                 class: App\Entity\User
                 property: username
 
-    # Configuration des firewalls
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
         main:
             lazy: true
             provider: app_user_provider
-            # Configuration optionnelle d'authentification
-            # form_login:
-            #     login_path: app_login
-            #     check_path: app_login
 
-    # Hiérarchie des rôles
+            form_login:
+                login_path: app_connexionadmin
+                check_path: app_connexionadmin
+
+            logout:
+                path: app_logout
+
     role_hierarchy:
-        ROLE_ADMIN: ROLE_USER  # Un admin hérite automatiquement des droits USER
-        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]  # Exemple supplémentaire
+        ROLE_ADMIN: ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
-    # Contrôle d'accès
     access_control:
+        - { path: ^/admin/modifier-mot-de-passe, roles: ROLE_ADMIN }
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profile, roles: ROLE_USER }
-        # - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }  # Exemple API
-
-when@test:
-    security:
-        password_hashers:
-            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
-                algorithm: auto
-                cost: 4  # Valeur minimale pour bcrypt
-                time_cost: 3  # Valeur minimale pour argon
-                memory_cost: 10  # Valeur minimale pour argon
