@@ -8,22 +8,22 @@
 		<div class="navbar-center">
 			<ul class="navbar-menu" id="navbar-menu">
 				<li>
-					<a href="{{ path('app_home') }}">Accueil</a>
+					<a href="{{ path('app_home') }}">{{ contenus.accueil|default('Accueil')}}</a>
 				</li>
 				<li>
-					<a href="{{ path('app_about') }}">À propos</a>
+					<a href="{{ path('app_about') }}">{{ contenus.apropos|default('À propos')}}</a>
 				</li>
 				<li>
-					<a href="{{ path('app_service') }}">Services</a>
+					<a href="{{ path('app_service') }}">{{ contenus.services|default('Services')}}</a>
 				</li>
 				<li>
-					<a href="{{ path('app_tarifs') }}">Tarifs / Packs</a>
+					<a href="{{ path('app_tarifs') }}">{{ contenus.tarifs|default('Tarifs / Packs')}}</a>
 				</li>
 				<li>
-					<a href="{{ path('app_formulaire') }}">Contact</a>
+					<a href="{{ path('app_formulaire') }}">{{ contenus.contact|default('Contact')}}</a>
 				</li>
 				<li>
-					<a href="{{ path('app_conseils') }}">Conseils</a>
+					<a href="{{ path('app_conseils') }}">{{ contenus.conseils|default('Conseils')}}</a>
 				</li>
 			</ul>
 		</div>

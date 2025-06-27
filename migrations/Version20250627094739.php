@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20250625142433 extends AbstractMigration
+final class Version20250627094739 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,7 @@ final class Version20250625142433 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql(<<<'SQL'
-            ALTER TABLE home ADD `key` VARCHAR(255) NOT NULL, CHANGE locale locale VARCHAR(255) NOT NULL
+            CREATE TABLE navbar (id INT AUTO_INCREMENT NOT NULL, contenu LONGTEXT NOT NULL, locale VARCHAR(255) NOT NULL, cle VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
         SQL);
     }
 
@@ -29,7 +29,7 @@ final class Version20250625142433 extends AbstractMigration
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql(<<<'SQL'
-            ALTER TABLE home DROP `key`, CHANGE locale locale VARCHAR(5) NOT NULL
+            DROP TABLE navbar
         SQL);
     }
 }
