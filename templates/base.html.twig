@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+
+			<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/navbaradmin.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/general.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/service.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/mention.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/about.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/conseils.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/formulaire.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/error.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/faq.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/gestion.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/tarif.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/statistics.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/temoiniage.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/account.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/messagerie.css') }}?v={{ "now"|date("U") }}">
+			<link rel="stylesheet" href="{{ asset('assets/css/tableaudebord.css') }}?v={{ "now"|date("U") }}">
+
+			<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+
+		{% endblock %}
+	</head>
+	<body>
+		{% if app.request.pathInfo starts with '/admin' == false %}
+    	{% include 'pages/navbar/navbar.html.twig' %}
+		{% endif %}
+		{% block body %}{% endblock %}
+		{% if app.request.pathInfo starts with '/admin' == false %}
+    	{% include 'pages/footer/footer.html.twig' %}
+		{% endif %}
+		{% block javascripts %}
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const toggle = document.getElementById('navbar-toggle');
+				const menu = document.getElementById('navbar-menu');
+				const navbar = document.querySelector('.navbar');
+
+			toggle.addEventListener('click', () => {
+			menu.classList.toggle('show');
+			navbar.classList.toggle('menu-open');
+			});
+
+			// DARK/LIGHT MODE
+				const themeToggle = document.getElementById('theme-toggle');
+				const themeIcon = document.getElementById('theme-icon');
+				const currentTheme = localStorage.getItem('theme');
+
+			if (currentTheme === 'dark') {
+			document.body.classList.add('dark-mode');
+			themeIcon.src = '{{ asset("assets/images/icons/moon.png") }}';
+			}
+				themeToggle.addEventListener('click', () => {
+				document.body.classList.toggle('dark-mode');
+				const isDark = document.body.classList.contains('dark-mode');
+				themeIcon.src = isDark ? '{{ asset("assets/images/icons/moon.png") }}' : '{{ asset("assets/images/icons/sun.png") }}';
+				localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				});
+			});
+
+			// LANGUE
+				function changeLanguage(selectElement) {
+				const selectedLocale = selectElement.value;
+				window.location.href = '/change-locale/' + selectedLocale;
+			}
+		</script>
+		{% endblock %}
+	</body>
+</html>
