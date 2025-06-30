@@ -7,17 +7,25 @@
 }
 
 .pricing-header {
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.header-image-left {
+    position: absolute;
+    left: 0;
+}
+
+.header-image {
+    position: absolute;
+    right: 0;
 }
 
 .pricing-header h1 {
-    font-size: 3.5rem;
-    color: #333;
-    margin-bottom: 10px;
-    flex-shrink: 0;
+    text-align: center;
+    margin: 0 auto;
     color: #ffffff;
 }
 
@@ -34,6 +42,7 @@
 }
 
 .pricing-cards {
+    margin-top: px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
