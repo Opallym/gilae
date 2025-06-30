@@ -1,0 +1,187 @@
+.containertbdb {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.headertbdb {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titletbdb {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.decorative-elementtbdb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    letter-spacing: 3px;
+}
+
+/* Image décorative taille 400px et centrée */
+.headertbdb-image {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.tbdb-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cardtbdb,
+.cardtbdb2 {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cardtbdb:hover,
+.cardtbdb2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cardtbdb-icon,
+.cardtbdb2-icon {
+    margin-bottom: 20px;
+}
+
+.icontbdb,
+.icontbdb2 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+/* Spécifique à l'image dans .cardtbdb2 */
+.icontbdb2 {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.cardtbdb-title,
+.cardtbdb2-title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.cardtbdb-content,
+.cardtbdb2-content {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+}
+
+.cardtbdb-content li,
+.cardtbdb2-content li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    padding-left: 15px;
+    position: relative;
+}
+
+.cardtbdb-content li:before,
+.cardtbdb2-content li:before {
+    content: "•";
+    color: #d4d4aa;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cardtbdb-content li:hover,
+.cardtbdb2-content li:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Spécifique à la 3e carte centrée */
+.cardtbdb2 {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 280px;
+}
+
+.tbdb-grid a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tbdb-grid a:hover {
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .titletbdb {
+        font-size: 2rem;
+    }
+
+    .tbdb-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cardtbdb,
+    .cardtbdb2 {
+        padding: 25px 20px;
+        max-width: none;
+    }
+
+    .icontbdb,
+    .icontbdb2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .containertbdb {
+        padding: 20px 10px;
+    }
+
+    .titletbdb {
+        font-size: 1.8rem;
+    }
+
+    .decorative-elementtbdb {
+        font-size: 1rem;
+    }
+}

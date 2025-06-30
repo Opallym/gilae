@@ -20,7 +20,7 @@ class StatisticsService
         'app_formulaire'   => 'Formulaire',
         'app_mention'      => 'Mentions légales',
         'app_conseils'     => 'Conseils',
-        'app_connexionadmin' => 'Connexion admin',
+        'admin_connexionadmin' => 'Connexion admin',
         'app_gestion'      => 'Espace gestion',
         '404'              => '404'
     ];

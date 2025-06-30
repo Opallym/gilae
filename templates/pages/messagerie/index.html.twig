@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messagerie{% endblock %}
+
+{% block body %}
+{% include 'pages/navbar_admin/index.html.twig' %}
+<div class="containermessagerie">
+  <!-- En-tête avec titre et décoration -->
+  <header class="headermessagerie">
+    <h1 class="titlemessagerie">Messagerie</h1>
+    <div class="decorativemessagerie-divider">
+      <div class="arrowmessagerie-line">
+        <img src="{{ asset('assets/images/messagerie/flower.png') }}" class="header-image" alt="Fleur droite">
+      </div>
+    </div>
+    <div class="mailmessagerie-icon">✉</div>
+  </header>
+  <!-- Section de navigation -->
+  <nav class="navigationmessagerie">
+  </nav>
+  <div class="navmessagerie-item center">
+      <button class="sortmessagerie-btn">Trier par</button>
+    </div>
+  <!-- Titres des colonnes alignés horizontalement -->
+  <div class="columns-titles">
+    <div>Messages reçus : </div>
+    <div>Archives : </div>
+  </div>
+  <!-- Zone principale avec colonnes -->
+  <main class="main-contentmessagerie">
+    <div class="messages-column">
+      <div class="message-area">
+        <!-- Zone pour les messages reçus -->
+      </div>
+    </div>  
+    <div class="archives-column">
+      <div class="archives-area">
+        <!-- Zone pour les archives -->
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
