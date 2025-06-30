@@ -29,7 +29,7 @@ class StatisticsController extends AbstractController
         $statsData = $this->statisticsService->getStatsWithPercentages();
         $pageNames = $this->statisticsService->getPageNames();
 
-        return $this->render('statistics/index.html.twig', [
+        return $this->render('pages/statistics/index.html.twig', [
             'stats' => $statsData,
             'pageNames' => $pageNames,
             'lastUpdate' => $this->statisticsService->getLastUpdateTime()
