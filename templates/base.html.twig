@@ -10,7 +10,6 @@
 
 			<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}?v={{ "now"|date("U") }}">
 			<link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}?v={{ "now"|date("U") }}">
-			<link rel="stylesheet" href="{{ asset('assets/css/navbaradmin.css') }}?v={{ "now"|date("U") }}">
 			<link rel="stylesheet" href="{{ asset('assets/css/general.css') }}?v={{ "now"|date("U") }}">
 			<link rel="stylesheet" href="{{ asset('assets/css/service.css') }}?v={{ "now"|date("U") }}">
 			<link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}?v={{ "now"|date("U") }}">
@@ -27,8 +26,6 @@
 			<link rel="stylesheet" href="{{ asset('assets/css/statistics.css') }}?v={{ "now"|date("U") }}">
 			<link rel="stylesheet" href="{{ asset('assets/css/temoiniage.css') }}?v={{ "now"|date("U") }}">
 			<link rel="stylesheet" href="{{ asset('assets/css/account.css') }}?v={{ "now"|date("U") }}">
-			<link rel="stylesheet" href="{{ asset('assets/css/messagerie.css') }}?v={{ "now"|date("U") }}">
-			<link rel="stylesheet" href="{{ asset('assets/css/tableaudebord.css') }}?v={{ "now"|date("U") }}">
 
 			<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
@@ -36,13 +33,9 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% if app.request.pathInfo starts with '/admin' == false %}
-    	{% include 'pages/navbar/navbar.html.twig' %}
-		{% endif %}
+		{% include 'pages/navbar/navbar.html.twig' %}
 		{% block body %}{% endblock %}
-		{% if app.request.pathInfo starts with '/admin' == false %}
-    	{% include 'pages/footer/footer.html.twig' %}
-		{% endif %}
+		{% include 'pages/footer/footer.html.twig' %}
 		{% block javascripts %}
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
