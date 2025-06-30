@@ -18,6 +18,11 @@
     line-height: 1.8;
 }
 
+body.dark-mode .titreapropos {
+    color: #7a8471;
+}
+
+
 .decor-gauche {
     background-image: url('../images/about/plante2g.png');
     display: block;
@@ -39,6 +44,7 @@ body.dark-mode .decor-gauche {
     height: 100vh;
     background-repeat: no-repeat;
 }
+
 
 .decor-droite {
     background-image: url('../images/about/plante1d.png');

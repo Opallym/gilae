@@ -66,6 +66,10 @@ body.dark-mode .decorative-imageformulairedroite {
     letter-spacing: 2px;
 }
 
+body.dark-mode .formulaire-title {
+    color: #7a8471;
+}
+
 .formulaire-info {
     margin-bottom: 3rem;
 }

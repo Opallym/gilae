@@ -4,13 +4,11 @@ namespace App\Controller;
 
 use App\Repository\NavbarRepository;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class NavbarController extends AbstractController
 {
-    #[Route('/navbar', name: 'app_navbar')]
     public function index(
         NavbarRepository $navbarRepository,
         RequestStack $requestStack
@@ -36,5 +34,4 @@ final class NavbarController extends AbstractController
             'contenus' => $contenus,
         ]);
     }
-
 }
