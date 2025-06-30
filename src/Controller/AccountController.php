@@ -49,7 +49,7 @@ final class AccountController extends AbstractController
                 $em->flush();
 
                 $this->addFlash('success', 'Mot de passe mis à jour avec succès.');
-                return $this->redirectToRoute('admin_dashboard');
+                return $this->redirectToRoute('admin_tableaudebord');
             }
         }
 

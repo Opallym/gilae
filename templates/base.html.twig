@@ -33,7 +33,7 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% include 'pages/navbar/navbar.html.twig' %}
+		{{ render(controller('App\\Controller\\NavbarController::index')) }}
 		{% block body %}{% endblock %}
 		{% include 'pages/footer/footer.html.twig' %}
 		{% block javascripts %}

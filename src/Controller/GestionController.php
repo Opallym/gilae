@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 final class GestionController extends AbstractController
 {
     #[IsGranted('ROLE_ADMIN')]
-    #[Route('/gestion', name: 'app_gestion')]
+    #[Route('/admin/gestion', name: 'admin_gestion')]
     public function index(StatisticsService $stats): Response
     {
         $stats->recordVisit('app_gestion');

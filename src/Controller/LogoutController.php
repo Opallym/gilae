@@ -11,7 +11,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LogoutController extends AbstractController
 {
-    #[Route('/logout', name: 'app_logout')]
+    #[Route('/admin/logout', name: 'admin_logout')]
     public function logout(Request $request, AuthenticationUtils $authenticationUtils): Response
     {
         // Récupérer l'utilisateur courant

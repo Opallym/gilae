@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Repository\NavbarRepository;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-final class NavbarController extends AbstractController
+final class NavbaradminController extends AbstractController
 {
+    #[Route('/navbarAdmin', name: 'app_navbaradmin')]
     public function index(
         NavbarRepository $navbarRepository,
         RequestStack $requestStack
@@ -30,8 +32,9 @@ final class NavbarController extends AbstractController
             $contenus[$bloc->getCle()] = $bloc->getContenu();
         }
 
-        return $this->render('pages/navbar/navbar.html.twig', [
+        return $this->render('pages/navbar_admin/index.html.twig', [
             'contenus' => $contenus,
         ]);
     }
+
 }

@@ -8,20 +8,20 @@
     <div class="decor-wrapper">
         <div class="decor-gauche"></div>
         <div class="apropos-texte">
-            <h1 class="elegant-underline">À propos :</h1>
+            <h1 class="titreapropos elegant-underline">{{ contenus.titre|default('À propos :')}}</h1>
             <div>
                 <p>
-                    Née d'une passion pour le service, la qualité et l'élégance, Gilaé est une 
-                    conciergerie qui anticipe tous vos besoins avec disponibilité et bienveillance.
+                    {{ contenus.p1|default('Née d\'une passion pour le service, la qualité et l\'élégance, Gilaé est une 
+                    conciergerie qui anticipe tous vos besoins avec disponibilité et bienveillance.')}}
                 </p>
                 <p>
-                    Entre discrétion et engagement, exigence et empathie, nous vous accompagnons 
+                    {{ contenus.p2|default('Entre discrétion et engagement, exigence et empathie, nous vous accompagnons 
                     avec le plus haut niveau de professionnalisme, permettant ainsi à nos clients 
-                    de vivre une expérience la plus simple et sereine possible.
+                    de vivre une expérience la plus simple et sereine possible.')}}
                 </p>
                 <p>
-                    Au-delà de la gestion logistique, nous nous attachons aux moindres détails 
-                    pour une vie sublimée au quotidien.
+                    {{ contenus.p3|default('Au-delà de la gestion logistique, nous nous attachons aux moindres détails 
+                    pour une vie sublimée au quotidien.')}}
                 </p>
             </div>
         </div>
