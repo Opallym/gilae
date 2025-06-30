@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\NavbarRepository;
+use App\Repository\AboutRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: NavbarRepository::class)]
-class Navbar
+#[ORM\Entity(repositoryClass: AboutRepository::class)]
+class About
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -17,7 +17,6 @@ class Navbar
     #[ORM\Column(type: Types::TEXT)]
     private ?string $contenu = null;
 
-    
     #[ORM\Column(length: 255)]
     private ?string $locale = null;
 

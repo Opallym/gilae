@@ -6,7 +6,7 @@
 {% block body %}
 	<div class="conseils-ligne">
 		<div class="feuille1"></div>
-		<h1 class="elegant-underline">Conseils</h1>
+		<h1 class="elegant-underline">{{ contenus.titre|default('Conseils')}}</h1>
 		<div class="feuille2"></div>
 	</div>
 	<div class="conseils-ligne">
@@ -14,41 +14,41 @@
 	</div>
 	
 	<div class="conseils-section">
-		<h2>CONSEILS POUR PROPRIÉTAIRES</h2>
+		<h2>{{ contenus.titre1|default('CONSEILS POUR PROPRIÉTAIRES')}}</h2>
 		<br>
-		<p>Préparez votre logement comme un hôte d’exception.</p>
-		<p>✔ Soignez chaque détail : literie confortable, propreté irréprochable, décoration apaisante.</p>
-		<p>✔ Mettez à disposition des essentiels : savon, papier toilette, dosettes de café/thé.</p>
-		<p>✔ Ajoutez une touche personnelle : un mot de bienvenue, un guide du quartier.</p>
+		<p>{{ contenus.description|default('Préparez votre logement comme un hôte d’exception.')}}</p>
+		<p>{{ contenus.description1|default('✔ Soignez chaque détail : literie confortable, propreté irréprochable, décoration apaisante.')}}</p>
+		<p>{{ contenus.description2|default('✔ Mettez à disposition des essentiels : savon, papier toilette, dosettes de café/thé.')}}</p>
+		<p>{{ contenus.description3|default('✔ Ajoutez une touche personnelle : un mot de bienvenue, un guide du quartier.')}}</p>
 	</div>
 	<br>
 	<div class="conseils-section">
-		<h2>TENDANCES AIRBNB & LOCATIONS COURTES DURÉES</h2>
+		<h2>{{ contenus.titre2|default('TENDANCES AIRBNB & LOCATIONS COURTES DURÉES')}}</h2>
 		<br>
-		<p>Ce que les voyageurs recherchent aujourd’hui :</p>
-		<p>✔ Expériences locales et authentiques</p>
-		<p>✔ Connexion internet rapide (télétravail oblige !)</p>
-		<p>✔ Hébergements bien notés, calmes, écoresponsables</p>
-		<p>✔ Flexibilité sur les horaires d’arrivée et de départ</p>
-		<p>✔ Annonce avec photos lumineuses, bien cadrées, sans surcharge</p>
+		<p>{{ contenus.description4|default('Ce que les voyageurs recherchent aujourd’hui :')}}</p>
+		<p>{{ contenus.description5|default('✔ Expériences locales et authentiques')}}</p>
+		<p>{{ contenus.description6|default('✔ Connexion internet rapide (télétravail oblige !)')}}</p>
+		<p>{{ contenus.description7|default('✔ Hébergements bien notés, calmes, écoresponsables')}}</p>
+		<p>{{ contenus.description8|default('✔ Flexibilité sur les horaires d’arrivée et de départ')}}</p>
+		<p>{{ contenus.description9|default('✔ Annonce avec photos lumineuses, bien cadrées, sans surcharge')}}</p>
 	</div>
 	<br>
 	<div class="conseils-section">
-		<h2>CE QU’IL FAUT SAVOIR AVANT DE LOUER</h2>
+		<h2>{{ contenus.titre3|default('CE QU’IL FAUT SAVOIR AVANT DE LOUER')}}</h2>
 		<br>
-		<p>✔ Enregistrement obligatoire auprès de votre mairie (notamment dans les grandes villes)</p>
-		<p>✔ 120 nuits maximum/an pour les résidences principales (dans les communes concernées)</p>
-		<p>✔ Revenus à déclarer (régime micro-BIC ou réel simplifié)</p>
-		<p>✔ Respect du règlement de copropriété (silence, animaux, accès communs…)</p>
+		<p>{{ contenus.description10|default('✔ Enregistrement obligatoire auprès de votre mairie (notamment dans les grandes villes)')}}</p>
+		<p>{{ contenus.description11|default('✔ 120 nuits maximum/an pour les résidences principales (dans les communes concernées)')}}</p>
+		<p>{{ contenus.description12|default('✔ Revenus à déclarer (régime micro-BIC ou réel simplifié)')}}</p>
+		<p>{{ contenus.description13|default('✔ Respect du règlement de copropriété (silence, animaux, accès communs…)')}}</p>
 	</div>
 	<br>
 	<div class="conseils-section">
-		<h2>OPTIMISEZ VOTRE LOCATION</h2>
+		<h2>{{ contenus.titre4|default('OPTIMISEZ VOTRE LOCATION')}}</h2>
 		<br>
-		<p>✔ Déléguez le ménage et l’accueil pour plus de sérénité</p>
-		<p>✔ Adaptez vos prix selon la saison et les événements locaux</p>
-		<p>✔ Restez réactif pour conserver de bonnes évaluations</p>
-		<p>✔ N’hésitez pas à faire appel à une conciergerie pour alléger votre charge mentale</p>
+		<p>{{ contenus.description14|default('✔ Déléguez le ménage et l’accueil pour plus de sérénité')}}</p>
+		<p>{{ contenus.description15|default('✔ Adaptez vos prix selon la saison et les événements locaux')}}</p>
+		<p>{{ contenus.description16|default('✔ Restez réactif pour conserver de bonnes évaluations')}}</p>
+		<p>{{ contenus.description17|default('✔ N’hésitez pas à faire appel à une conciergerie pour alléger votre charge mentale')}}</p>
 	</div>
 	<br>
 {% endblock %}
