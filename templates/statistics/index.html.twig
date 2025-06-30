@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block body %}
+{% include 'pages/navbar_admin/index.html.twig' %}
 	<div class="containerstatistics">
 		<div class="stats-cardstatistics">
 			<div class="headerstatistics">
@@ -11,7 +12,7 @@
 				<div class="decorative-arrowsstatistics"></div>
 			</div>
 			<div style="text-align: center;">
-				<a href="{{ path('stats') }}" class="refresh-buttonstasts">🔄 Actualiser</a>
+				<a href="{{ path('admin_stats') }}" class="refresh-buttonstasts">🔄 Actualiser</a>
 			</div>
 			<!-- Container principal des statistiques -->
 			<div class="stats-containerstatistics">

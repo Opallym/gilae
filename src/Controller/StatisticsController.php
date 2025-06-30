@@ -17,7 +17,7 @@ class StatisticsController extends AbstractController
     {
         $this->statisticsService = $statisticsService;
     }
-    #[Route('/stats', name: 'stats')]
+    #[Route('/admin/stats', name: 'admin_stats')]
     public function index(Request $request): Response
     {
         $visitPage = $request->query->get('visit');
