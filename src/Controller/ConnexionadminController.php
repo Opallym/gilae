@@ -9,10 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class ConnexionadminController extends AbstractController
 {
-    #[Route('/admin/connexionadmin', name: 'admin_connexionadmin')]
+    #[Route('/connexionadmin', name: 'app_connexionadmin')]
     public function index(StatisticsService $stats): Response
     {
-        $stats->recordVisit('admin_connexionadmin');
+        $stats->recordVisit('app_connexionadmin');
         return $this->render('pages/connexionadmin/index.html.twig', [
             'controller_name' => 'ConnexionadminController',
         ]);

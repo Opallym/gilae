@@ -18,8 +18,8 @@ security:
             provider: app_user_provider
 
             form_login:
-                login_path: admin_connexionadmin
-                check_path: admin_connexionadmin
+                login_path: app_connexionadmin
+                check_path: app_connexionadmin
                 default_target_path: admin_tableaudebord
 
             logout:
