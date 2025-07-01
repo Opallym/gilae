@@ -1,9 +1,8 @@
 /* Styles généraux pour la page des services */
 .service-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    font-family: 'Arial', sans-serif;
 }
 
 .service-header {
@@ -16,26 +15,27 @@
     height: auto;
 }
 
-/* Styles pour chaque élément de service - MODIFICATIONS PRINCIPALES */
+/* Styles pour chaque élément de service - INVERSE DES POSITIONS */
 .service-item {
     display: flex;
-    align-items: center;        /* Alignement vertical au centre */
+    align-items: center;
     margin-bottom: 4rem;
-    gap: 2rem;                 /* Espacement entre texte et image */
+    gap: 2rem;
 }
 
-.service-item:nth-child(even) {
+/* Modification principale : inversion des éléments pairs */
+.service-item:nth-child(odd) {  /* Changé de :even à :odd */
     flex-direction: row-reverse;
 }
 
 .service-text {
     flex: 1;
-    min-width: 50%;            /* Garantit une largeur minimale */
-    padding: 0 1rem;           /* Padding horizontal seulement */
+    min-width: 50%;
+    padding: 0 1rem;
 }
 
 .service-text h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -49,24 +49,20 @@
 .service-image {
     flex: 1;
     display: flex;
-    justify-content: center;   /* Centre l'image horizontalement */
-    align-items: center;       /* Centre l'image verticalement */
-    min-width: 40%;            /* Largeur minimale pour l'image */
+    justify-content: center;
+    align-items: center;
+    min-width: 40%;
 }
 
 .service-image img {
     max-width: 100%;
-    max-height: 300px;         /* Hauteur maximale pour uniformité */
+    max-height: 400px;
     width: auto;
     height: auto;
-    object-fit: contain;       /* Garde les proportions */
-    transition: transform 0.3s ease; 
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-/* Effet au survol */
-.service-item:hover .service-image img {
-    transform: scale(1.05);
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -75,7 +71,7 @@
         gap: 1rem;
     }
     
-    .service-item:nth-child(even) {
+    .service-item:nth-child(odd) {  /* Aussi modifié pour le responsive */
         flex-direction: column;
     }
     
