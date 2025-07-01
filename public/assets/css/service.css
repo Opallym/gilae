@@ -16,13 +16,12 @@
     height: auto;
 }
 
-/* Styles pour chaque élément de service */
+/* Styles pour chaque élément de service - MODIFICATIONS PRINCIPALES */
 .service-item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center;        /* Alignement vertical au centre */
     margin-bottom: 4rem;
-    gap: 2rem;
+    gap: 2rem;                 /* Espacement entre texte et image */
 }
 
 .service-item:nth-child(even) {
@@ -31,7 +30,8 @@
 
 .service-text {
     flex: 1;
-    padding: 1rem;
+    min-width: 50%;            /* Garantit une largeur minimale */
+    padding: 0 1rem;           /* Padding horizontal seulement */
 }
 
 .service-text h2 {
@@ -48,13 +48,19 @@
 
 .service-image {
     flex: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;   /* Centre l'image horizontalement */
+    align-items: center;       /* Centre l'image verticalement */
+    min-width: 40%;            /* Largeur minimale pour l'image */
 }
 
 .service-image img {
-    max-width: 80%;
+    max-width: 100%;
+    max-height: 300px;         /* Hauteur maximale pour uniformité */
+    width: auto;
     height: auto;
-    transition: transform 0.3s ease;
+    object-fit: contain;       /* Garde les proportions */
+    transition: transform 0.3s ease; 
 }
 
 /* Effet au survol */
@@ -66,6 +72,7 @@
 @media (max-width: 768px) {
     .service-item {
         flex-direction: column;
+        gap: 1rem;
     }
     
     .service-item:nth-child(even) {
@@ -73,21 +80,29 @@
     }
     
     .service-text, .service-image {
+        min-width: 100%;
         text-align: center;
+        padding: 0;
     }
     
     .service-image img {
         max-width: 60%;
         margin-top: 1rem;
+        max-height: 200px;
     }
 }
 
 @media (max-width: 480px) {
-    .service-text h1 {
+    .service-text h2 {
         font-size: 1.5rem;
     }
     
     .service-text div {
         font-size: 1rem;
+    }
+    
+    .service-image img {
+        max-width: 80%;
+        max-height: 150px;
     }
 }
