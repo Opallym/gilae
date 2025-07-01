@@ -11,36 +11,36 @@
 		<div class="faq-content">
 			<div class="faq-column">
 				<div class="faq-item">
-					<div class="faq-question">Qu'est-ce qu'une conciergerie ?</div>
+					<div class="faq-question">{{ contenus.question1|default('Qu\'est-ce qu\'une conciergerie ?')}}</div>
 					<div class="faq-reponse">
-						Une conciergerie gère votre location saisonnière du début à la fin du séjour des voyageurs.
+						{{ contenus.reponce1|default('Une conciergerie gère votre location saisonnière du début à la fin du séjour des voyageurs.')}}
 					</div>
 				</div>
 
 				<div class="faq-item">
-					<div class="faq-question">Quels sont vos services ?</div>
+					<div class="faq-question">{{ contenus.question2|default('Quels sont vos services ?')}}</div>
 					<div class="faq-reponse">
-						Nous proposons la création et la gestion de votre annonce, la communication avec les voyageurs, le ménage, et bien plus.
+						{{ contenus.reponce2|default('Nous proposons la création et la gestion de votre annonce, la communication avec les voyageurs, le ménage, et bien plus.')}}
 					</div>
 				</div>
 
 				<div class="faq-item">
-					<div class="faq-question">Comment se déroule la gestion ?</div>
+					<div class="faq-question">{{ contenus.question3|default('Comment se déroule la gestion ?')}}</div>
 					<div class="faq-reponse">
-						Nous nous occupons de l'accueil des voyageurs, de l'assistance pendant leur séjour, ainsi que du ménage entre les locations.
+						{{ contenus.reponce3|default('Nous nous occupons de l\'accueil des voyageurs, de l\'assistance pendant leur séjour, ainsi que du ménage entre les locations.')}}
 					</div>
 				</div>
 
 				<div class="faq-item">
-					<div class="faq-question">Quel est le coût d'une conciergerie ?</div>
+					<div class="faq-question">{{ contenus.question4|default('Quel est le coût d\'une conciergerie ?')}}</div>
 					<div class="faq-reponse">
-						Nous percevons une commission en tant que pourcentage des revenus locatifs.
+						{{ contenus.reponce4|default('Nous percevons une commission en tant que pourcentage des revenus locatifs.')}}
 					</div>
 				</div>
 
 				<div class="faq-contact">
-					<p>D'autres questions ? Envoyez les nous ?</p>
-					<button class="faq-button">Nous contacter</button>
+					<p>{{ contenus.autresquestions|default('D\'autres questions ? Envoyez les nous ?')}}</p>
+					<button class="faq-button">{{ contenus.bouttoncontact|default('Nous contacter')}}</button>
 				</div>
 			</div>
 

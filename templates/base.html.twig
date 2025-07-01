@@ -42,7 +42,7 @@
 	</head>
 	<body>
 		{% if app.request.pathInfo starts with '/admin' == false %}
-    	{% include 'pages/navbar/navbar.html.twig' %}
+    	{{ render(controller('App\\Controller\\NavbarController::index')) }}
 		{% endif %}
 		{% block body %}{% endblock %}
 		{% if app.request.pathInfo starts with '/admin' == false %}
