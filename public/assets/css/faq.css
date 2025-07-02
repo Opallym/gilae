@@ -13,6 +13,10 @@
     margin-bottom: 2rem;
 }
 
+body.dark-mode .faq-title {
+    color: #625F55;
+}
+
 .faq-content {
     position: relative;
     max-width: 600px;

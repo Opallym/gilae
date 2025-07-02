@@ -6,7 +6,7 @@
 
 {% block body %}
 	<main class="pfaq-container">
-		<h1 class="faq-title">FAQ</h1>
+		<h1 class="faq-title elegant-underline">FAQ</h1>
 
 		<div class="faq-content">
 			<div class="faq-column">
@@ -40,7 +40,10 @@
 
 				<div class="faq-contact">
 					<p>{{ contenus.autresquestions|default('D\'autres questions ? Envoyez les nous ?')}}</p>
-					<button class="faq-button">{{ contenus.bouttoncontact|default('Nous contacter')}}</button>
+					<button onclick="window.location.href='{{ path('app_formulaire') }}'" class="faq-button">
+						{{ contenus.bouttoncontact|default('Nous contacter') }}
+					</button>
+
 				</div>
 			</div>
 

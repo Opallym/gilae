@@ -57,7 +57,7 @@ body.dark-mode .decor-gauche {
 }
 
 body.dark-mode .decor-droite {
-    background-image: url('../images/about/plante1dlight.png');
+    background-image: url('../images/about/plante2dlight.png');
     display: block;
     max-width: 100%;
     height: auto;
@@ -105,13 +105,6 @@ body.dark-mode .decor-bas {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.decor-droite {
-    background-image: url('../images/about/plante1d.png');
-}
-body.dark-mode .decor-droite {
-    background-image: url('../images/about/plante1dlight.png');
 }
 
 .decor-bas {
