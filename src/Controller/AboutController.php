@@ -15,25 +15,28 @@ final class AboutController extends AbstractController
         AboutRepository $aboutRepository,
         RequestStack $requestStack
     ): Response {
-        // Récupère la locale courante
+        // Récupère la locale courante (ex: 'fr' ou 'en')
         $locale = $requestStack->getCurrentRequest()->getLocale();
 
-        // Cherche les blocs de contenu pour cette langue
+        // Cherche les blocs de contenu pour cette locale
         $blocs = $aboutRepository->findBy(['locale' => $locale]);
 
-        // Fallback si rien trouvé
+        // Fallback sur 'fr' si rien trouvé
         if (!$blocs) {
             $blocs = $aboutRepository->findBy(['locale' => 'fr']);
         }
 
-        // Format clé => contenu
+        // Transforme en tableau clé => contenu
         $contenus = [];
         foreach ($blocs as $bloc) {
             $contenus[$bloc->getCle()] = $bloc->getContenu();
         }
 
+        // Rend la page avec les contenus, sans mode édition
         return $this->render('pages/about/about.html.twig', [
             'contenus' => $contenus,
+            'mode_edition' => false,
+            'locale' => $locale,
         ]);
     }
 }
