@@ -169,3 +169,49 @@ body.dark-mode .decor-bas {
         max-width: 900px;
     }
 }
+
+.btn-containervalider {
+    position: absolute;
+    bottom: 0px;      /* 20px du bas de la fenêtre */
+    left: 80%;         /* positionné à 50% horizontalement */
+    transform: translateX(-50%); /* ramène le bouton au centre */
+    z-index: 1000;     /* devant les autres éléments */
+  }
+
+  #btn-valider {
+    padding: 20px 90px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+  }
+
+  #btn-valider:hover {
+    background: #e0e0e033;
+  }
+
+  .locale-selector {
+    margin-bottom: 20px;
+    
+}
+
+.locale-selector a {
+    text-decoration: none;
+    color: #b2adad;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+.locale-selector a.active {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.locale-selector a:hover {
+    text-decoration: underline;
+}

@@ -18,7 +18,6 @@
 }
 
 .menu-button {
-
     padding: 20px 90px;
     background: #f0f0f000;
     border: 1px solid #ddd;
@@ -33,6 +32,21 @@
     background: #e0e0e033;
 }
 
+.btn-modifmdp {
+    padding: 20px 90px;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-modifmdp:hover {
+    background: #e0e0e033;
+}
 
 
 .pricing-header {
@@ -49,7 +63,7 @@
 .pricing-header h1 {
     font-size: 2.5rem;
     /* Taille du titre */
-    color: #333;
+    color: #ffffff;
     /* Couleur du texte */
     margin: 0;
     /* Supprime les marges par défaut */
