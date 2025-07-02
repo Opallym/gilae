@@ -25,6 +25,7 @@ final class MentionController extends AbstractController
             'responsible' => 'Gilae consiergerie'
         ];
 
+        
         // Données de l'hébergeur
         $siteHost = [
             'name' => 'Squarespace',
