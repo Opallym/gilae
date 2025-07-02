@@ -1,27 +1,17 @@
 <?php
 
-// src/Controller/Security/LogoutController.php
+// src/Controller/LogoutController.php
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Routing\Attribute\Route;
 
 class LogoutController extends AbstractController
 {
-    #[Route('/admin/logout', name: 'admin_logout')]
-    public function logout(Request $request, AuthenticationUtils $authenticationUtils): Response
+    #[Route('/logout', name: 'app_logout')]
+    public function logout(): void
     {
-        // Récupérer l'utilisateur courant
-        $user = $this->getUser();
-        
-        // Déconnexion manuelle (optionnel)
-        // $this->container->get('security.token_storage')->setToken(null);
-        // $request->getSession()->invalidate();
-        
-        // Redirection vers la page d'accueil
-        return $this->redirectToRoute('app_home');
+        throw new \Exception('This should not be reached.');
     }
 }

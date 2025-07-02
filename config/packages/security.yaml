@@ -23,8 +23,8 @@ security:
                 default_target_path: admin_tableaudebord
 
             logout:
-                path: app_logout
-                target: homepage
+                path: app_logout         # Route de déconnexion
+                target: app_home         # Redirection vers l'accueil après logout
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER

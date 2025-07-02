@@ -25,3 +25,7 @@ services:
     App\EventListener\LocaleListener:
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    # ✅ Ajout : permet d'autowirer LogoutUrlGenerator
+    Symfony\Component\Security\Http\Logout\LogoutUrlGenerator:
+        alias: security.logout_url_generator
