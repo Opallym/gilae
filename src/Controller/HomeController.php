@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Repository\HomeRepository;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Security\Http\Logout\LogoutUrlGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class HomeController extends AbstractController
@@ -13,25 +16,34 @@ final class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(
         HomeRepository $homeRepository,
-        RequestStack $requestStack
+        RequestStack $requestStack,
+        Security $security,
+        LogoutUrlGenerator $logoutUrlGenerator
     ): Response {
-        // Récupération de la locale courante (ex: 'fr', 'en', etc.)
+        // 🔐 Déconnexion automatique si ROLE_ADMIN
+        if ($security->isGranted('ROLE_ADMIN')) {
+            return new RedirectResponse($logoutUrlGenerator->getLogoutPath());
+        }
+
+        // 🌐 Locale courante
         $locale = $requestStack->getCurrentRequest()->getLocale();
 
-        // Récupère tous les blocs de contenu pour la locale
+        // 📦 Récupération des blocs traduits
         $blocs = $homeRepository->findBy(['locale' => $locale]);
 
-        // Si aucun bloc trouvé pour cette langue, fallback en français
+        // 🧩 Fallback si aucun bloc pour la locale
         if (!$blocs) {
+            
             $blocs = $homeRepository->findBy(['locale' => 'fr']);
         }
 
-        // Transformation en tableau associatif clé => contenu
+        // 🧷 Conversion en tableau clé => contenu
         $contenus = [];
         foreach ($blocs as $bloc) {
             $contenus[$bloc->getKey()] = $bloc->getContenu();
         }
 
+        // 🎯 Rendu de la page d’accueil
         return $this->render('pages/home/home.html.twig', [
             'contenus' => $contenus,
         ]);

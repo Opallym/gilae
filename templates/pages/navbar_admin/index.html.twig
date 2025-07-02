@@ -4,32 +4,33 @@
 {% endblock %}
 
 {% block body %}
-<nav class="navbaradmin">
-	<div class="navbaradmin-container">
+	<nav class="navbaradmin">
+		<div class="navbaradmin-container">
 
-		<div class="navbaradmin-left">
-			<img src="{{ asset('assets/images/logo/logo-white.png') }}" alt="Logo de Gilaë" height="80">
-		</div>
+			<div class="navbaradmin-left">
+				<button type="button" onclick="window.location.href='{{ path('app_home') }}'" style="background:none; border:none; padding:0; cursor:pointer;">
+					<img src="{{ asset('assets/images/logo/logo-white.png') }}" alt="Logo de Gilaë" height="80">
+				</button>
+			</div>
 
-		<div class="navbaradmin-center">
-			<ul class="navbaradmin-menu" id="navbaradmin-menu">
-				<li>
-					<a href="{{ path('admin_tableaudebord') }}">{{ contenus.accueil|default('Tableau de bord')}}</a>
-				</li>
-				<li>
-					<a href="{{ path('admin_messagerie') }}">{{ contenus.apropos|default('Messagerie')}}</a>
-				</li>
-				<li>
-					<a href="{{ path('admin_stats') }}">{{ contenus.services|default('Statistique')}}</a>
-				</li>
-				<li>
-					<a href="{{ path('admin_gestion') }}">{{ contenus.tarifs|default('Gestion')}}</a>
-				</li>
-			</ul>
-		</div>
+			<div class="navbaradmin-center">
+				<ul class="navbaradmin-menu" id="navbaradmin-menu">
+					<li>
+						<a href="{{ path('admin_tableaudebord') }}">{{ contenus.accueil|default('Tableau de bord')}}</a>
+					</li>
+					<li>
+						<a href="{{ path('admin_messagerie') }}">{{ contenus.apropos|default('Messagerie')}}</a>
+					</li>
+					<li>
+						<a href="{{ path('admin_stats') }}">{{ contenus.services|default('Statistique')}}</a>
+					</li>
+					<li>
+						<a href="{{ path('admin_gestion') }}">{{ contenus.tarifs|default('Gestion')}}</a>
+					</li>
+				</ul>
+			</div>
 			<button class="navbaradmin-toggle" id="navbaradmin-toggle">Menu ☰</button>
 		</div>
 
 	</div>
-</nav>
-{% endblock %}
+</nav>{% endblock %}
