@@ -9,10 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class TemoiniageController extends AbstractController
 {
-    #[Route('/temoiniage', name: 'app_temoiniage')]
+    #[Route('/admin/temoiniage', name: 'admin_temoiniage')]
     public function index(StatisticsService $stats): Response
     {
-        $stats->recordVisit('app_temoiniage');
+        $stats->recordVisit('admin_temoiniage');
         return $this->render('pages/temoiniages/temoiniages.html.twig');
     }
 

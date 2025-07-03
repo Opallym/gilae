@@ -4,49 +4,65 @@
 {% endblock %}
 
 {% block body %}
+
+	{% if mode_edition|default(false) %}
+		<div class="locale-selector">
+			<a href="{{ path('admin_home', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a>
+			|
+			<a href="{{ path('admin_home', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
+		</div>
+	{% endif %}
 	<div class="background-container"></div>
 
 	<div class="section-centrale">
-
-			<h2 class="elegant-underline">{{ contenus.titreintro|default('Votre alliée du quotidien pour une vie simplifiée, sereine et élégante.') }}</h2>
-			<p>
-			{{ contenus.intro|default('Parce que chaque instant mérite votre pleine attention, nous vous proposons des services de conciergerie sur mesure, pensés pour alléger votre charge mentale et vous offrir le luxe de la tranquillité.') }}
+		<h2 class="elegant-underline" {% if mode_edition|default(false) %} contenteditable="true" data-key="titreintro" {% endif %}>
+			{{ contenus.titreintro|default('Votre alliée du quotidien pour une vie simplifiée, sereine et élégante.')|raw }}
+		</h2>
+		<p {% if mode_edition|default(false) %} contenteditable="true" data-key="intro" {% endif %}>
+			{{ contenus.intro|default('Parce que chaque instant mérite votre pleine attention...')|raw }}
 		</p>
-				
 	</div>
+
 	<div class='img-responsive1'></div>
+
 	<div class="row-container">
 		<div class="svg-block">
 			<div class="image-graphique"></div>
-			<p>
-				{{ contenus.bloc1|default('Investir dans la tranquillité, c’est rentable. Faire appel à notre conciergerie, c’est gagner un temps précieux et optimiser chaque aspect de votre organisation. Moins de stress, plus d\'efficacité, une meilleure qualité de vie. Une valeur ajoutée concrète pour vous ou vos biens.')}}
+			<p {% if mode_edition|default(false) %} contenteditable="true" data-key="bloc1" {% endif %}>
+				{{ contenus.bloc1|default('Investir dans la tranquillité, c’est rentable...')|raw }}
 			</p>
 		</div>
 		<div class="svg-block">
 			<div class="stress"></div>
-			<p>
-				{{ contenus.bloc2|default('On s’occupe de tout. Notre mission : vous libérer de la charge mentale. Confiez-nous ce qui vous encombre, et retrouvez la légèreté de journées simples et sereines. Moins de préoccupations, plus d’instants pour vous.')}}
+			<p {% if mode_edition|default(false) %} contenteditable="true" data-key="bloc2" {% endif %}>
+				{{ contenus.bloc2|default('On s’occupe de tout...')|raw }}
 			</p>
 		</div>
 		<div class="svg-block">
 			<div class="flexibilité"></div>
-			<p>
-				{{ contenus.bloc3|default('Une conciergerie qui s’adapte à vous. Parce que chaque personne est unique, Gilaë propose des services modulables, ajustés à vos priorités, vos rythmes et vos envies. Avec nous, rien n’est figé. Vous avez le contrôle, sans les contraintes.') }}
+			<p {% if mode_edition|default(false) %} contenteditable="true" data-key="bloc3" {% endif %}>
+				{{ contenus.bloc3|default('Une conciergerie qui s’adapte à vous...')|raw }}
 			</p>
 		</div>
 	</div>
+
 	<div class='img-responsive2'></div>
+
 	<div class="section-container">
 		<div class="section-centrale">
-			<h1 class="titre elegant-underline">{{ contenus.titreengagement|default('Gilaë, la conciergerie sur mesure à votre écoute :')}}</h1>
+			<h1 class="titre elegant-underline" {% if mode_edition|default(false) %} contenteditable="true" data-key="titreengagement" {% endif %}>
+				{{ contenus.titreengagement|default('Gilaë, la conciergerie sur mesure à votre écoute :')|raw }}
+			</h1>
 		</div>
 		<div class="contenu">
 			<div class="texte">
-				<p>
-					{{ contenus.pengagement|default('Votre temps est précieux. Gilaë vous propose une gestion raffinée et complète de votre résidence pour que vous n’ayez plus jamais à vous en soucier. Gilaë, c’est avant tout une philosophie de service alliant bienveillance, discrétion et efficacité. Notre équipe vous accompagne avec exigence et humanité, en adaptant chaque prestation à vos besoins, vos rythmes et vos attentes. Nous conjuguons art de vivre et rigueur professionnelle pour valoriser vos biens et alléger votre quotidien. Nous savons que chaque lieu raconte une histoire, et que chaque propriétaire mérite une solution unique. C’est pourquoi nous concevons des services de conciergerie haut de gamme, pensés pour sublimer votre vie ou celle de vos hôtes. Grâce à notre approche personnalisée, nos clients constatent une hausse significative de la rentabilité, une réduction du stress quotidien, et surtout, plus de liberté pour se consacrer à l’essentiel.')}}
+				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="pengagement" {% endif %}>
+					{{ contenus.pengagement|default('Votre temps est précieux...')|raw }}
 				</p>
 				<div class="liensfaq">
-					<a href="{{ path('app_about') }}"> {{ contenus.bdecouvrir|default('Découvrir plus')}}</a>
+					<a href="{{ path('app_about') }}">
+						{{ contenus.bdecouvrir|default('Découvrir plus') }}
+					</a>
 				</div>
 			</div>
 			<div class="image">
@@ -55,17 +71,25 @@
 		</div>
 	</div>
 
-	<div class='img-responsive3'></div>">
+	<div class='img-responsive3'></div>
 
 	<div class="section-container">
 		<div class="section-centrale">
-			<h1 class="elegant-underline titre ">{{ contenus.titreserenite|default('Augmentez votre sérénité (et vos revenus) avec Gilaë.')}}</h1>
+			<h1 class="elegant-underline titre" {% if mode_edition|default(false) %} contenteditable="true" data-key="titreserenite" {% endif %}>
+				{{ contenus.titreserenite|default('Augmentez votre sérénité (et vos revenus) avec Gilaë.')|raw }}
+			</h1>
 		</div>
 		<div class="contenu">
 			<div class="texte">
-				<p>{{ contenus.p1serenite|default('◦ Valorisation optimale de votre bien grâce à une veille quotidienne des tarifs et des tendances locales.')}}</p>
-				<p>{{ contenus.p2serenite|default('◦ Taux d’occupation maximisé par une stratégie locative intelligente alliant court et moyen séjour.')}}</p>
-				<p>{{ contenus.p3serenite|default('◦ Accompagnement humain et discret avec un gestionnaire dédié, expert en hôtellerie de charme et immobilier.')}}</p>
+				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="p1serenite" {% endif %}>
+					{{ contenus.p1serenite|default('◦ Valorisation optimale de votre bien...')|raw }}
+				</p>
+				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="p2serenite" {% endif %}>
+					{{ contenus.p2serenite|default('◦ Taux d’occupation maximisé...')|raw }}
+				</p>
+				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="p3serenite" {% endif %}>
+					{{ contenus.p3serenite|default('◦ Accompagnement humain et discret...')|raw }}
+				</p>
 			</div>
 			<div class="image">
 				<div class="img-commentaire"></div>
@@ -75,14 +99,15 @@
 
 	<div class='img-responsive4'></div>
 
-
 	<section class="faq-section">
 		<div class="faq-container">
-			<h2 class="elegant-underline titre">{{ contenus.titrefaq|default('Encore des questions ?')}}</h2>
+			<h2 class="elegant-underline titre" {% if mode_edition|default(false) %} contenteditable="true" data-key="titrefaq" {% endif %}>
+				{{ contenus.titrefaq|default('Encore des questions ?')|raw }}
+			</h2>
 
 			<div class="faq-row">
-				<p class="faq-description">
-					{{ contenus.introfaq|default('Prêt à commencer l’aventure mais encore des questions ? Voici les questions les plus posées :')}}
+				<p class="faq-description" {% if mode_edition|default(false) %} contenteditable="true" data-key="introfaq" {% endif %}>
+					{{ contenus.introfaq|default('Prêt à commencer l’aventure...')|raw }}
 				</p>
 				<div class="liensfaq">
 					<a href="{{ path('app_faq') }}">FAQ</a>
@@ -130,8 +155,8 @@
 				<button class="faq-question light">{{ contenus.questions8faq|default('À qui s’adresse Gilaë ?')}}</button>
 				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
 			</div>
-
 		</div>
+
 	</section>
 
 	<script>
@@ -143,4 +168,35 @@ answer.classList.toggle('open');
 });
 	</script>
 
+	{% if mode_edition|default(false) %}
+		<div class="btn-containervaliderhome">
+			<button id="btn-validerhome">Valider les modifications</button>
+		</div>
+		<script>
+			document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+el.addEventListener('blur', () => {
+const key = el.dataset.key;
+const texte = el.innerText.trim();
+const locale = '{{ locale|default("fr") }}';
+
+fetch('{{ path("admin_home_update") }}', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify(
+{key: key, texte: texte, locale: locale}
+)
+}).then(response => response.json()).then(data => {
+if (!data.success) {
+alert('Erreur lors de la sauvegarde');
+}
+});
+});
+});
+document.getElementById('btn-validerhome').addEventListener('click', () => {
+window.location.href = '{{ path("admin_gestion") }}';
+});
+		</script>
+	{% endif %}
 {% endblock %}

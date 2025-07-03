@@ -30,6 +30,8 @@ final class FaqController extends AbstractController
 
         return $this->render('pages/faq/faq.html.twig', [
             'contenus' => $contenus,
+            'locale' => $locale,
+            'mode_edition' => false, // ← ajoute ceci pour corriger le bug
         ]);
     }
 }

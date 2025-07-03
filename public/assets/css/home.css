@@ -515,3 +515,49 @@ body.dark-mode .faq-answer.dark {
 .liensfaq {
   padding: 10px 20px;
 }
+
+.btn-containervaliderhome {
+    position: absolute;
+    top: 40px;         /* 100px depuis le haut de la fenêtre */
+    left: 90%;         /* positionné à 50% horizontalement */
+    transform: translateX(-50%); /* ramène le bouton au centre */
+    z-index: 1000;     /* devant les autres éléments */
+  }
+
+  #btn-validerhome {
+    padding: 20px 90px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+  }
+
+  #btn-validerhome:hover {
+    background: #e0e0e033;
+  }
+
+  .locale-selectorhome {
+    margin-bottom: 20px;
+    
+}
+
+.locale-selectorhome a {
+    text-decoration: none;
+    color: #b2adad;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+.locale-selectorhome a.active {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.locale-selectorhome a:hover {
+    text-decoration: underline;
+}

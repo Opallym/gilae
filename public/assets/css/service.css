@@ -104,3 +104,49 @@
         max-height: 150px;
     }
 }
+
+.btn-containervaliderservice {
+    position: absolute;
+    bottom: -1850px;
+    left: 86%;         /* positionné à 50% horizontalement */
+    transform: translateX(-50%); /* ramène le bouton au centre */
+    z-index: 1000;     /* devant les autres éléments */
+  }
+
+  #btn-validerservice {
+    padding: 20px 90px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+  }
+
+  #btn-validerservice:hover {
+    background: #e0e0e033;
+  }
+
+  .locale-selectorservice {
+    margin-bottom: 20px;
+    
+}
+
+.locale-selectorservice a {
+    text-decoration: none;
+    color: #b2adad;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+.locale-selectorservice a.active {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.locale-selectorservice a:hover {
+    text-decoration: underline;
+}

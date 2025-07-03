@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\ConseilRepository;
+use App\Repository\ConseilsRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -12,18 +12,18 @@ final class ConseilsController extends AbstractController
 {
     #[Route('/conseils', name: 'app_conseils')]
     public function index(
-        ConseilRepository $conseilRepository,
+        ConseilsRepository $conseilsRepository,
         RequestStack $requestStack
     ): Response {
         // Récupération de la locale courante (fr, en, etc.)
         $locale = $requestStack->getCurrentRequest()->getLocale();
 
         // Récupère tous les blocs de contenu pour la locale
-        $blocs = $conseilRepository->findBy(['locale' => $locale]);
+        $blocs = $conseilsRepository->findBy(['locale' => $locale]);
 
         // Fallback en français si pas de contenu pour la langue
         if (!$blocs) {
-            $blocs = $conseilRepository->findBy(['locale' => 'fr']);
+            $blocs = $conseilsRepository->findBy(['locale' => 'fr']);
         }
 
         // Transformation clé => contenu
@@ -34,6 +34,8 @@ final class ConseilsController extends AbstractController
 
         return $this->render('pages/conseils/conseils.html.twig', [
             'contenus' => $contenus,
+            'mode_edition' => false,
+            'locale' => $locale,
         ]);
     }
 }

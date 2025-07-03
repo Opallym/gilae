@@ -1,57 +1,112 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Services | Gilae Conciergerie
-{% endblock %}
+{% block title %}Services | Gilae Conciergerie{% endblock %}
 
 {% block body %}
-	<main class="service-container">
-		<header class="service-header">
-			<h2>Services</h2>
-				<p>Gilae vous propose une gamme complete de services de consiergerie pour faciliter la gestion de vos location saisonnières.</p>
-		</header>
+{% if mode_edition|default(false) %}
+<div class="locale-selectorservice">
+    <a href="{{ path('admin_service', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a> | 
+    <a href="{{ path('admin_service', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
+</div>
+{% endif %}
 
-		<!-- Premier service -->
-		<section class="service-item">
-			<div class="service-text">
-				<h2>Gestion des Locataires</h2>
-				<p>Prise en charge de communication et de l'accueil des voyageurs.</p>
-			</div>
-			<div class="service-image">
-				<img src="{{ asset('assets/images/service/calendar.png') }}" alt="Icône représentant un calendrier pour la gestion des locataires">
-			</div>
-		</section>
+<main class="service-container">
+    <header class="service-header">
+        <h2 {% if mode_edition %} contenteditable="true" data-cle="titre" {% endif %}>
+            {{ contenus.titre|default('Services')|raw }}
+        </h2>
+        <p {% if mode_edition %} contenteditable="true" data-cle="intro" {% endif %}>
+            {{ contenus.intro|default('Gilae vous propose une gamme complète de services de conciergerie pour faciliter la gestion de vos locations saisonnières.')|raw }}
+        </p>
+    </header>
 
-		<!-- Deuxième service -->
-		<section class="service-item">
-			<div class="service-text">
-				<h2>Optimisation des tarifs</h2>
-				<p>Ajustement dynamique de vos prix de location.</p>
-			</div>
-			<div class="service-image">
-				<img src="{{ asset('assets/images/service/tarif.png') }}" alt="Icône représentant des euros pour l'optimisation des tarifs">
-			</div>
-		</section>
+    <section class="service-item">
+        <div class="service-text">
+            <h2 {% if mode_edition %} contenteditable="true" data-cle="gestion_locataires_titre" {% endif %}>
+                {{ contenus.gestion_locataires_titre|default('Gestion des Locataires')|raw }}
+            </h2>
+            <p {% if mode_edition %} contenteditable="true" data-cle="gestion_locataires_desc" {% endif %}>
+                {{ contenus.gestion_locataires_desc|default('Prise en charge de la communication et de l\'accueil des voyageurs.')|raw }}
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="{{ asset('assets/images/service/calendar.png') }}" alt="Icône représentant un calendrier">
+        </div>
+    </section>
 
-		<!-- Troisième service -->
-		<section class="service-item">
-			<div class="service-text">
-				<h2>Entretien et ménage</h2>
-				<p>Service nettoyage complet entre chaque séjour.</p>
-			</div>
-			<div class="service-image">
-				<img src="{{ asset('assets/images/service/menage.png') }}" alt="Icône représentant un produit ménager pour le service d'entretien">
-			</div>
-		</section>
+    <section class="service-item">
+        <div class="service-text">
+            <h2 {% if mode_edition %} contenteditable="true" data-cle="optimisation_tarifs_titre" {% endif %}>
+                {{ contenus.optimisation_tarifs_titre|default('Optimisation des tarifs')|raw }}
+            </h2>
+            <p {% if mode_edition %} contenteditable="true" data-cle="optimisation_tarifs_desc" {% endif %}>
+                {{ contenus.optimisation_tarifs_desc|default('Ajustement dynamique de vos prix de location.')|raw }}
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="{{ asset('assets/images/service/tarif.png') }}" alt="Icône représentant des euros">
+        </div>
+    </section>
 
-		<!-- Quatrième service -->
-		<section class="service-item">
-			<div class="service-text">
-				<h2>Assistance des voyageurs</h2>
-				<p>Soutien et aide 7j/7 pendant la durée du séjour.</p>
-			</div>
-			<div class="service-image">
-				<img src="{{ asset('assets/images/service/telephone.png') }}" alt="Icône représentant un téléphone pour l'assistance des voyageurs">
-			</div>
-		</section>
-	</main>
+    <section class="service-item">
+        <div class="service-text">
+            <h2 {% if mode_edition %} contenteditable="true" data-cle="entretien_menage_titre" {% endif %}>
+                {{ contenus.entretien_menage_titre|default('Entretien et ménage')|raw }}
+            </h2>
+            <p {% if mode_edition %} contenteditable="true" data-cle="entretien_menage_desc" {% endif %}>
+                {{ contenus.entretien_menage_desc|default('Service de nettoyage complet entre chaque séjour.')|raw }}
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="{{ asset('assets/images/service/menage.png') }}" alt="Icône représentant un produit ménager">
+        </div>
+    </section>
+
+    <section class="service-item">
+        <div class="service-text">
+            <h2 {% if mode_edition %} contenteditable="true" data-cle="assistance_voyageurs_titre" {% endif %}>
+                {{ contenus.assistance_voyageurs_titre|default('Assistance des voyageurs')|raw }}
+            </h2>
+            <p {% if mode_edition %} contenteditable="true" data-cle="assistance_voyageurs_desc" {% endif %}>
+                {{ contenus.assistance_voyageurs_desc|default('Soutien et aide 7j/7 pendant la durée du séjour.')|raw }}
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="{{ asset('assets/images/service/telephone.png') }}" alt="Icône représentant un téléphone">
+        </div>
+    </section>
+</main>
+
+{% if mode_edition %}
+<div class="btn-containervaliderservice">
+  <button id="btn-validerservice">Valider les modifications</button>
+</div>
+
+<script>
+  document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+      el.addEventListener('blur', () => {
+          const cle = el.dataset.cle;
+          const texte = el.innerText.trim();
+          const locale = '{{ locale|default("fr") }}';
+
+          fetch('{{ path("admin_service_update") }}', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({cle: cle, texte: texte, locale: locale})
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (!data.success) {
+                  alert('Erreur lors de la sauvegarde');
+              }
+          });
+      });
+  });
+
+  document.getElementById('btn-validerservice').addEventListener('click', () => {
+    const locale = '{{ locale|default("fr") }}';
+    window.location.href = '{{ path("admin_service", {locale: locale}) }}';
+  });
+</script>
+{% endif %}
 {% endblock %}
