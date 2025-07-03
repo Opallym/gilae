@@ -1,4 +1,4 @@
-.pfaq-container {
+.pffaq-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,35 +13,48 @@
     margin-bottom: 2rem;
 }
 
+/* Exemple si tu veux styliser elegant-underline */
+.faq-title.elegant-underline {
+    border-bottom: 3px solid #625F55;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
 body.dark-mode .faq-title {
     color: #625F55;
 }
 
-.faq-content {
+.ffaq-content {
     position: relative;
     max-width: 600px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.faq-column {
+.ffaq-column {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.faq-question {
+.ffaq-item {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.ffaq-question {
     font-weight: bold;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
-.faq-reponse {
+.ffaq-reponse {
     font-size: 1rem;
     line-height: 1.6;
 }
 
-.faq-contact {
+.ffaq-contact {
     margin-top: 3rem;
     font-size: 1rem;
 }
@@ -61,22 +74,67 @@ body.dark-mode .faq-title {
     background-color: #e3dfd7;
 }
 
-.faq-decor {
+.ffaq-decor {
     position: absolute;
     top: 5rem;
     height: auto;
     width: 60px;
 }
 
-.faq-decor.left {
+.ffaq-decor.left {
     width: 200px;
-    left: -500px;
+    left: -300px;
     top: -100px;
-    transform: scaleX(-1); /* miroir horizontal */
+    transform: scaleX(-1);
 }
 
-.faq-decor.right {
+.ffaq-decor.right {
     width: 200px;
-    right: -500px;
+    right: -300px;
     top: -100px;
+}
+
+.btn-containervaliderffaq {
+    position: absolute;
+    bottom: 20px;     /* 20px du bas de la fenêtre */
+    left: 80%;        /* positionné à 80% horizontalement */
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+#btn-validerffaq {
+    padding: 20px 90px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: background 0.3s;
+}
+
+#btn-validerffaq:hover {
+    background: #e0e0e033;
+}
+
+.locale-selector {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.locale-selector a {
+    text-decoration: none;
+    color: #b2adad;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+.locale-selector a.active {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.locale-selector a:hover {
+    text-decoration: underline;
 }

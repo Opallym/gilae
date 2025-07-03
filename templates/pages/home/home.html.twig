@@ -116,17 +116,47 @@
 		</div>
 
 		<div class="faq-container">
-			{% for i in 1..8 %}
-				<div class="faq-item">
-					<button class="faq-question {{ i % 2 == 0 ? 'dark' : 'light' }}" {% if mode_edition|default(false) %} contenteditable="true" data-key="questions{{ i }}faq" {% endif %}>
-						{{ attribute(contenus, 'questions' ~ i ~ 'faq')|default('Question FAQ ' ~ i)|raw }}
-					</button>
-					<div class="faq-answer {{ i % 2 == 0 ? 'dark' : 'green' }}">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</div>
-				</div>
-			{% endfor %}
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions1faq|default('Puis-je louer mon logement en RBNB toute l’année ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions2faq|default('Suis-je couvert(e) par l’assurance ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions3faq|default('Comment fonctionne la gestion des arrivées et départs ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions4faq|default('Puis-je louer uniquement ma chambre ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions5faq|default('Qui fournit le linge de maison et les produits d’accueil ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions6faq|default('Y a-t-il un engagement minimum ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions7faq|default('Intervenez-vous en cas de problème ou d’urgence ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions8faq|default('À qui s’adresse Gilaë ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
 		</div>
+
 	</section>
 
 	<script>
@@ -144,23 +174,25 @@ answer.classList.toggle('open');
 		</div>
 		<script>
 			document.querySelectorAll('[contenteditable="true"]').forEach(el => {
-    el.addEventListener('blur', () => {
-        const key = el.dataset.key;
-        const texte = el.innerText.trim();
-        const locale = '{{ locale|default("fr") }}';
+el.addEventListener('blur', () => {
+const key = el.dataset.key;
+const texte = el.innerText.trim();
+const locale = '{{ locale|default("fr") }}';
 
-        fetch('{{ path("admin_home_update") }}', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({key: key, texte: texte, locale: locale})
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (!data.success) {
-                alert('Erreur lors de la sauvegarde');
-            }
-        });
-    });
+fetch('{{ path("admin_home_update") }}', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify(
+{key: key, texte: texte, locale: locale}
+)
+}).then(response => response.json()).then(data => {
+if (!data.success) {
+alert('Erreur lors de la sauvegarde');
+}
+});
+});
 });
 document.getElementById('btn-validerhome').addEventListener('click', () => {
 window.location.href = '{{ path("admin_gestion") }}';

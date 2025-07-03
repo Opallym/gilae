@@ -9,10 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class FormulaireController extends AbstractController
 {
-    #[Route('/contact', name: 'app_formulaire')]
+    #[Route('/contacter', name: 'app_formulaire')]
     public function index(StatisticsService $stats): Response
     {
-        $stats->recordVisit('app_formulaire');
-        return $this->render('pages/formulaire/formulaire.html.twig');
+        $stats->recordVisit('app_contact');
+        return $this->render('pages/contact/contact.html.twig');
     }
 }

@@ -1,54 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}FAQ - Conciergerie
-{% endblock %}
-
+{% block title %}FAQ - Conciergerie{% endblock %}
 
 {% block body %}
-	<main class="pfaq-container">
-		<h1 class="faq-title elegant-underline">FAQ</h1>
+{% if mode_edition|default(false) %}
+	<div class="locale-selector">
+		<a href="{{ path('admin_faq', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a> | 
+		<a href="{{ path('admin_faq', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
+	</div>
+{% endif %}
+<main class="pffaq-container">
+    <h1 class="faq-title elegant-underline">FAQ</h1>
 
-		<div class="faq-content">
-			<div class="faq-column">
-				<div class="faq-item">
-					<div class="faq-question">{{ contenus.question1|default('Qu\'est-ce qu\'une conciergerie ?')}}</div>
-					<div class="faq-reponse">
-						{{ contenus.reponce1|default('Une conciergerie gère votre location saisonnière du début à la fin du séjour des voyageurs.')}}
-					</div>
-				</div>
+    <div class="ffaq-content">
+        <div class="ffaq-column">
+            {% for i in 1..4 %}
+                <div class="ffaq-item">
+                    <div class="ffaq-question" contenteditable="{{ mode_edition ? 'true' : 'false' }}" data-cle="question{{ i }}">
+                        {{ contenus['question' ~ i]|default('Question ' ~ i) }}
+                    </div>
+                    <div class="ffaq-reponse" contenteditable="{{ mode_edition ? 'true' : 'false' }}" data-cle="reponce{{ i }}">
+                        {{ contenus['reponce' ~ i]|default('Réponse ' ~ i) }}
+                    </div>
+                </div>
+            {% endfor %}
 
-				<div class="faq-item">
-					<div class="faq-question">{{ contenus.question2|default('Quels sont vos services ?')}}</div>
-					<div class="faq-reponse">
-						{{ contenus.reponce2|default('Nous proposons la création et la gestion de votre annonce, la communication avec les voyageurs, le ménage, et bien plus.')}}
-					</div>
-				</div>
+            <div class="ffaq-contact">
+                <p contenteditable="{{ mode_edition ? 'true' : 'false' }}" data-cle="autresquestions">
+                    {{ contenus.autresquestions|default('D\'autres questions ? Envoyez-les nous.') }}
+                </p>
+                <button onclick="window.location.href='{{ path('app_formulaire') }}'" class="faq-button" contenteditable="{{ mode_edition ? 'true' : 'false' }}" data-cle="bouttoncontact">
+                    {{ contenus.bouttoncontact|default('Nous contacter') }}
+                </button>
+            </div>
+        </div>
 
-				<div class="faq-item">
-					<div class="faq-question">{{ contenus.question3|default('Comment se déroule la gestion ?')}}</div>
-					<div class="faq-reponse">
-						{{ contenus.reponce3|default('Nous nous occupons de l\'accueil des voyageurs, de l\'assistance pendant leur séjour, ainsi que du ménage entre les locations.')}}
-					</div>
-				</div>
+        <img src="{{ asset('assets/images/faq/flower.png') }}" class="ffaq-decor left" alt="Décor gauche">
+        <img src="{{ asset('assets/images/faq/flower.png') }}" class="ffaq-decor right" alt="Décor droit">
+    </div>
 
-				<div class="faq-item">
-					<div class="faq-question">{{ contenus.question4|default('Quel est le coût d\'une conciergerie ?')}}</div>
-					<div class="faq-reponse">
-						{{ contenus.reponce4|default('Nous percevons une commission en tant que pourcentage des revenus locatifs.')}}
-					</div>
-				</div>
+    {% if mode_edition %}
+        <div class="btn-containervaliderffaq">
+            <button id="btn-validerffaq">Valider les modifications</button>
+        </div>
 
-				<div class="faq-contact">
-					<p>{{ contenus.autresquestions|default('D\'autres questions ? Envoyez les nous ?')}}</p>
-					<button onclick="window.location.href='{{ path('app_formulaire') }}'" class="faq-button">
-						{{ contenus.bouttoncontact|default('Nous contacter') }}
-					</button>
+        <script>
+            document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+                el.addEventListener('blur', () => {
+                    const cle = el.dataset.cle;
+                    const texte = el.innerText.trim();
+                    const locale = '{{ locale|default("fr") }}';
 
-				</div>
-			</div>
+                    fetch('{{ path("admin_faq_update") }}', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ cle, texte, locale })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.success) {
+                            alert('Erreur lors de la sauvegarde de "' + cle + '"');
+                        }
+                    });
+                });
+            });
 
-			<img src="{{ asset('assets/images/faq/flower.png') }}" class="faq-decor left" alt="Décor gauche">
-			<img src="{{ asset('assets/images/faq/flower.png') }}" class="faq-decor right" alt="Décor droit">
-		</div>
-	</main>
+            document.getElementById('btn-validerffaq').addEventListener('click', () => {
+                window.location.href = '{{ path('admin_gestion') }}';
+            });
+        </script>
+    {% endif %}
+</main>
 {% endblock %}

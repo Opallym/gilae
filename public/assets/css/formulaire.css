@@ -1,5 +1,5 @@
-/* Wrapper principal */
 .formulaire-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,7 +9,6 @@
     padding: 2rem;
 }
 
-/* Images gauche/droite */
 .image-container {
     flex: 1;
     display: flex;
@@ -48,8 +47,9 @@ body.dark-mode .decorative-imageformulairedroite {
 .formulaire-container {
     flex: 2;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;      /* empiler verticalement */
+    align-items: center;         /* centrer horizontalement */
+    justify-content: flex-start; /* aligner en haut, pas centrer verticalement */
     text-align: center;
 }
 
@@ -62,7 +62,7 @@ body.dark-mode .decorative-imageformulairedroite {
 .formulaire-title {
     font-size: 3.5rem;
     font-weight: normal;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem; /* augmenté pour plus d'espace */
     letter-spacing: 2px;
 }
 
@@ -154,4 +154,50 @@ body.dark-mode .formulaire-title {
     .decorative-imageformulairedroite {
         display: none;
     }
+}
+
+.btn-containervaliderformulaire {
+    position: absolute;
+    bottom: 0px;      /* 20px du bas de la fenêtre */
+    left: 80%;         /* positionné à 50% horizontalement */
+    transform: translateX(-50%); /* ramène le bouton au centre */
+    z-index: 1000;     /* devant les autres éléments */
+  }
+
+  #btn-validerformulaire {
+    padding: 20px 90px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+  }
+
+  #btn-validerformulaire:hover {
+    background: #e0e0e033;
+  }
+
+  .locale-selectorformulaire {
+    margin-bottom: 20px;
+    
+}
+
+.locale-selectorformulaire a {
+    text-decoration: none;
+    color: #b2adad;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+.locale-selectorformulaire a.active {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.locale-selectorformulaire a:hover {
+    text-decoration: underline;
 }
