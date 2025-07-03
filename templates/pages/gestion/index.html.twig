@@ -14,7 +14,7 @@
 		<div class="button-grid">
 			<div class="button-column">
 			{% if is_granted('ROLE_ADMIN') %}
-				<a href="{{ path('app_home') }}" class="menu-button">Acceuil</a>
+				<a href="{{ path('admin_home') }}" class="menu-button">Acceuil</a>
 				<a href="{{ path('admin_about') }}" class="menu-button">A propos</a>
 				<a href="{{ path('app_service') }}" class="menu-button">Services</a>
 				<a href="{{ path('app_tarifs') }}" class="menu-button">Tarifs/Packs</a>

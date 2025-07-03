@@ -14,18 +14,29 @@ class Home
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $contenu = null;
+
     #[ORM\Column(length: 255)]
     private ?string $locale = null;
 
     #[ORM\Column(length: 255)]
     private ?string $key = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $contenu = null;
-
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getContenu(): ?string
+    {
+        return $this->contenu;
+    }
+
+    public function setContenu(string $contenu): static
+    {
+        $this->contenu = $contenu;
+        return $this;
     }
 
     public function getLocale(): ?string
@@ -36,7 +47,6 @@ class Home
     public function setLocale(string $locale): static
     {
         $this->locale = $locale;
-
         return $this;
     }
 
@@ -48,19 +58,6 @@ class Home
     public function setKey(string $key): static
     {
         $this->key = $key;
-
-        return $this;
-    }
-
-    public function getContenu(): ?string
-    {
-        return $this->contenu;
-    }
-
-    public function setContenu(string $contenu): static
-    {
-        $this->contenu = $contenu;
-
         return $this;
     }
 }
