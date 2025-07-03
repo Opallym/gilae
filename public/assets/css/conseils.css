@@ -158,3 +158,50 @@ body.dark-mode .conseils-section h2 {
     padding: 0 15px;
   }
 }
+
+
+.btn-containervaliderconseils {
+    position: absolute;
+    bottom: -1000px;      
+    left: 80%;         /* positionné à 50% horizontalement */
+    transform: translateX(-50%); /* ramène le bouton au centre */
+    z-index: 1000;     /* devant les autres éléments */
+  }
+
+  #btn-validerconseils {
+    padding: 20px 90px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+  }
+
+  #btn-validerconseils:hover {
+    background: #e0e0e033;
+  }
+
+  .locale-selectorconseils {
+    margin-bottom: 20px;
+    
+}
+
+.locale-selectorconseilsconseils a {
+    text-decoration: none;
+    color: #b2adad;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+.locale-selectorconseils a.active {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.locale-selectorconseils a:hover {
+    text-decoration: underline;
+}
