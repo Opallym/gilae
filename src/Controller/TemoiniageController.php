@@ -7,13 +7,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-final class TarifsController extends AbstractController
+final class TemoiniageController extends AbstractController
 {
-    #[Route('/tarifs', name: 'app_tarifs')]
+    #[Route('/admin/temoiniage', name: 'admin_temoiniage')]
     public function index(StatisticsService $stats): Response
     {
-        $stats->recordVisit('app_tarifs');
-        return $this->render('pages/tarifs/tarifs.html.twig');
+        $stats->recordVisit('admin_temoiniage');
+        return $this->render('pages/temoiniages/temoiniages.html.twig');
     }
 
 }

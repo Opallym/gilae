@@ -4,14 +4,8 @@
 
 {% block body %}
 {% include 'pages/navbar_admin/index.html.twig' %}
-{% for label, messages in app.flashes %}
-  <div class="alert alert-{{ label }}">
-    {% for msg in messages %}
-      {{ msg }}
-    {% endfor %}
-  </div>
-{% endfor %}
 <div class="containermessagerie">
+  <!-- En-tête avec titre et décoration -->
   <header class="headermessagerie">
     <h1 class="titlemessagerie">Messagerie</h1>
     <div class="decorativemessagerie-divider">
@@ -21,59 +15,27 @@
     </div>
     <div class="mailmessagerie-icon">✉</div>
   </header>
-
-  <nav class="navigationmessagerie"></nav>
-
+  <!-- Section de navigation -->
+  <nav class="navigationmessagerie">
+  </nav>
   <div class="navmessagerie-item center">
-    <button class="sortmessagerie-btn">Trier par</button>
-  </div>
-
+      <button class="sortmessagerie-btn">Trier par</button>
+    </div>
+  <!-- Titres des colonnes alignés horizontalement -->
   <div class="columns-titles">
-    <div>Messages reçus :</div>
-    <div>Archives :</div>
+    <div>Messages reçus : </div>
+    <div>Archives : </div>
   </div>
-
+  <!-- Zone principale avec colonnes -->
   <main class="main-contentmessagerie">
-    <!-- Colonne des messages reçus -->
     <div class="messages-column">
       <div class="message-area">
-        {% set unreadMessages = messages|filter(m => not m.isRead) %}
-        {% if unreadMessages is empty %}
-          <p>Aucun message reçu.</p>
-        {% else %}
-          {% for message in unreadMessages %}
-            <div class="message-card">
-              <p><strong>De :</strong> {{ message.fromEmail }}</p>
-              <p><strong>Sujet :</strong> {{ message.subject }}</p>
-              <p><strong>Message :</strong> {{ message.body|u.truncate(100, '...') }}</p>
-              <p><strong>Reçu le :</strong> {{ message.receivedAt|date('d/m/Y H:i') }}</p>
-
-              <form method="post" action="{{ path('admin_messagerie', { id: message.id }) }}">
-                <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ message.id) }}">
-                <button type="submit" class="btn btn-sm btn-outline-success">Archiver</button>
-              </form>
-            </div>
-          {% endfor %}
-        {% endif %}
+        <!-- Zone pour les messages reçus -->
       </div>
-    </div>
-
-    <!-- Colonne des archives -->
+    </div>  
     <div class="archives-column">
       <div class="archives-area">
-        {% set readMessages = messages|filter(m => m.isRead) %}
-        {% if readMessages is empty %}
-          <p>Aucun message archivé.</p>
-        {% else %}
-          {% for message in readMessages %}
-            <div class="message-card archived">
-              <p><strong>De :</strong> {{ message.fromEmail }}</p>
-              <p><strong>Sujet :</strong> {{ message.subject }}</p>
-              <p><strong>Message :</strong> {{ message.body|u.truncate(100, '...') }}</p>
-              <p><strong>Reçu le :</strong> {{ message.receivedAt|date('d/m/Y H:i') }}</p>
-            </div>
-          {% endfor %}
-        {% endif %}
+        <!-- Zone pour les archives -->
       </div>
     </div>
   </main>

@@ -29,21 +29,6 @@ class Temoignage
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column(length: 10)]
-    private ?string $locale = 'fr';
-
-    public function getLocale(): ?string
-    {
-        return $this->locale;
-    }
-
-    public function setLocale(string $locale): static
-    {
-        $this->locale = $locale;
-
-        return $this;
-    }
-
     public function getId(): ?int
     {
         return $this->id;

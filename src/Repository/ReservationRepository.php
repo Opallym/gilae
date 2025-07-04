@@ -22,15 +22,17 @@ class ReservationRepository extends ServiceEntityRepository
      * @param \DateTimeImmutable $now Date actuelle pour la comparaison
      * @return Reservation[]
      */
-    public function findByFeedbackToSend(\DateTimeImmutable $now)
-{
-    return $this->createQueryBuilder('r')
-        ->andWhere('r.dateFin < :now')
-        ->andWhere('r.isConfirmed = true')
-        ->andWhere('r.isFeedbackSent = false')
-        ->setParameter('now', $now)
-        ->getQuery()
-        ->getResult();
-}
+    public function findByFeedbackToSend(\DateTimeImmutable $now): array
+    {
+        return $this->createQueryBuilder('r')
+    ->andWhere('r.isConfirmed = :confirmed')
+    ->andWhere('r.isFeedbackSent = :feedbackSent')
+    ->andWhere('r.dateFin <= :now')
+    ->setParameter('confirmed', true)
+    ->setParameter('feedbackSent', false)
+    ->setParameter('now', $now)
+    ->getQuery()
+    ->getResult();
 
+    }
 }
