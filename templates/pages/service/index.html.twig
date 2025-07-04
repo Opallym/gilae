@@ -11,8 +11,8 @@
 {% endif %}
 
 <main class="service-container">
-    <header class="service-header">
-        <h2 {% if mode_edition %} contenteditable="true" data-cle="titre" {% endif %}>
+    <header class="service-header ">
+        <h2 class="elegant-underline"{% if mode_edition %} contenteditable="true" data-cle="titre" {% endif %}>
             {{ contenus.titre|default('Services')|raw }}
         </h2>
         <p {% if mode_edition %} contenteditable="true" data-cle="intro" {% endif %}>
@@ -30,7 +30,7 @@
             </p>
         </div>
         <div class="service-image">
-            <img src="{{ asset('assets/images/service/calendar.png') }}" alt="Icône représentant un calendrier">
+            <div class="imgcalendrier">
         </div>
     </section>
 
@@ -44,7 +44,7 @@
             </p>
         </div>
         <div class="service-image">
-            <img src="{{ asset('assets/images/service/tarif.png') }}" alt="Icône représentant des euros">
+        <div class="imgticket">
         </div>
     </section>
 
@@ -58,7 +58,7 @@
             </p>
         </div>
         <div class="service-image">
-            <img src="{{ asset('assets/images/service/menage.png') }}" alt="Icône représentant un produit ménager">
+        <div class="imgbalai">
         </div>
     </section>
 
@@ -72,7 +72,7 @@
             </p>
         </div>
         <div class="service-image">
-            <img src="{{ asset('assets/images/service/telephone.png') }}" alt="Icône représentant un téléphone">
+        <div class="imgtelephone">
         </div>
     </section>
 </main>
