@@ -8841,6 +8841,7 @@
             "time": "2025-02-19T14:29:33+00:00"
         },
         {
+
             "name": "twig/string-extra",
             "version": "v3.21.0",
             "source": {
@@ -8908,6 +8909,7 @@
             "time": "2025-01-31T20:45:36+00:00"
         },
         {
+
             "name": "twig/twig",
             "version": "v3.21.1",
             "source": {
