@@ -113,3 +113,50 @@
         margin: 10px auto;
     }
 }
+
+
+.btn-containervalidertarifs {
+    position: absolute;
+    bottom: -560px;
+    left: 92%;        
+    transform: translateX(-50%); 
+    z-index: 1000;           
+}
+
+#btn-validertarifs {
+     padding: 20px 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: #f0f0f000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+}
+
+#btn-validertarifs:hover {
+    background: #e0e0e033;
+}
+
+/* Facultatif : styles pour la sélection de langues */
+.locale-selector {
+    margin-bottom: 20px;
+}
+
+.locale-selector a {
+    text-decoration: none;
+    color: #b2adad;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+.locale-selector a.active {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.locale-selector a:hover {
+    text-decoration: underline;
+}

@@ -1,75 +1,144 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tarifs/Packs | Gilae Conciergerie
-{% endblock %}
-
+{% block title %}Tarifs/Packs | Gilae Conciergerie{% endblock %}
 
 {% block body %}
-	
+{% if mode_edition|default(false) %}
+<div class="locale-selectorservice">
+    <a href="{{ path('admin_tarifs', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a> | 
+    <a href="{{ path('admin_tarifs', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
+</div>
+{% endif %}
+<div class="pricingTarifs-container">
+	<div class="pricingTarifs-header">
+		<img src="{{ asset('assets/images/logo/flowerleft.png') }}" class="headerTarifs-image-left" alt="Fleur gauche">
+		<h1 {% if mode_edition %}contenteditable="true" data-cle="titre"{% endif %}>
+			{{ contenus.titre|default('Tarifs / Packs')|raw }}
+		</h1>
+		<img src="{{ asset('assets/images/logo/flowerright.png') }}" class="headerTarifs-image" alt="Fleur droite">
+	</div>
 
-	<div class="pricingTarifs-container">
-		<div class="pricingTarifs-header">
-			<img src="{{ asset('assets/images/logo/flowerleft.png') }}" class="headerTarifs-image-left" alt="Fleur gauche">
-			<h1>Tarifs / Packs</h1>
-			<img src="{{ asset('assets/images/logo/flowerright.png') }}" class="headerTarifs-image" alt="Fleur droite">
+	<div class="pricingTarifs-cards">
+
+		<!-- Carte Basic -->
+		<div class="pricingTarifs-card">
+			<h2 {% if mode_edition %}contenteditable="true" data-cle="basic_titre"{% endif %}>
+				{{ contenus.basic_titre|default('Basic')|raw }}
+			</h2>
+			<div class="priceTarifs" {% if mode_edition %}contenteditable="true" data-cle="basic_prix"{% endif %}>
+				{{ contenus.basic_prix|default('90 €')|raw }}
+				<div class="priceTarifs-text">
+					<small {% if mode_edition %}contenteditable="true" data-cle="basic_prix_text"{% endif %}>
+						{{ contenus.basic_prix_text|default('/mois')|raw }}
+					</small>
+				</div>
+			</div>
+			<ul class="featuresTarifs">
+				<li {% if mode_edition %}contenteditable="true" data-cle="basic_l1"{% endif %}>
+					{{ contenus.basic_l1|default('Gestion des réservations')|raw }}
+				</li>
+				<li {% if mode_edition %}contenteditable="true" data-cle="basic_l2"{% endif %}>
+					{{ contenus.basic_l2|default('Accueil des voyageurs')|raw }}
+				</li>
+				<li {% if mode_edition %}contenteditable="true" data-cle="basic_l3"{% endif %}>
+					{{ contenus.basic_l3|default('Assistance 7j/7')|raw }}
+				</li>
+				<img src="{{ asset('assets/images/tarif/menageb.png') }}" style="width: 250px; height: auto;" alt="Icône ménage">
+			</ul>
 		</div>
 
-		<div
-			class="pricingTarifs-cards">
-			<!-- Carte Basic -->
-			<div class="pricingTarifs-card">
-				<h2>Basic</h2>
-				<div class="priceTarifs">90 €
-					<div class="priceTarifs-text">
-						<small>/mois</small>
-					</div>
+		<!-- Carte Confort -->
+		<div class="pricingTarifs-card">
+			<h2 {% if mode_edition %}contenteditable="true" data-cle="confort_titre"{% endif %}>
+				{{ contenus.confort_titre|default('Confort')|raw }}
+			</h2>
+			<div class="priceTarifs" {% if mode_edition %}contenteditable="true" data-cle="confort_prix"{% endif %}>
+				{{ contenus.confort_prix|default('7%')|raw }}
+				<div class="priceTarifs-text">
+					<small {% if mode_edition %}contenteditable="true" data-cle="confort_prix_text"{% endif %}>
+						{{ contenus.confort_prix_text|default('réservations')|raw }}
+					</small>
 				</div>
-
-				<ul class="featuresTarifs">
-					<li>Gestion des réservations</li>
-					<li>Accueil des voyageurs</li>
-					<li>Assistance 7j/7</li>
-					<img src="{{ asset('assets/images/tarif/menageb.png') }}" style="width: 250px; height: auto;" alt="Icône ménage">
-				</ul>
 			</div>
 
-			<!-- Carte Confort -->
-			<div class="pricingTarifs-card">
-				<h2>Confort</h2>
-				<div class="priceTarifs">7%
-					<div class="priceTarifs-text">
-						<small>réservations</small>
-					</div>
+			<div class="dividerTarifs"></div>
+
+			<ul class="featuresTarifs">
+				<li {% if mode_edition %}contenteditable="true" data-cle="confort_l1"{% endif %}>
+					{{ contenus.confort_l1|default('Service Basic inclus')|raw }}
+				</li>
+				<li {% if mode_edition %}contenteditable="true" data-cle="confort_l2"{% endif %}>
+					{{ contenus.confort_l2|default('Optimisation des tarifs')|raw }}
+				</li>
+				<li {% if mode_edition %}contenteditable="true" data-cle="confort_l3"{% endif %}>
+					{{ contenus.confort_l3|default('Ménage inclus')|raw }}
+				</li>
+				<img src="{{ asset('assets/images/tarif/telephoneb.png') }}" style="width: 250px; height: auto;" alt="Icône téléphone">
+			</ul>
+		</div>
+
+		<!-- Carte Privilège -->
+		<div class="pricingTarifs-card">
+			<h2 {% if mode_edition %}contenteditable="true" data-cle="privilege_titre"{% endif %}>
+				{{ contenus.privilege_titre|default('Privilège')|raw }}
+			</h2>
+			<div class="priceTarifs" {% if mode_edition %}contenteditable="true" data-cle="privilege_prix"{% endif %}>
+				{{ contenus.privilege_prix|default('15%')|raw }}
+				<div class="priceTarifs-text">
+					<small {% if mode_edition %}contenteditable="true" data-cle="privilege_prix_text"{% endif %}>
+						{{ contenus.privilege_prix_text|default('réservations')|raw }}
+					</small>
 				</div>
-
-				<div class="dividerTarifs"></div>
-
-				<ul class="featuresTarifs">
-					<li>Service Basic inclus</li>
-					<li>Optimisation des tarifs</li>
-					<li>Ménage inclus</li>
-					<img src="{{ asset('assets/images/tarif/telephoneb.png') }}" style="width: 250px; height: auto;" alt="Icône téléphone">
-				</ul>
 			</div>
 
-			<!-- Carte Privilège -->
-			<div class="pricingTarifs-card">
-				<h2>Privilège</h2>
-				<div class="priceTarifs">15%
-					<div class="priceTarifs-text">
-						<small>réservations</small>
-					</div>
-				</div>
+			<div class="dividerTarifs"></div>
 
-				<div class="dividerTarifs"></div>
-
-				<ul class="featuresTarifs">
-					<li>Service Confort inclus</li>
-					<li>Conciergerie sur mesure</li>
-					<li>Soins hôteliers</li>
-					<img src="{{ asset('assets/images/tarif/tarifb.png') }}" style="width: 250px; height: auto;" alt="Icône tarif">
-				</ul>
-			</div>
+			<ul class="featuresTarifs">
+				<li {% if mode_edition %}contenteditable="true" data-cle="privilege_l1"{% endif %}>
+					{{ contenus.privilege_l1|default('Service Confort inclus')|raw }}
+				</li>
+				<li {% if mode_edition %}contenteditable="true" data-cle="privilege_l2"{% endif %}>
+					{{ contenus.privilege_l2|default('Conciergerie sur mesure')|raw }}
+				</li>
+				<li {% if mode_edition %}contenteditable="true" data-cle="privilege_l3"{% endif %}>
+					{{ contenus.privilege_l3|default('Soins hôteliers')|raw }}
+				</li>
+				<img src="{{ asset('assets/images/tarif/tarifb.png') }}" style="width: 250px; height: auto;" alt="Icône tarif">
+			</ul>
 		</div>
 	</div>
+</div>
+
+{% if mode_edition %}
+	<div class="btn-containervalidertarifs">
+		<button id="btn-validertarifs">Valider les modifications</button>
+	</div>
+
+	<script>
+		document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+			el.addEventListener('blur', () => {
+				const cle = el.dataset.cle;
+				const texte = el.innerText.trim();
+				const locale = '{{ locale|default("fr") }}';
+
+				fetch('{{ path("admin_tarifs_update") }}', {
+					method: 'POST',
+					headers: {'Content-Type': 'application/json'},
+					body: JSON.stringify({cle, texte, locale})
+				})
+				.then(res => res.json())
+				.then(data => {
+					if (!data.success) {
+						alert('Erreur lors de la sauvegarde');
+					}
+				});
+			});
+		});
+
+		document.getElementById('btn-validertarifs').addEventListener('click', () => {
+			window.location.href = '{{ path('admin_gestion') }}';
+		});
+	</script>
+{% endif %}
+
 {% endblock %}
