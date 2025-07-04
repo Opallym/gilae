@@ -16,6 +16,8 @@
     height: auto;
 }
 
+
+
 /* Styles pour chaque élément de service - INVERSE DES POSITIONS */
 .service-item {
     display: flex;
@@ -50,10 +52,53 @@
 
 .service-image {
     flex: 1;
-    display: flex;
     justify-content: center;
     align-items: center;
     min-width: 40%;
+}
+
+.imgcalendrier{
+    background-image: url('../images/service/calendar.png');
+    background-size: contain; 
+    height: 30vh;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode .imgcalendrier{
+    background-image: url('../images/service/calendarLight.png');
+}
+
+.imgticket {
+    background-image: url('../images/service/tarif.png');
+    background-size: contain; 
+    height: 30vh;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode .imgticket{
+    background-image: url('../images/service/tarifLight.png');
+}
+
+.imgbalai {
+    background-image: url('../images/service/menage.png');
+    background-size: contain; 
+    height: 30vh;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode .imgbalai{
+    background-image: url('../images/service/menageLight.png');
+}
+
+.imgtelephone {
+    background-image: url('../images/service/telephone.png');
+    background-size: contain; 
+    height: 30vh;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode .imgtelephone{
+    background-image: url('../images/service/telephoneLight.png');
 }
 
 .service-image img {
@@ -81,6 +126,7 @@
         min-width: 100%;
         text-align: center;
         padding: 0;
+        background-position: center;
     }
     
     .service-image img {
@@ -88,8 +134,23 @@
         margin-top: 1rem;
         max-height: 200px;
     }
-}
+}   
 
+    .imgbalai {
+        background-position: center;
+    }
+
+    .imgcalendrier {
+        background-position: center;
+    }
+
+    .imgtelephone {
+        background-position: center;
+    }
+
+    .imgticket {
+        background-position: center;
+    }
 @media (max-width: 480px) {
     .service-text h2 {
         font-size: 1.5rem;
