@@ -7,9 +7,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class TemoignageController extends AbstractController
+class TemoignagesController extends AbstractController
 {
-    #[Route('/admin/temoignages/admin', name: 'app_temoignages')]
+    #[Route('/admin/temoignages', name: 'admin_temoignages')]
     public function index(TemoignageRepository $temoignageRepository): Response
     {
         // Récupère uniquement les témoignages approuvés
