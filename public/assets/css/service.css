@@ -11,12 +11,21 @@
     font-size: 3.5rem;
 }
 
-.service-header img {
-    max-width: 100%;
-    height: auto;
+
+.background-container-service {
+    background-image: url('/assets/images/service/planteup.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    /* Utilisez min-height plutôt que height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Pour le pseudo-élément overlay */
 }
-
-
 
 /* Styles pour chaque élément de service - INVERSE DES POSITIONS */
 .service-item {
@@ -28,7 +37,8 @@
 }
 
 /* Modification principale : inversion des éléments pairs */
-.service-item:nth-child(odd) {  /* Changé de :even à :odd */
+.service-item:nth-child(odd) {
+    /* Changé de :even à :odd */
     flex-direction: row-reverse;
 }
 
@@ -57,47 +67,47 @@
     min-width: 40%;
 }
 
-.imgcalendrier{
+.imgcalendrier {
     background-image: url('../images/service/calendar.png');
-    background-size: contain; 
+    background-size: contain;
     height: 30vh;
     background-repeat: no-repeat;
 }
 
-body.dark-mode .imgcalendrier{
+body.dark-mode .imgcalendrier {
     background-image: url('../images/service/calendarLight.png');
 }
 
 .imgticket {
     background-image: url('../images/service/tarif.png');
-    background-size: contain; 
+    background-size: contain;
     height: 30vh;
     background-repeat: no-repeat;
 }
 
-body.dark-mode .imgticket{
+body.dark-mode .imgticket {
     background-image: url('../images/service/tarifLight.png');
 }
 
 .imgbalai {
     background-image: url('../images/service/menage.png');
-    background-size: contain; 
+    background-size: contain;
     height: 30vh;
     background-repeat: no-repeat;
 }
 
-body.dark-mode .imgbalai{
+body.dark-mode .imgbalai {
     background-image: url('../images/service/menageLight.png');
 }
 
 .imgtelephone {
     background-image: url('../images/service/telephone.png');
-    background-size: contain; 
+    background-size: contain;
     height: 30vh;
     background-repeat: no-repeat;
 }
 
-body.dark-mode .imgtelephone{
+body.dark-mode .imgtelephone {
     background-image: url('../images/service/telephoneLight.png');
 }
 
@@ -117,49 +127,65 @@ body.dark-mode .imgtelephone{
         flex-direction: column;
         gap: 1rem;
     }
-    
-    .service-item:nth-child(odd) {  /* Aussi modifié pour le responsive */
+
+    .service-item:nth-child(odd) {
+        /* Aussi modifié pour le responsive */
         flex-direction: column;
     }
-    
-    .service-text, .service-image {
+
+    .service-text,
+    .service-image {
         min-width: 100%;
         text-align: center;
         padding: 0;
         background-position: center;
     }
-    
+
     .service-image img {
         max-width: 60%;
         margin-top: 1rem;
         max-height: 200px;
     }
-}   
 
-    .imgbalai {
-        background-position: center;
+    .background-container-service {
+        min-height: 80vh;
+        /* Réduit la hauteur sur mobile */
+        background-attachment: scroll;
+        /* Désfixe le background sur mobile */
     }
+}
 
-    .imgcalendrier {
-        background-position: center;
-    }
+.imgbalai {
+    background-position: center;
+}
 
-    .imgtelephone {
-        background-position: center;
-    }
+.imgcalendrier {
+    background-position: center;
+}
 
-    .imgticket {
-        background-position: center;
-    }
+.imgtelephone {
+    background-position: center;
+}
+
+.imgticket {
+    background-position: center;
+}
+
 @media (max-width: 480px) {
+    .background-container-service {
+        min-height: 70vh;
+        background-position: 60% center;
+        /* Ajustez selon votre image */
+    }
+
     .service-text h2 {
         font-size: 1.5rem;
     }
-    
+
     .service-text div {
         font-size: 1rem;
     }
-    
+
     .service-image img {
         max-width: 80%;
         max-height: 150px;
@@ -169,12 +195,15 @@ body.dark-mode .imgtelephone{
 .btn-containervaliderservice {
     position: absolute;
     bottom: -1850px;
-    left: 86%;         /* positionné à 50% horizontalement */
-    transform: translateX(-50%); /* ramène le bouton au centre */
-    z-index: 1000;     /* devant les autres éléments */
-  }
+    left: 86%;
+    /* positionné à 50% horizontalement */
+    transform: translateX(-50%);
+    /* ramène le bouton au centre */
+    z-index: 1000;
+    /* devant les autres éléments */
+}
 
-  #btn-validerservice {
+#btn-validerservice {
     padding: 20px 90px;
     font-size: 1.1rem;
     cursor: pointer;
@@ -185,15 +214,15 @@ body.dark-mode .imgtelephone{
     text-decoration: none;
     color: white;
     transition: background 0.3s;
-  }
+}
 
-  #btn-validerservice:hover {
+#btn-validerservice:hover {
     background: #e0e0e033;
-  }
+}
 
-  .locale-selectorservice {
+.locale-selectorservice {
     margin-bottom: 20px;
-    
+
 }
 
 .locale-selectorservice a {

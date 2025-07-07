@@ -11,14 +11,16 @@
 {% endif %}
 
 <main class="service-container">
-    <header class="service-header ">
-        <h2 class="elegant-underline"{% if mode_edition %} contenteditable="true" data-cle="titre" {% endif %}>
-            {{ contenus.titre|default('Services')|raw }}
-        </h2>
-        <p {% if mode_edition %} contenteditable="true" data-cle="intro" {% endif %}>
-            {{ contenus.intro|default('Gilae vous propose une gamme complète de services de conciergerie pour faciliter la gestion de vos locations saisonnières.')|raw }}
-        </p>
-    </header>
+     <div class="background-container-service">
+        <header class="service-header">
+            <h2 class="elegant-underline"{% if mode_edition %} contenteditable="true" data-cle="titre" {% endif %}>
+                {{ contenus.titre|default('Services')|raw }}
+            </h2>
+            <p {% if mode_edition %} contenteditable="true" data-cle="intro" {% endif %}>
+                {{ contenus.intro|default('Gilae vous propose une gamme complète de services de conciergerie pour faciliter la gestion de vos locations saisonnières.')|raw }}
+            </p>
+        </header>
+    </div>
 
     <section class="service-item">
         <div class="service-text">
