@@ -1,62 +1,61 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gilaë
-{% endblock %}
+{% block title %}Gilaë{% endblock %}
 
 {% block body %}
 
 	{% if mode_edition|default(false) %}
 		<div class="locale-selector">
-			<a href="{{ path('admin_home', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a>
-			|
+			<a href="{{ path('admin_home', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a> |
 			<a href="{{ path('admin_home', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
 		</div>
 	{% endif %}
+
 	<div class="background-container"></div>
 
 	<div class="section-centrale">
-		<h2 class="elegant-underline" {% if mode_edition|default(false) %} contenteditable="true" data-key="titreintro" {% endif %}>
+		<h2 class="elegant-underline" {% if mode_edition %} contenteditable="true" data-key="titreintro" {% endif %}>
 			{{ contenus.titreintro|default('Votre alliée du quotidien pour une vie simplifiée, sereine et élégante.')|raw }}
 		</h2>
-		<p {% if mode_edition|default(false) %} contenteditable="true" data-key="intro" {% endif %}>
+		<p {% if mode_edition %} contenteditable="true" data-key="intro" {% endif %}>
 			{{ contenus.intro|default('Parce que chaque instant mérite votre pleine attention...')|raw }}
 		</p>
 	</div>
 
-	<div class='img-responsive1'></div>
+	<div class="img-responsive1"></div>
 
 	<div class="row-container">
 		<div class="svg-block">
 			<div class="image-graphique"></div>
-			<p {% if mode_edition|default(false) %} contenteditable="true" data-key="bloc1" {% endif %}>
+			<p {% if mode_edition %} contenteditable="true" data-key="bloc1" {% endif %}>
 				{{ contenus.bloc1|default('Investir dans la tranquillité, c’est rentable...')|raw }}
 			</p>
 		</div>
 		<div class="svg-block">
 			<div class="stress"></div>
-			<p {% if mode_edition|default(false) %} contenteditable="true" data-key="bloc2" {% endif %}>
+			<p {% if mode_edition %} contenteditable="true" data-key="bloc2" {% endif %}>
 				{{ contenus.bloc2|default('On s’occupe de tout...')|raw }}
 			</p>
 		</div>
 		<div class="svg-block">
 			<div class="flexibilité"></div>
-			<p {% if mode_edition|default(false) %} contenteditable="true" data-key="bloc3" {% endif %}>
+			<p {% if mode_edition %} contenteditable="true" data-key="bloc3" {% endif %}>
 				{{ contenus.bloc3|default('Une conciergerie qui s’adapte à vous...')|raw }}
 			</p>
 		</div>
 	</div>
 
-	<div class='img-responsive2'></div>
+	<div class="img-responsive2"></div>
 
 	<div class="section-container">
 		<div class="section-centrale">
-			<h1 class="titre elegant-underline" {% if mode_edition|default(false) %} contenteditable="true" data-key="titreengagement" {% endif %}>
+			<h1 class="titre elegant-underline" {% if mode_edition %} contenteditable="true" data-key="titreengagement" {% endif %}>
 				{{ contenus.titreengagement|default('Gilaë, la conciergerie sur mesure à votre écoute :')|raw }}
 			</h1>
 		</div>
 		<div class="contenu">
 			<div class="texte">
-				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="pengagement" {% endif %}>
+				<p {% if mode_edition %} contenteditable="true" data-key="pengagement" {% endif %}>
 					{{ contenus.pengagement|default('Votre temps est précieux...')|raw }}
 				</p>
 				<div class="liensfaq">
@@ -66,47 +65,72 @@
 				</div>
 			</div>
 			<div class="image">
-				<div class='image-engagements'></div>
+				<div class="image-engagements"></div>
 			</div>
 		</div>
 	</div>
 
-	<div class='img-responsive3'></div>
+	<div class="img-responsive3"></div>
 
 	<div class="section-container">
 		<div class="section-centrale">
-			<h1 class="elegant-underline titre" {% if mode_edition|default(false) %} contenteditable="true" data-key="titreserenite" {% endif %}>
+			<h1 class="elegant-underline titre" {% if mode_edition %} contenteditable="true" data-key="titreserenite" {% endif %}>
 				{{ contenus.titreserenite|default('Augmentez votre sérénité (et vos revenus) avec Gilaë.')|raw }}
 			</h1>
 		</div>
 		<div class="contenu">
 			<div class="texte">
-				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="p1serenite" {% endif %}>
+				<p {% if mode_edition %} contenteditable="true" data-key="p1serenite" {% endif %}>
 					{{ contenus.p1serenite|default('◦ Valorisation optimale de votre bien...')|raw }}
 				</p>
-				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="p2serenite" {% endif %}>
+				<p {% if mode_edition %} contenteditable="true" data-key="p2serenite" {% endif %}>
 					{{ contenus.p2serenite|default('◦ Taux d’occupation maximisé...')|raw }}
 				</p>
-				<p {% if mode_edition|default(false) %} contenteditable="true" data-key="p3serenite" {% endif %}>
+				<p {% if mode_edition %} contenteditable="true" data-key="p3serenite" {% endif %}>
 					{{ contenus.p3serenite|default('◦ Accompagnement humain et discret...')|raw }}
 				</p>
 			</div>
 			<div class="image">
-				<div class="img-commentaire"></div>
+				<div class="temoignage-swiper-container">
+					{% if temoignages is not empty %}
+						<div class="swiper mySwiper">
+							<div class="swiper-wrapper">
+								{% for temoignage in temoignages %}
+									<div class="swiper-slide">
+										<div class="temoignage-card">
+											<p class="message">"{{ temoignage.message }}"</p>
+											<div class="stars">
+												{% for i in 1..temoignage.note %}
+													<span class="star filled">★</span>
+												{% endfor %}
+												{% for i in (temoignage.note + 1)..5 %}
+													<span class="star">☆</span>
+												{% endfor %}
+											</div>
+											<p class="nom">– {{ temoignage.nom }}</p>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					{% else %}
+						<p>Aucun témoignage pour le moment.</p>
+					{% endif %}
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class='img-responsive4'></div>
+	<div class="img-responsive4"></div>
 
 	<section class="faq-section">
 		<div class="faq-container">
-			<h2 class="elegant-underline titre" {% if mode_edition|default(false) %} contenteditable="true" data-key="titrefaq" {% endif %}>
+			<h2 class="elegant-underline titre" {% if mode_edition %} contenteditable="true" data-key="titrefaq" {% endif %}>
 				{{ contenus.titrefaq|default('Encore des questions ?')|raw }}
 			</h2>
-
 			<div class="faq-row">
-				<p class="faq-description" {% if mode_edition|default(false) %} contenteditable="true" data-key="introfaq" {% endif %}>
+				<p class="faq-description" {% if mode_edition %} contenteditable="true" data-key="introfaq" {% endif %}>
 					{{ contenus.introfaq|default('Prêt à commencer l’aventure...')|raw }}
 				</p>
 				<div class="liensfaq">
@@ -116,87 +140,77 @@
 		</div>
 
 		<div class="faq-container">
-			<div class="faq-item">
-				<button class="faq-question light">{{ contenus.questions1faq|default('Puis-je louer mon logement en RBNB toute l’année ?')}}</button>
-				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
-
-			<div class="faq-item">
-				<button class="faq-question dark">{{ contenus.questions2faq|default('Suis-je couvert(e) par l’assurance ?')}}</button>
-				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
-
-			<div class="faq-item">
-				<button class="faq-question dark">{{ contenus.questions3faq|default('Comment fonctionne la gestion des arrivées et départs ?')}}</button>
-				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
-
-			<div class="faq-item">
-				<button class="faq-question light">{{ contenus.questions4faq|default('Puis-je louer uniquement ma chambre ?')}}</button>
-				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
-
-			<div class="faq-item">
-				<button class="faq-question light">{{ contenus.questions5faq|default('Qui fournit le linge de maison et les produits d’accueil ?')}}</button>
-				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
-
-			<div class="faq-item">
-				<button class="faq-question dark">{{ contenus.questions6faq|default('Y a-t-il un engagement minimum ?')}}</button>
-				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
-
-			<div class="faq-item">
-				<button class="faq-question dark">{{ contenus.questions7faq|default('Intervenez-vous en cas de problème ou d’urgence ?')}}</button>
-				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
-
-			<div class="faq-item">
-				<button class="faq-question light">{{ contenus.questions8faq|default('À qui s’adresse Gilaë ?')}}</button>
-				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-			</div>
+			{% for i in 1..8 %}
+				<div class="faq-item">
+					<button class="faq-question {{ i is odd ? 'light' : 'dark' }}">
+						{{ attribute(contenus, 'questions' ~ i ~ 'faq')|default('Question FAQ ' ~ i) }}
+					</button>
+					<div class="faq-answer {{ i is odd ? 'green' : 'dark' }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+				</div>
+			{% endfor %}
 		</div>
-
 	</section>
 
-	<script>
-		document.querySelectorAll('.faq-question').forEach(button => {
-button.addEventListener('click', () => {
-const answer = button.nextElementSibling;
-answer.classList.toggle('open');
-});
-});
-	</script>
-
-	{% if mode_edition|default(false) %}
+	{% if mode_edition %}
 		<div class="btn-containervaliderhome">
 			<button id="btn-validerhome">Valider les modifications</button>
 		</div>
 		<script>
 			document.querySelectorAll('[contenteditable="true"]').forEach(el => {
-el.addEventListener('blur', () => {
-const key = el.dataset.key;
-const texte = el.innerText.trim();
-const locale = '{{ locale|default("fr") }}';
+				el.addEventListener('blur', () => {
+					const key = el.dataset.key;
+					const texte = el.innerText.trim();
+					const locale = '{{ locale|default("fr") }}';
 
-fetch('{{ path("admin_home_update") }}', {
-method: 'POST',
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify(
-{key: key, texte: texte, locale: locale}
-)
-}).then(response => response.json()).then(data => {
-if (!data.success) {
-alert('Erreur lors de la sauvegarde');
-}
-});
-});
-});
-document.getElementById('btn-validerhome').addEventListener('click', () => {
-window.location.href = '{{ path("admin_gestion") }}';
-});
+					fetch('{{ path("admin_home_update") }}', {
+						method: 'POST',
+						headers: {'Content-Type': 'application/json'},
+						body: JSON.stringify({ key, texte, locale })
+					})
+					.then(response => response.json())
+					.then(data => {
+						if (!data.success) {
+							alert('Erreur lors de la sauvegarde');
+						}
+					});
+				});
+			});
+
+			document.getElementById('btn-validerhome').addEventListener('click', () => {
+				window.location.href = '{{ path("admin_gestion") }}';
+			});
 		</script>
 	{% endif %}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			new Swiper('.mySwiper', {
+				direction: 'vertical',
+				slidesPerView: 2,
+				spaceBetween: 30,
+				loop: true,
+				autoplay: {
+					delay: 4000,
+					disableOnInteraction: false,
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				speed: 800,
+				grabCursor: true
+			});
+
+			// FAQ toggle
+			document.querySelectorAll('.faq-question').forEach(button => {
+				button.addEventListener('click', () => {
+					const answer = button.nextElementSibling;
+					answer.classList.toggle('open');
+				});
+			});
+		});
+	</script>
 {% endblock %}

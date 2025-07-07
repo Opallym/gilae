@@ -115,7 +115,7 @@ body.dark-mode .elegant-underline {
 
 .texte p {
   font-size: 25px;
-  line-height: 1.7;
+  line-height: 2.5;
   text-align: center;
 }
 
@@ -561,3 +561,46 @@ body.dark-mode .faq-answer.dark {
 .locale-selectorhome a:hover {
     text-decoration: underline;
 }
+
+
+.temoignage-swiper-container {
+    padding: 3rem 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 500px; /* important pour vertical */
+    overflow: hidden;
+}
+
+.swiper {
+    height: 100%;
+}
+
+.temoignage-card {
+    background: #81927C;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.temoignage-card .message {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.temoignage-card .stars {
+    margin: 0.5rem 0;
+}
+
+.temoignage-card .star.filled {
+    color: gold;
+}
+
+.temoignage-card .star {
+    color: #ccc;
+}
+

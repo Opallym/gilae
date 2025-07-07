@@ -42,7 +42,12 @@
           <p>Aucun message reçu.</p>
         {% else %}
           {% for message in unreadMessages %}
-            <div class="message-card">
+            <div class="message-card" 
+                 style="cursor:pointer;"
+                 data-subject="{{ message.subject|e('html_attr') }}"
+                 data-from="{{ message.fromEmail|e('html_attr') }}"
+                 data-date="{{ message.receivedAt|date('d/m/Y H:i') }}"
+                 data-body="{{ message.body|e('html_attr') }}">
               <p><strong>De :</strong> {{ message.fromEmail }}</p>
               <p><strong>Sujet :</strong> {{ message.subject }}</p>
               <p><strong>Message :</strong> {{ message.body|u.truncate(100, '...') }}</p>
@@ -66,7 +71,12 @@
           <p>Aucun message archivé.</p>
         {% else %}
           {% for message in readMessages %}
-            <div class="message-card archived">
+            <div class="message-card archived"
+                 style="cursor:pointer;"
+                 data-subject="{{ message.subject|e('html_attr') }}"
+                 data-from="{{ message.fromEmail|e('html_attr') }}"
+                 data-date="{{ message.receivedAt|date('d/m/Y H:i') }}"
+                 data-body="{{ message.body|e('html_attr') }}">
               <p><strong>De :</strong> {{ message.fromEmail }}</p>
               <p><strong>Sujet :</strong> {{ message.subject }}</p>
               <p><strong>Message :</strong> {{ message.body|u.truncate(100, '...') }}</p>
@@ -78,4 +88,50 @@
     </div>
   </main>
 </div>
+
+<!-- Modale cachée par défaut -->
+<div id="messageModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" id="modalCloseBtn">&times;</span>
+    <h3 id="modalSubject"></h3>
+    <p><strong>De :</strong> <span id="modalFrom"></span></p>
+    <p><strong>Reçu le :</strong> <span id="modalDate"></span></p>
+    <hr>
+    <p id="modalBody"></p>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.message-card').forEach(card => {
+    card.addEventListener('click', () => {
+      // Récupérer les données
+      const subject = card.dataset.subject;
+      const from = card.dataset.from;
+      const date = card.dataset.date;
+      const body = card.dataset.body;
+
+      // Remplir la modale
+      document.getElementById('modalSubject').textContent = subject;
+      document.getElementById('modalFrom').textContent = from;
+      document.getElementById('modalDate').textContent = date;
+      document.getElementById('modalBody').textContent = body;
+
+      // Afficher la modale
+      document.getElementById('messageModal').style.display = 'flex';
+    });
+  });
+
+  // Fermer la modale au clic sur la croix
+  document.getElementById('modalCloseBtn').addEventListener('click', () => {
+    document.getElementById('messageModal').style.display = 'none';
+  });
+
+  // Fermer la modale si clic en dehors du contenu
+  window.addEventListener('click', (event) => {
+    const modal = document.getElementById('messageModal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
 {% endblock %}
