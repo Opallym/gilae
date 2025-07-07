@@ -91,7 +91,9 @@ textarea::placeholder {
 /* Bouton */
 .contactbutton {
   display: block;
-  margin: 0 auto;
+  position: relative;
+  top: -10px;
+  left: 145px;         
   padding: 12px 30px;
   background-color: #5C7151;
   border: 1px solid #ffffff;
@@ -137,4 +139,28 @@ textarea::placeholder {
   h1 {
     font-size: 24px;
   }
+}
+
+select,
+.select-subject select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  background-color: #6e8262; /* 👉 ta couleur */
+  color: white;
+  font-size: 16px;
+  backdrop-filter: blur(5px);
+  appearance: none; /* enlève le style par défaut */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='white'%20d='M2%200L0%202h4L2%200zM2%205L0%203h4L2%205z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7em center;
+  background-size: 0.65em auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+select:focus {
+  border-color: #ffffff;
+  outline: none;
+  background-color: #5c7151; /* légèrement plus foncé au focus */
 }

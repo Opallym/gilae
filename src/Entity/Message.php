@@ -1,5 +1,7 @@
 <?php
 
+// src/Entity/Message.php
+
 namespace App\Entity;
 
 use App\Entity\Reservation;
@@ -22,6 +24,9 @@ class Message
     #[ORM\Column(length: 255)]
     private string $fromEmail;
 
+    #[ORM\Column(length: 20, nullable: true)]
+    private ?string $phoneNumber = null;
+
     #[ORM\Column(type: 'datetime_immutable')]
     private \DateTimeImmutable $receivedAt;
 
@@ -33,74 +38,26 @@ class Message
 
     // --- Getters et Setters ---
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    public function getId(): ?int { return $this->id; }
 
-    public function getSubject(): string
-    {
-        return $this->subject;
-    }
+    public function getSubject(): string { return $this->subject; }
+    public function setSubject(string $subject): self { $this->subject = $subject; return $this; }
 
-    public function setSubject(string $subject): self
-    {
-        $this->subject = $subject;
-        return $this;
-    }
+    public function getBody(): string { return $this->body; }
+    public function setBody(string $body): self { $this->body = $body; return $this; }
 
-    public function getBody(): string
-    {
-        return $this->body;
-    }
+    public function getFromEmail(): string { return $this->fromEmail; }
+    public function setFromEmail(string $fromEmail): self { $this->fromEmail = $fromEmail; return $this; }
 
-    public function setBody(string $body): self
-    {
-        $this->body = $body;
-        return $this;
-    }
+    public function getPhoneNumber(): ?string { return $this->phoneNumber; }
+    public function setPhoneNumber(?string $phoneNumber): self { $this->phoneNumber = $phoneNumber; return $this; }
 
-    public function getFromEmail(): string
-    {
-        return $this->fromEmail;
-    }
+    public function getReceivedAt(): \DateTimeImmutable { return $this->receivedAt; }
+    public function setReceivedAt(\DateTimeImmutable $receivedAt): self { $this->receivedAt = $receivedAt; return $this; }
 
-    public function setFromEmail(string $fromEmail): self
-    {
-        $this->fromEmail = $fromEmail;
-        return $this;
-    }
+    public function isRead(): bool { return $this->isRead; }
+    public function setIsRead(bool $isRead): self { $this->isRead = $isRead; return $this; }
 
-    public function getReceivedAt(): \DateTimeImmutable
-    {
-        return $this->receivedAt;
-    }
-
-    public function setReceivedAt(\DateTimeImmutable $receivedAt): self
-    {
-        $this->receivedAt = $receivedAt;
-        return $this;
-    }
-
-    public function isRead(): bool
-    {
-        return $this->isRead;
-    }
-
-    public function setIsRead(bool $isRead): self
-    {
-        $this->isRead = $isRead;
-        return $this;
-    }
-
-    public function getReservation(): ?Reservation
-    {
-        return $this->reservation;
-    }
-
-    public function setReservation(?Reservation $reservation): self
-    {
-        $this->reservation = $reservation;
-        return $this;
-    }
+    public function getReservation(): ?Reservation { return $this->reservation; }
+    public function setReservation(?Reservation $reservation): self { $this->reservation = $reservation; return $this; }
 }

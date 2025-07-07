@@ -18,7 +18,8 @@ final class HomeController extends AbstractController
         HomeRepository $homeRepository,
         RequestStack $requestStack,
         Security $security,
-        LogoutUrlGenerator $logoutUrlGenerator
+        LogoutUrlGenerator $logoutUrlGenerator,
+        \App\Repository\TemoignageRepository $temoignageRepository // 🆕 Injecter le repo des témoignages
     ): Response {
         // 🔐 Déconnexion automatique si ROLE_ADMIN
         if ($security->isGranted('ROLE_ADMIN')) {
@@ -33,7 +34,6 @@ final class HomeController extends AbstractController
 
         // 🧩 Fallback si aucun bloc pour la locale
         if (!$blocs) {
-            
             $blocs = $homeRepository->findBy(['locale' => 'fr']);
         }
 
@@ -43,9 +43,18 @@ final class HomeController extends AbstractController
             $contenus[$bloc->getKey()] = $bloc->getContenu();
         }
 
-        // 🎯 Rendu de la page d’accueil
+        // 📝 Récupération des témoignages approuvés pour la locale
+        $temoignages = $temoignageRepository->findBy([
+            'isApproved' => true,
+            'locale' => $locale,
+        ], ['createdAt' => 'DESC']);
+
+        // 🎯 Rendu de la page d’accueil avec témoignages
         return $this->render('pages/home/home.html.twig', [
             'contenus' => $contenus,
+            'locale' => $locale,
+            'temoignages' => $temoignages,
+            'mode_edition' => false, 
         ]);
     }
 }
