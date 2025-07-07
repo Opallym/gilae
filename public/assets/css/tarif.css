@@ -14,17 +14,42 @@
     margin-bottom: 40px;
 }
 
-.headerTarifs-image-left {
-    left: 0;
-    max-width: 300px;
-    height: auto;
+body.dark-mode .titretarif{
+    color: #000000;
+}
+
+.headerTarifs-image-left{
+  width: 180px;
+  height: 30vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.headerTarifs-image{
+  width: 180px;
+  height: 20vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .headerTarifs-image {
-    right: 0;
-    max-width: 300px;
-    height: auto;
+    background-image: url('../images/logo/flowerright.png');
 }
+
+body.dark-mode .headerTarifs-image {
+    background-image: url('../images/logo/flowerrightlight.png');
+}
+
+.headerTarifs-image-left {
+    background-image: url('../images/logo/flowerleft.png');
+}
+
+body.dark-mode .headerTarifs-image-left {
+    background-image: url('../images/logo/flowerleftlight.png');
+}
+
 
 .pricingTarifs-header h1 {
     text-align: center;
@@ -41,14 +66,19 @@
     gap: 30px;
 }
 
+
 .pricingTarifs-card {
     flex: 1;
     min-width: 250px;
-    background: white;
+    background: #ffffff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
     text-align: center;
+}
+
+body.dark-mode .pricingTarifs-card {
+    background: #EAE6DA;
 }
 
 .pricingTarifs-card h2 {
