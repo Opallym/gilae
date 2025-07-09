@@ -102,6 +102,11 @@ body.dark-mode .formulaire-title {
     font-weight: 500;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #7A8B75;
+}
+
+body.dark-mode .formulaire-button {
+    border: 2px solid #B3B04C; 
 }
 
 .formulaire-button:hover {
