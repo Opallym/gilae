@@ -151,14 +151,45 @@
 		</div>
 
 		<div class="faq-container">
-			{% for i in 1..8 %}
-				<div class="faq-item">
-					<button class="faq-question {{ i is odd ? 'light' : 'dark' }}">
-						{{ attribute(contenus, 'questions' ~ i ~ 'faq')|default('Question FAQ ' ~ i) }}
-					</button>
-					<div class="faq-answer {{ i is odd ? 'green' : 'dark' }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
-				</div>
-			{% endfor %}
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions1faq|default('Puis-je louer mon logement en RBNB toute l’année ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions2faq|default('Suis-je couvert(e) par l’assurance ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions3faq|default('Comment fonctionne la gestion des arrivées et départs ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions4faq|default('Puis-je louer uniquement ma chambre ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions5faq|default('Qui fournit le linge de maison et les produits d’accueil ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions6faq|default('Y a-t-il un engagement minimum ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question dark">{{ contenus.questions7faq|default('Intervenez-vous en cas de problème ou d’urgence ?')}}</button>
+				<div class="faq-answer dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question light">{{ contenus.questions8faq|default('À qui s’adresse Gilaë ?')}}</button>
+				<div class="faq-answer green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor metus non metus.</div>
+			</div>
 		</div>
 	</section>
 
