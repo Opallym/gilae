@@ -143,25 +143,37 @@ body.dark-mode .elegant-underline {
 }
 
 .image-engagements {
-  background-image: url('../images/home/imagenosengagements.png');
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  background-size: contain; 
-  height: 75vh;
-  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 20px;
+  background-color: #7A8B76;
+  border-radius: 8px;
+  border: 2px solid white;
 }
 
-body.dark-mode .image-engagements{
-  background-image: url('../images/home/imagenosengagementslight.png');
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  background-size: contain; 
-  height: 75vh;
-  background-repeat: no-repeat;
+.image-engagements h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.image-engagements ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.image-engagements li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.image-engagements li:before {
+  content: "✔";
+  color: rgb(53, 53, 53);
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .img-commentaire {
@@ -170,7 +182,7 @@ body.dark-mode .image-engagements{
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 50vh;
   background-repeat: no-repeat;
 }
@@ -181,7 +193,7 @@ body.dark-mode .img-commentaire {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 50vh;
   background-repeat: no-repeat;
 }
@@ -192,7 +204,7 @@ body.dark-mode .img-commentaire {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -204,7 +216,7 @@ body.dark-mode .img-responsive1 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -216,7 +228,7 @@ body.dark-mode .img-responsive1 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -228,7 +240,7 @@ body.dark-mode .img-responsive2 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -240,7 +252,7 @@ body.dark-mode .img-responsive2 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -252,7 +264,7 @@ body.dark-mode .img-responsive3 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -264,7 +276,7 @@ body.dark-mode .img-responsive3 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -276,7 +288,7 @@ body.dark-mode .img-responsive4 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -287,7 +299,7 @@ body.dark-mode .img-responsive4 {
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
 }
 
@@ -296,16 +308,16 @@ body.dark-mode .image-graphique {
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
 }
 
-.stress{
+.stress {
   background-image: url('../images/home/images1.png');
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
 }
 
@@ -314,16 +326,16 @@ body.dark-mode .stress {
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
 }
 
-.flexibilité{
+.flexibilité {
   background-image: url('../images/home/images2.png');
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
 }
 
@@ -332,7 +344,7 @@ body.dark-mode .flexibilité {
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
   height: 27vh;
 }
 
@@ -358,7 +370,7 @@ body.dark-mode .flexibilité {
 }
 
 .liensfaq a {
- display: block;
+  display: block;
   margin: 20px auto 0;
   padding: 12px 24px;
   background-color: transparent;
@@ -369,11 +381,11 @@ body.dark-mode .flexibilité {
   font-weight: bold;
   text-align: center;
   transition: all 0.3s ease;
-  
+
 }
 
 body.dark-mode .liensfaq a {
- display: block;
+  display: block;
   margin: 20px auto 0;
   padding: 12px 24px;
   background-color: transparent;
@@ -517,90 +529,94 @@ body.dark-mode .faq-answer.dark {
 }
 
 .btn-containervaliderhome {
-    position: absolute;
-    top: 40px;         /* 100px depuis le haut de la fenêtre */
-    left: 90%;         /* positionné à 50% horizontalement */
-    transform: translateX(-50%); /* ramène le bouton au centre */
-    z-index: 1000;     /* devant les autres éléments */
-  }
+  position: absolute;
+  top: 40px;
+  /* 100px depuis le haut de la fenêtre */
+  left: 90%;
+  /* positionné à 50% horizontalement */
+  transform: translateX(-50%);
+  /* ramène le bouton au centre */
+  z-index: 1000;
+  /* devant les autres éléments */
+}
 
-  #btn-validerhome {
-    padding: 20px 90px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    background: #f0f0f000;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    transition: background 0.3s;
-  }
+#btn-validerhome {
+  padding: 20px 90px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: #f0f0f000;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s;
+}
 
-  #btn-validerhome:hover {
-    background: #e0e0e033;
-  }
+#btn-validerhome:hover {
+  background: #e0e0e033;
+}
 
-  .locale-selectorhome {
-    margin-bottom: 20px;
-    
+.locale-selectorhome {
+  margin-bottom: 20px;
+
 }
 
 .locale-selectorhome a {
-    text-decoration: none;
-    color: #b2adad;
-    padding: 0 5px;
-    font-weight: normal;
+  text-decoration: none;
+  color: #b2adad;
+  padding: 0 5px;
+  font-weight: normal;
 }
 
 .locale-selectorhome a.active {
-    font-weight: bold;
-    color: #ffffff;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .locale-selectorhome a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 
 .temoignage-swiper-container {
-    padding: 3rem 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    height: 500px; /* important pour vertical */
-    overflow: hidden;
+  padding: 3rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 500px;
+  /* important pour vertical */
+  overflow: hidden;
 }
 
 .swiper {
-    height: 100%;
+  height: 100%;
 }
 
 .temoignage-card {
-    background: #81927C;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    text-align: center;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background: #81927C;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .temoignage-card .message {
-    font-style: italic;
-    margin-bottom: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
 .temoignage-card .stars {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .temoignage-card .star.filled {
-    color: gold;
+  color: gold;
 }
 
 .temoignage-card .star {
-    color: #ccc;
+  color: #ccc;
 }
-
