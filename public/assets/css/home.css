@@ -142,28 +142,56 @@ body.dark-mode .elegant-underline {
   margin: 0 auto;
 }
 
+.contenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.texte {
+  flex: 1;
+  min-width: 300px;
+}
+
 .image-engagements {
+  flex: 1;
+  min-width: 300px;
   color: #ffffff;
-  padding: 20px;
+  padding: 25px 30px;
   background-color: #7A8B76;
-  border-radius: 8px;
+  border-radius: 30px;
   border: 2px solid white;
+  max-width: 400px;
+  /* ← Ajustez cette valeur */
+  min-height: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .image-engagements h2 {
   text-align: center;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  /* Espacement accru sous le titre */
+  font-size: 2.5em;
+  /* Taille du titre */
 }
 
 .image-engagements ul {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
+  /* Supprime les marges par défaut */
+  font-size: 1.7em;
 }
 
 .image-engagements li {
-  margin-bottom: 10px;
-  padding-left: 25px;
+  margin-bottom: 12px;
+  /* Espacement entre les éléments */
+  padding-left: 32px;
+  /* Ajustement pour aligner les puces */
   position: relative;
 }
 
@@ -171,9 +199,32 @@ body.dark-mode .elegant-underline {
   content: "✔";
   color: rgb(53, 53, 53);
   position: absolute;
-  left: 0;
-  font-size: 1.2em;
+  left: 5px;
+  /* Décalage pour alignement visuel */
+  top: 2px;
+  /* Alignement vertical */
+  font-size: 1.1em;
   font-weight: bold;
+}
+
+body.dark-mode .image-engagements {
+  background-color: #EAE6DA;
+  border-color: #B3B04C;
+  box-shadow: 0 4px 12px rgba(179, 176, 76, 0.1);
+}
+
+body.dark-mode .image-engagements h2 {
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .image-engagements ul {
+  color: #000000;
+}
+
+body.dark-mode .image-engagements li::before {
+  color: #B3B04C;
+  text-shadow: 0 0 3px rgba(179, 176, 76, 0.3);
 }
 
 .img-commentaire {
@@ -442,6 +493,16 @@ body.dark-mode .svg-block p {
 @media (max-width: 768px) {
   .faq-item {
     flex: 1 1 100%;
+  }
+  .contenu {
+    flex-direction: column;
+  }
+  
+  .image-engagements {
+    order: 1; /* Met la boîte après le texte dans le flux */
+    margin-top: 30px; /* Espacement entre texte et boîte */
+    max-width: 100%; /* Annule la largeur max fixe */
+    min-height: auto; /* Supprime la hauteur fixe */
   }
 }
 
