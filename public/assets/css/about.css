@@ -20,9 +20,11 @@
 
 body.dark-mode .titreapropos {
     color: #7a8471;
+    
 }
-
-
+.titreapropos {
+size: 20px;
+}
 .decor-gauche {
     background-image: url('../images/about/plante2g.png');
     display: block;
