@@ -26,7 +26,7 @@ class MessageType extends AbstractType
                 'label' => false,
                 'choices' => [
                     'Réservation' => 'Réservation',
-                    'Question' => 'Questions',
+                    'Questions' => 'Questions',
                     'Autre' => 'Autre',
                 ],
                 'placeholder' => 'Choisissez un sujet...',

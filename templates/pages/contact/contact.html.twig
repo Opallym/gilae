@@ -4,8 +4,18 @@
 
 {% block body %}
   <div class="v1">
+  
+    {# Décorations gauche et droite #}
+    <div class="image-container gauche">
+      <div class="decorative-imagecontactgauche" alt="Décoration-gauche"></div>
+    </div>
+
+    <div class="image-container droite">
+      <div class="decorative-imagecontactdroite" alt="Décoration-droite"></div>
+    </div>
+
     <div class="container">
-      <h1>Contacts</h1>
+      <h1 class="titrecontactformulaire">Nous Contacter</h1>
 
       {% for label, messages in app.flashes %}
         <div class="alert alert-{{ label }}">
@@ -17,32 +27,29 @@
 
       {{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
 
-        <div class="input-group">
-          <div class="icon">✉</div>
-          {{ form_widget(form.fromEmail, {'attr': {'placeholder': 'Entrer votre adresse mail...', 'required': true}}) }}
-          {{ form_errors(form.fromEmail) }}
-        </div>
+      <div class="input-group">
+        <div class="icon">✉</div>
+        {{ form_widget(form.fromEmail, {'attr': {'placeholder': 'Entrer votre adresse mail...', 'required': true}}) }}
+        {{ form_errors(form.fromEmail) }}
+      </div>
 
-        <div class="input-group">
-          <div class="icon">📞</div>
-          {{ form_widget(form.phoneNumber, {'attr': {'placeholder': 'Entrer votre numéro de téléphone...', 'required': true}}) }}
-          {{ form_errors(form.phoneNumber) }}
-        </div>
+      <div class="input-group">
+        <div class="icon">📞</div>
+        {{ form_widget(form.phoneNumber, {'attr': {'placeholder': 'Entrer votre numéro de téléphone...', 'required': true}}) }}
+        {{ form_errors(form.phoneNumber) }}
+      </div>
 
-        <div class="input-group">
-          {{ form_widget(form.subject, {'attr': {
-            'class': 'styled-select',
-            'required': true
-          }}) }}
-          {{ form_errors(form.subject) }}
-        </div>
+      <div class="input-group">
+        {{ form_widget(form.subject, {'attr': {'class': 'styled-select', 'required': true}}) }}
+        {{ form_errors(form.subject) }}
+      </div>
 
-        <div class="textarea-group">
-          {{ form_widget(form.body, {'attr': {'placeholder': 'Entrez votre demande...', 'rows': 8, 'required': true}}) }}
-          {{ form_errors(form.body) }}
-        </div>
+      <div class="textarea-group">
+        {{ form_widget(form.body, {'attr': {'placeholder': 'Entrez votre demande...', 'rows': 8, 'required': true}}) }}
+        {{ form_errors(form.body) }}
+      </div>
 
-        <button class="contactbutton" type="submit">Envoyez</button>
+      <button class="contactbutton" type="submit">Envoyez</button>
 
       {{ form_end(form) }}
     </div>

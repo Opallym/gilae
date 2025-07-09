@@ -9,7 +9,7 @@
 }
 
 /* Titre principal */
-h1 {
+.modiftitre {
     text-align: center;
     color: #ffffff;
     font-size: 28px;
@@ -154,7 +154,7 @@ textarea::placeholder {
         padding: 30px 20px;
     }
 
-    h1 {
+    .modiftitre {
         font-size: 24px;
     }
 }

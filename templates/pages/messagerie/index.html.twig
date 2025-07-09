@@ -24,9 +24,16 @@
 
   <nav class="navigationmessagerie"></nav>
 
-  <div class="navmessagerie-item center">
-    <button class="sortmessagerie-btn">Trier par</button>
-  </div>
+  <form method="get" action="{{ path('admin_messagerie') }}">
+  <select name="sort" onchange="this.form.submit()" class="sortmessagerie-btn">
+    <option value="">-- Trier par --</option>
+    <option value="date_asc" {{ app.request.get('sort') == 'date_asc' ? 'selected' }}>Date croissante</option>
+    <option value="date_desc" {{ app.request.get('sort') == 'date_desc' ? 'selected' }}>Date décroissante</option>
+    <option value="reservation" {{ app.request.get('sort') == 'reservation' ? 'selected' }}>Réservation</option>
+    <option value="questions" {{ app.request.get('sort') == 'questions' ? 'selected' }}>Questions</option>
+    <option value="autre" {{ app.request.get('sort') == 'autre' ? 'selected' }}>Autre</option>
+  </select>
+</form>
 
   <div class="columns-titles">
     <div>Messages reçus :</div>
@@ -53,9 +60,10 @@
               <p><strong>Message :</strong> {{ message.body|u.truncate(100, '...') }}</p>
               <p><strong>Reçu le :</strong> {{ message.receivedAt|date('d/m/Y H:i') }}</p>
 
-              <form method="post" action="{{ path('admin_messagerie', { id: message.id }) }}">
+              <form method="post" action="{{ path('admin_messageriearchive', { id: message.id }) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ message.id) }}">
-                <button type="submit" class="btn btn-sm btn-outline-success">Archiver</button>
+                <button type="submit" class="btnMessagerie">Archiver</button>
+                <a href="{{ path('admin_messagerie_reply', { id: message.id }) }}" class="btnMessagerie">Répondre</a>
               </form>
             </div>
           {% endfor %}
@@ -81,6 +89,17 @@
               <p><strong>Sujet :</strong> {{ message.subject }}</p>
               <p><strong>Message :</strong> {{ message.body|u.truncate(100, '...') }}</p>
               <p><strong>Reçu le :</strong> {{ message.receivedAt|date('d/m/Y H:i') }}</p>
+
+              <form method="post" action="{{ path('admin_messagerie_desarchiver', { id: message.id }) }}" style="display:inline-block;">
+                <input type="hidden" name="_token" value="{{ csrf_token('desarchiver' ~ message.id) }}">
+                <button type="submit" class="btnMessagerie">Désarchiver</button>
+              </form>
+
+              <form method="post" action="{{ path('admin_messagerie_supprimer', { id: message.id }) }}" style="display:inline-block;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('supprimer' ~ message.id) }}">
+                <button type="submit" class="btnMessagerie btn-danger">Supprimer</button>
+              </form>
+
             </div>
           {% endfor %}
         {% endif %}
