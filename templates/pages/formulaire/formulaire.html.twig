@@ -9,6 +9,15 @@
     <a href="{{ path('admin_formulaire', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
 </div>
 {% endif %}
+<div class="formulaire-container">
+  <h1 class="formulaire-title elegant-underline"
+      contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}"
+      id="titre"
+      data-cle="titre">
+    {{ contact.titre|default('Contacts') }}
+  </h1>
+  <!-- Le reste du contenu -->
+</div>
 
 <main class="formulaire-wrapper">
 
@@ -18,10 +27,7 @@
 
     <div class="formulaire-container">
         <div class="formulaire-content">
-            <h1 class="formulaire-title elegant-underline"
-                contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}"
-                id="titre"
-                data-cle="titre">{{ contact.titre|default('Contacts') }}</h1>
+            
 
             {# Données de contact #}
             {% set contenus = contenus|default({

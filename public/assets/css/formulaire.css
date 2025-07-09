@@ -31,6 +31,7 @@
     background-image: url('../images/formulaire/plg2dark.webp');
 }
 
+
 .decorative-imageformulairegauche {
     background-image: url('../images/formulaire/plg1dark.webp');
 }
@@ -60,10 +61,10 @@ body.dark-mode .decorative-imageformulairedroite {
 
 /* Titres et contenu */
 .formulaire-title {
-    font-size: 3.5rem;
-    font-weight: normal;
-    margin-bottom: 5rem; /* augmenté pour plus d'espace */
-    letter-spacing: 2px;
+    font-size: 4rem;
+    
+   
+    letter-spacing: 5px;
 }
 
 body.dark-mode .formulaire-title {
