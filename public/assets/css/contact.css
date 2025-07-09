@@ -5,6 +5,9 @@
   justify-content: center;
   padding: 20px;
   animation: fadeIn 0.6s ease-out;
+  position: relative;
+	padding-left: 220px;
+	padding-right: 220px;
 }
 
 /* Conteneur */
@@ -14,12 +17,13 @@
 }
 
 /* Titre */
-h1 {
+.titrecontactformulaire {
   text-align: center;
-  font-size: 28px;
+  font-size: 50px;
   margin-bottom: 30px;
   letter-spacing: 0.5px;
   font-weight: 500;
+  box-shadow: inset 0 -6px 0 #7A8B75;
 }
 
 /* Formulaire */
@@ -163,4 +167,48 @@ select:focus {
   border-color: #ffffff;
   outline: none;
   background-color: #5c7151; /* légèrement plus foncé au focus */
+}
+
+.decorative-imagecontactdroite {
+    background-image: url('../images/formulaire/plg2dark.webp');
+}
+
+.decorative-imagecontactgauche {
+    background-image: url('../images/formulaire/plg1dark.webp');
+}
+
+body.dark-mode .decorative-imagecontactgauche {
+    background-image: url('../images/formulaire/plg1.png');
+}
+
+body.dark-mode .decorative-imagecontactdroite {
+    background-image: url('../images/formulaire/plg2.png');
+}
+
+.image-container {
+	position: absolute;
+	top: 0;
+	width: 200px; /* Ajuste selon la taille de ton image */
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	z-index: 1;
+}
+
+.image-container.gauche {
+	left: 0;
+}
+
+.image-container.droite {
+	right: 0;
+}
+
+.decorative-imagecontactgauche,
+.decorative-imagecontactdroite {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 }

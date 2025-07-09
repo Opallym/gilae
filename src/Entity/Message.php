@@ -1,7 +1,5 @@
 <?php
 
-// src/Entity/Message.php
-
 namespace App\Entity;
 
 use App\Entity\Reservation;
@@ -36,6 +34,12 @@ class Message
     #[ORM\ManyToOne(targetEntity: Reservation::class)]
     private ?Reservation $reservation = null;
 
+    #[ORM\Column(type: 'text', nullable: true)]
+    private ?string $adminReply = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $category = null; // ✅ Nouveau champ
+
     // --- Getters et Setters ---
 
     public function getId(): ?int { return $this->id; }
@@ -60,4 +64,10 @@ class Message
 
     public function getReservation(): ?Reservation { return $this->reservation; }
     public function setReservation(?Reservation $reservation): self { $this->reservation = $reservation; return $this; }
+
+    public function getAdminReply(): ?string { return $this->adminReply; }
+    public function setAdminReply(?string $adminReply): static { $this->adminReply = $adminReply; return $this; }
+
+    public function getCategory(): ?string { return $this->category; } // ✅ Getter
+    public function setCategory(?string $category): self { $this->category = $category; return $this; } // ✅ Setter
 }
