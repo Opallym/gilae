@@ -29,9 +29,9 @@
     <option value="">-- Trier par --</option>
     <option value="date_asc" {{ app.request.get('sort') == 'date_asc' ? 'selected' }}>Date croissante</option>
     <option value="date_desc" {{ app.request.get('sort') == 'date_desc' ? 'selected' }}>Date décroissante</option>
-    <option value="reservation" {{ app.request.get('sort') == 'reservation' ? 'selected' }}>Réservation</option>
-    <option value="questions" {{ app.request.get('sort') == 'questions' ? 'selected' }}>Questions</option>
-    <option value="autre" {{ app.request.get('sort') == 'autre' ? 'selected' }}>Autre</option>
+    <option value="Réservation" {{ app.request.get('sort') == 'Réservation' ? 'selected' }}>Réservation</option>
+    <option value="Questions" {{ app.request.get('sort') == 'Questions' ? 'selected' }}>Questions</option>
+    <option value="Autre" {{ app.request.get('sort') == 'Autre' ? 'selected' }}>Autre</option>
   </select>
 </form>
 
