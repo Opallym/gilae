@@ -110,7 +110,7 @@
 
   document.getElementById('btn-validerservice').addEventListener('click', () => {
     const locale = '{{ locale|default("fr") }}';
-    window.location.href = '{{ path("admin_service", {locale: locale}) }}';
+    window.location.href = '{{ path("admin_gestion", {locale: locale}) }}';
   });
 </script>
 {% endif %}
