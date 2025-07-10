@@ -653,8 +653,11 @@ body.dark-mode .faq-answer.dark {
   height: 100%;
 }
 
+/* Style par défaut (dark) */
+/* Par défaut (mode light) */
 .temoignage-card {
   background: #81927C;
+  color: #ffffff;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -663,6 +666,7 @@ body.dark-mode .faq-answer.dark {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 2px solid white;
 }
 
 .temoignage-card .message {
@@ -675,9 +679,24 @@ body.dark-mode .faq-answer.dark {
 }
 
 .temoignage-card .star.filled {
-  color: gold;
+  color: #ffe600;
 }
 
 .temoignage-card .star {
-  color: #ccc;
+  color: #363333;
+}
+
+/* Mode sombre activé sur <body class="dark-mode"> */
+body.dark-mode .temoignage-card {
+  background: #EAE6DA;
+  color: #000000;
+  border: 2px solid #B3B04C;
+}
+
+body.dark-mode .temoignage-card .star {
+  color: #bbaeae;
+}
+
+body.dark-mode .temoignage-card .star.filled {
+  color: #ffe600;
 }

@@ -29,14 +29,12 @@ class MessagerieController extends AbstractController
             case 'date_desc':
                 $qb->orderBy('m.receivedAt', 'DESC');
                 break;
-            case 'reservation':
-                $qb->where('m.category = :cat')->setParameter('cat', 'Réservation');
-                break;
-            case 'questions':
-                $qb->where('m.category = :cat')->setParameter('cat', 'Questions');
-                break;
-            case 'autre':
-                $qb->where('m.category = :cat')->setParameter('cat', 'Autre');
+            case 'Réservation':
+            case 'Questions':
+            case 'Autre':
+                $qb->where('m.subject = :subject')
+                   ->setParameter('subject', $sort)
+                   ->orderBy('m.receivedAt', 'DESC');
                 break;
             default:
                 $qb->orderBy('m.receivedAt', 'DESC'); // tri par défaut
@@ -50,17 +48,40 @@ class MessagerieController extends AbstractController
     }
 
     #[Route('/admin/messagerie/archive/{id}', name: 'admin_messageriearchive', methods: ['POST'])]
-    public function archive(
-        Message $message,
-        EntityManagerInterface $em,
-        Request $request
-    ): Response {
-        $submittedToken = $request->request->get('_token');
-
-        if ($this->isCsrfTokenValid('archive' . $message->getId(), $submittedToken)) {
+    public function archive(Message $message, EntityManagerInterface $em, Request $request): Response
+    {
+        if ($this->isCsrfTokenValid('archive' . $message->getId(), $request->request->get('_token'))) {
             $message->setIsRead(true);
             $em->flush();
             $this->addFlash('success', 'Message archivé avec succès.');
+        } else {
+            $this->addFlash('error', 'Jeton CSRF invalide.');
+        }
+
+        return $this->redirectToRoute('admin_messagerie');
+    }
+
+    #[Route('/admin/messagerie/desarchiver/{id}', name: 'admin_messagerie_desarchiver', methods: ['POST'])]
+    public function desarchiver(Message $message, EntityManagerInterface $em, Request $request): Response
+    {
+        if ($this->isCsrfTokenValid('desarchiver' . $message->getId(), $request->request->get('_token'))) {
+            $message->setIsRead(false);
+            $em->flush();
+            $this->addFlash('success', 'Message désarchivé avec succès.');
+        } else {
+            $this->addFlash('error', 'Jeton CSRF invalide.');
+        }
+
+        return $this->redirectToRoute('admin_messagerie');
+    }
+
+    #[Route('/admin/messagerie/supprimer/{id}', name: 'admin_messagerie_supprimer', methods: ['POST'])]
+    public function supprimer(Message $message, EntityManagerInterface $em, Request $request): Response
+    {
+        if ($this->isCsrfTokenValid('supprimer' . $message->getId(), $request->request->get('_token'))) {
+            $em->remove($message);
+            $em->flush();
+            $this->addFlash('success', 'Message supprimé avec succès.');
         } else {
             $this->addFlash('error', 'Jeton CSRF invalide.');
         }
@@ -85,7 +106,7 @@ class MessagerieController extends AbstractController
             $email = (new Email())
                 ->from('admin@votre-site.com')
                 ->to($message->getFromEmail())
-                ->subject('Réponse à votre message: ' . $message->getSubject())
+                ->subject('Réponse à votre message : ' . $message->getSubject())
                 ->text($replyContent);
 
             $mailer->send($email);
@@ -101,43 +122,5 @@ class MessagerieController extends AbstractController
             'message' => $message,
             'form' => $form->createView(),
         ]);
-    }
-
-    #[Route('/admin/messagerie/desarchiver/{id}', name: 'admin_messagerie_desarchiver', methods: ['POST'])]
-    public function desarchiver(
-        Message $message,
-        EntityManagerInterface $em,
-        Request $request
-    ): Response {
-        $submittedToken = $request->request->get('_token');
-
-        if ($this->isCsrfTokenValid('desarchiver' . $message->getId(), $submittedToken)) {
-            $message->setIsRead(false);
-            $em->flush();
-            $this->addFlash('success', 'Message désarchivé avec succès.');
-        } else {
-            $this->addFlash('error', 'Jeton CSRF invalide.');
-        }
-
-        return $this->redirectToRoute('admin_messagerie');
-    }
-
-    #[Route('/admin/messagerie/supprimer/{id}', name: 'admin_messagerie_supprimer', methods: ['POST'])]
-    public function supprimer(
-        Message $message,
-        EntityManagerInterface $em,
-        Request $request
-    ): Response {
-        $submittedToken = $request->request->get('_token');
-
-        if ($this->isCsrfTokenValid('supprimer' . $message->getId(), $submittedToken)) {
-            $em->remove($message);
-            $em->flush();
-            $this->addFlash('success', 'Message supprimé avec succès.');
-        } else {
-            $this->addFlash('error', 'Jeton CSRF invalide.');
-        }
-
-        return $this->redirectToRoute('admin_messagerie');
     }
 }
