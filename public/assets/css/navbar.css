@@ -26,11 +26,13 @@
   border-radius: 5px;
   border: none;
   font-size: 14px;
+  margin-right: 20px;
 }
 
 .language-select {
-  margin-right: 10px;
+  margin-right: 60px;
 }
+
 
 body.dark-mode {
   background-color: #ffffff;
