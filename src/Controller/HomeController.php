@@ -54,7 +54,7 @@ final class HomeController extends AbstractController
             'contenus' => $contenus,
             'locale' => $locale,
             'temoignages' => $temoignages,
-            'mode_edition' => false, 
+            'mode_edition' => false,
         ]);
     }
 }

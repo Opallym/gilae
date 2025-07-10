@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gilaë{% endblock %}
+{% block title %}Gilaë
+{% endblock %}
 
 {% block body %}
 
 	{% if mode_edition|default(false) %}
 		<div class="locale-selector">
-			<a href="{{ path('admin_home', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a> |
+			<a href="{{ path('admin_home', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a>
+			|
 			<a href="{{ path('admin_home', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
 		</div>
 	{% endif %}
@@ -65,19 +67,19 @@
 				</div>
 			</div>
 			<div class="image">
-    <div class='image-engagements'>
-        <h2>Nos engagements :</h2>
-        <ul>
-            <li>Création d'annonce professionnelle avec mise en valeur esthétique</li>
-            <li>Suivi quotidien des prix pour une rentabilité optimale</li>
-            <li>Gestion des entrées et sorties avec accueil chaleureux</li>
-            <li>Communication fluide avec les voyageurs, 7j/7</li>
-            <li>Conseils et instructions personnalisés selon votre logement</li>
-            <li>Services hôteliers haut de gamme : menage, linge, produits essentiels</li>
-            <li>Maintenance et interventions réactives toute la semaine</li>
-        </ul>
-    </div>
-</div>
+				<div class='image-engagements'>
+					<h2>Nos engagements :</h2>
+					<ul>
+						<li>Création d'annonce professionnelle avec mise en valeur esthétique</li>
+						<li>Suivi quotidien des prix pour une rentabilité optimale</li>
+						<li>Gestion des entrées et sorties avec accueil chaleureux</li>
+						<li>Communication fluide avec les voyageurs, 7j/7</li>
+						<li>Conseils et instructions personnalisés selon votre logement</li>
+						<li>Services hôteliers haut de gamme : menage, linge, produits essentiels</li>
+						<li>Maintenance et interventions réactives toute la semaine</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -118,7 +120,8 @@
 													<span class="star">☆</span>
 												{% endfor %}
 											</div>
-											<p class="nom">– {{ temoignage.nom }}</p>
+											<p class="nom">–
+												{{ temoignage.nom }}</p>
 										</div>
 									</div>
 								{% endfor %}
@@ -130,6 +133,7 @@
 					{% endif %}
 				</div>
 			</div>
+
 		</div>
 	</div>
 
@@ -199,28 +203,30 @@
 		</div>
 		<script>
 			document.querySelectorAll('[contenteditable="true"]').forEach(el => {
-				el.addEventListener('blur', () => {
-					const key = el.dataset.key;
-					const texte = el.innerText.trim();
-					const locale = '{{ locale|default("fr") }}';
+el.addEventListener('blur', () => {
+const key = el.dataset.key;
+const texte = el.innerText.trim();
+const locale = '{{ locale|default("fr") }}';
 
-					fetch('{{ path("admin_home_update") }}', {
-						method: 'POST',
-						headers: {'Content-Type': 'application/json'},
-						body: JSON.stringify({ key, texte, locale })
-					})
-					.then(response => response.json())
-					.then(data => {
-						if (!data.success) {
-							alert('Erreur lors de la sauvegarde');
-						}
-					});
-				});
-			});
+fetch('{{ path("admin_home_update") }}', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify(
+{key, texte, locale}
+)
+}).then(response => response.json()).then(data => {
+if (!data.success) {
+alert('Erreur lors de la sauvegarde');
+}
+});
+});
+});
 
-			document.getElementById('btn-validerhome').addEventListener('click', () => {
-				window.location.href = '{{ path("admin_gestion") }}';
-			});
+document.getElementById('btn-validerhome').addEventListener('click', () => {
+window.location.href = '{{ path("admin_gestion") }}';
+});
 		</script>
 	{% endif %}
 {% endblock %}
@@ -229,30 +235,30 @@
 	{{ parent() }}
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
-			new Swiper('.mySwiper', {
-				direction: 'vertical',
-				slidesPerView: 2,
-				spaceBetween: 30,
-				loop: true,
-				autoplay: {
-					delay: 4000,
-					disableOnInteraction: false,
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					clickable: true,
-				},
-				speed: 800,
-				grabCursor: true
-			});
+new Swiper('.mySwiper', {
+direction: 'vertical',
+slidesPerView: 2,
+spaceBetween: 30,
+loop: true,
+autoplay: {
+delay: 4000,
+disableOnInteraction: false
+},
+pagination: {
+el: '.swiper-pagination',
+clickable: true
+},
+speed: 800,
+grabCursor: true
+});
 
-			// FAQ toggle
-			document.querySelectorAll('.faq-question').forEach(button => {
-				button.addEventListener('click', () => {
-					const answer = button.nextElementSibling;
-					answer.classList.toggle('open');
-				});
-			});
-		});
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(button => {
+button.addEventListener('click', () => {
+const answer = button.nextElementSibling;
+answer.classList.toggle('open');
+});
+});
+});
 	</script>
 {% endblock %}
