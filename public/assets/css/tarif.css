@@ -190,3 +190,10 @@ body.dark-mode .pricingTarifs-card {
 .locale-selector a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 720px) {
+  .headerTarifs-image,
+  .headerTarifs-image-left {
+    display: none;
+  }
+}
