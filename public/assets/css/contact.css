@@ -12,9 +12,6 @@
   position: relative;
 }
 
-
-
-
 /* Conteneur */
 .container {
   width: 100%;
@@ -22,6 +19,14 @@
   text-align: center; /* au cas où */
 }
 
+body.dark-mode .dark-light-input {
+  color: #B3B04C;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .dark-light-input::placeholder {
+  color: #B3B04C;
+}
 
 /* Titre */
 .titrecontactformulaire {
@@ -30,6 +35,12 @@
   letter-spacing: 0.5px;
   margin-bottom: 60px;
   box-shadow: inset 0 -6px 0 #7A8B75;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  color: #B3B04C ;
 }
 
 /* Formulaire */
@@ -104,8 +115,6 @@ textarea::placeholder {
 
 /* Bouton */
 .contactbutton {
-  display: block;
-  position: relative;
   top: -10px;
   left: 145px;         
   padding: 12px 30px;
@@ -161,11 +170,11 @@ select,
   padding: 12px 15px;
   border-radius: 10px;
   border: 1px solid #ffffff;
-  background-color: #6e8262; /* 👉 ta couleur */
+  background-color: #6e8262; 
   color: white;
   font-size: 16px;
   backdrop-filter: blur(5px);
-  appearance: none; /* enlève le style par défaut */
+  appearance: none; 
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='white'%20d='M2%200L0%202h4L2%200zM2%205L0%203h4L2%205z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.7em center;
@@ -176,7 +185,7 @@ select,
 select:focus {
   border-color: #ffffff;
   outline: none;
-  background-color: #5c7151; /* légèrement plus foncé au focus */
+  background-color: #6e8262; 
 }
 
 .decorative-imagecontactdroite {
@@ -207,11 +216,11 @@ body.dark-mode .decorative-imagecontactdroite {
 }
 
 .image-container.gauche {
-	left: 0;
+	left: 250px;
 }
 
 .image-container.droite {
-	right: 0;
+	right: 250px;
 }
 
 .decorative-imagecontactgauche,
@@ -221,4 +230,31 @@ body.dark-mode .decorative-imagecontactdroite {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+}
+
+body.dark-mode .contactbutton {
+  background-color: #ffffff; 
+  color: #B3B04C; 
+  border: 1px solid #B3B04C;
+}
+
+body.dark-mode .contactbutton:hover {
+  background-color: #f2f2f2; 
+}
+
+body.dark-mode select {
+  background-color: #ffffff;
+  color: #B3B04C;
+  border: 1px solid #B3B04C;
+}
+
+body.dark-mode select:focus {
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 1468px) {
+  .image-container.gauche,
+  .image-container.droite {
+    display: none;
+  }
 }
