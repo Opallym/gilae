@@ -205,3 +205,10 @@ body.dark-mode .conseils-section h2 {
 .locale-selectorconseils a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 720px) {
+  .feuille1,
+  .feuille2 {
+    display: none;
+  }
+}
