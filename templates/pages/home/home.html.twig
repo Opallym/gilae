@@ -105,7 +105,7 @@
 			</div>
 			<div class="image">
 				<div class="temoignage-swiper-container">
-					{% if temoignages is not empty %}
+					{% if temoignages is defined and temoignages is not empty %}
 						<div class="swiper mySwiper">
 							<div class="swiper-wrapper">
 								{% for temoignage in temoignages %}

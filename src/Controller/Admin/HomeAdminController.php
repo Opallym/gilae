@@ -2,40 +2,51 @@
 
 namespace App\Controller\Admin;
 
-use App\Repository\HomeRepository;
 use App\Entity\Home;
+use App\Repository\HomeRepository;
+use App\Repository\TemoignageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[IsGranted('ROLE_ADMIN')]
 class HomeAdminController extends AbstractController
 {
     #[Route('/admin/home', name: 'admin_home')]
-    public function index(HomeRepository $homeRepository, Request $request): Response
-    {
-        $locale = $request->query->get('locale', 'fr');
+public function index(
+    HomeRepository $homeRepository,
+    Request $request,
+    TemoignageRepository $temoignageRepository // ✅ Ajout ici
+): Response {
+    $locale = $request->query->get('locale', 'fr');
 
-        $blocs = $homeRepository->findBy(['locale' => $locale]);
-        if (!$blocs) {
-            $blocs = $homeRepository->findBy(['locale' => 'fr']);
-        }
-
-        $contenus = [];
-        foreach ($blocs as $bloc) {
-            $contenus[$bloc->getKey()] = $bloc->getContenu();
-        }
-
-        return $this->render('pages/home/home.html.twig', [
-            'contenus' => $contenus,
-            'mode_edition' => true,
-            'locale' => $locale,
-        ]);
+    $blocs = $homeRepository->findBy(['locale' => $locale]);
+    if (!$blocs) {
+        $blocs = $homeRepository->findBy(['locale' => 'fr']);
     }
+
+    $contenus = [];
+    foreach ($blocs as $bloc) {
+        $contenus[$bloc->getKey()] = $bloc->getContenu();
+    }
+
+    // ✅ Récupération des témoignages approuvés
+    $temoignages = $temoignageRepository->findBy([
+        'isApproved' => true,
+        'locale' => $locale,
+    ], ['createdAt' => 'DESC']);
+
+    return $this->render('pages/home/home.html.twig', [
+        'contenus' => $contenus,
+        'locale' => $locale,
+        'temoignages' => $temoignages,
+        'mode_edition' => true,
+    ]);
+}
 
     #[Route('/admin/home/update', name: 'admin_home_update', methods: ['POST'])]
     public function update(Request $request, HomeRepository $homeRepository, EntityManagerInterface $em): JsonResponse
