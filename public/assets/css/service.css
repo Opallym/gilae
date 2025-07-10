@@ -237,13 +237,10 @@ body.dark-mode .imgtelephone {
 
 .btn-containervaliderservice {
     position: absolute;
-    bottom: -1850px;
+    bottom: -1450px;
     left: 86%;
-    /* positionné à 50% horizontalement */
     transform: translateX(-50%);
-    /* ramène le bouton au centre */
     z-index: 1000;
-    /* devant les autres éléments */
 }
 
 #btn-validerservice {
