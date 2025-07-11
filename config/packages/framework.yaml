@@ -1,13 +1,14 @@
-# see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
     secret: '%env(APP_SECRET)%'
 
+    # 🔒 Sécurité des sessions
     session:
         enabled: true
         storage_factory_id: session.storage.factory.native
+        cookie_secure: auto           # force le cookie à être sécurisé si HTTPS
+        cookie_samesite: 'lax'        # empêche certaines attaques CSRF
+        cookie_httponly: true         # empêche l'accès aux cookies via JavaScript
 
-when@test:
-    framework:
-        test: true
-        session:
-            storage_factory_id: session.storage.factory.mock_file
+    # ⚙️ Support des proxies (utile si reverse proxy ou CDN comme Cloudflare)
+    trusted_proxies: '%env(TRUSTED_PROXIES)%'
+    http_method_override: true       # supporte PUT, DELETE via formulaire
