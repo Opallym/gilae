@@ -40,7 +40,7 @@
 
 		{% endblock %}
 	</head>
-	<body>
+	<body class="{{ app.request.locale }}">
 		{% if app.request.pathInfo starts with '/admin' == false %}
     	{{ render(controller('App\\Controller\\NavbarController::index')) }}
 		{% endif %}
