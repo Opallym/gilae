@@ -46,7 +46,7 @@
 		{% endif %}
 		{% block body %}{% endblock %}
 		{% if app.request.pathInfo starts with '/admin' == false %}
-    	{% include 'pages/footer/footer.html.twig' %}
+    	{{ render(controller('App\\Controller\\FooterController::index')) }}
 		{% endif %}
 		{% block javascripts %}
 		<script>

@@ -5,8 +5,8 @@
 			<p>+06.00.00.00.00</p>
 		</div>
 		<div>
-			<a href="{{ path('app_mention') }}">
-				Mentions légales &<br>politique de confidentialité
+			<a href="{{ path('app_mention') }}">{{ contenus.footermentions|default('Mentions légales &')}}
+				<br>{{ contenus.footermentions1|default('politique de confidentialité')}}
 			</a>
 		</div>
 		<div>
@@ -18,5 +18,5 @@
 	</div>
 </div>
 <div class="footer-bottom">
-	<p>© 2025 Conciergerie Gilaë. Tous droits réservés.</p>
+	<p>{{ contenus.footerdroitsreserves|default('© 2025 Conciergerie Gilaë. Tous droits réservés.')}}</p>
 </div></footer>

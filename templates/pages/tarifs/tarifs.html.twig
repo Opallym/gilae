@@ -32,11 +32,6 @@
 
 			<div class="priceTarifs" {% if mode_edition %}contenteditable="true" data-cle="basic_prix"{% endif %}>
 				{{ contenus.basic_prix|default('90 €')|raw }}
-				<div class="priceTarifs-text">
-					<small {% if mode_edition %}contenteditable="true" data-cle="basic_prix_text"{% endif %}>
-						{{ contenus.basic_prix_text|default('/mois')|raw }}
-					</small>
-				</div>
 			</div>
 			<ul class="featuresTarifs">
 				<li {% if mode_edition %}contenteditable="true" data-cle="basic_l1"{% endif %}>
@@ -61,11 +56,6 @@
 			</h2>
 			<div class="priceTarifs" {% if mode_edition %}contenteditable="true" data-cle="confort_prix"{% endif %}>
 				{{ contenus.confort_prix|default('7%')|raw }}
-				<div class="priceTarifs-text">
-					<small {% if mode_edition %}contenteditable="true" data-cle="confort_prix_text"{% endif %}>
-						{{ contenus.confort_prix_text|default('réservations')|raw }}
-					</small>
-				</div>
 			</div>
 
 			<div class="dividerTarifs"></div>
@@ -93,11 +83,6 @@
 			</h2>
 			<div class="priceTarifs" {% if mode_edition %}contenteditable="true" data-cle="privilege_prix"{% endif %}>
 				{{ contenus.privilege_prix|default('15%')|raw }}
-				<div class="priceTarifs-text">
-					<small {% if mode_edition %}contenteditable="true" data-cle="privilege_prix_text"{% endif %}>
-						{{ contenus.privilege_prix_text|default('réservations')|raw }}
-					</small>
-				</div>
 			</div>
 
 			<div class="dividerTarifs"></div>
