@@ -4,9 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 80px;  /* espace haut */
-  padding-left: 220px;
-  padding-right: 220px;
+  padding-top: 80px;
+  /* espace haut */
   padding-bottom: 20px;
   animation: fadeIn 0.6s ease-out;
   position: relative;
@@ -15,8 +14,10 @@
 /* Conteneur */
 .container {
   width: 100%;
-  max-width: 100%; /* ou une valeur plus grande si besoin */
-  text-align: center; /* au cas où */
+  max-width: 100%;
+  /* ou une valeur plus grande si besoin */
+  text-align: center;
+  /* au cas où */
 }
 
 body.dark-mode .dark-light-input {
@@ -40,18 +41,20 @@ body.dark-mode .dark-light-input::placeholder {
 body.dark-mode input,
 body.dark-mode textarea,
 body.dark-mode select {
-  color: #B3B04C ;
+  color: #B3B04C;
 }
 
 /* Formulaire */
 .contact-form {
-  background: rgba(194, 204, 188, 0.2); /* style flouté/clair */
+  background: rgba(194, 204, 188, 0.2);
+  /* style flouté/clair */
   border: 1px solid #ffffff;
   border-radius: 10px;
   padding: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   max-width: 500px;
+  min-width: 250px;
   margin: 0 auto;
 
 }
@@ -116,7 +119,7 @@ textarea::placeholder {
 /* Bouton */
 .contactbutton {
   top: -10px;
-  left: 145px;         
+  left: 145px;
   padding: 12px 30px;
   background-color: #5C7151;
   border: 1px solid #ffffff;
@@ -143,6 +146,7 @@ textarea::placeholder {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -170,11 +174,11 @@ select,
   padding: 12px 15px;
   border-radius: 10px;
   border: 1px solid #ffffff;
-  background-color: #6e8262; 
+  background-color: #6e8262;
   color: white;
   font-size: 16px;
   backdrop-filter: blur(5px);
-  appearance: none; 
+  appearance: none;
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='white'%20d='M2%200L0%202h4L2%200zM2%205L0%203h4L2%205z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.7em center;
@@ -185,61 +189,62 @@ select,
 select:focus {
   border-color: #ffffff;
   outline: none;
-  background-color: #6e8262; 
+  background-color: #6e8262;
 }
 
 .decorative-imagecontactdroite {
-    background-image: url('../images/formulaire/plg2dark.webp');
+  background-image: url('../images/formulaire/plg2dark.webp');
 }
 
 .decorative-imagecontactgauche {
-    background-image: url('../images/formulaire/plg1dark.webp');
+  background-image: url('../images/formulaire/plg1dark.webp');
 }
 
 body.dark-mode .decorative-imagecontactgauche {
-    background-image: url('../images/formulaire/plg1.png');
+  background-image: url('../images/formulaire/plg1.png');
 }
 
 body.dark-mode .decorative-imagecontactdroite {
-    background-image: url('../images/formulaire/plg2.png');
+  background-image: url('../images/formulaire/plg2.png');
 }
 
 .image-container {
-	position: absolute;
-	top: 0;
-	width: 200px; /* Ajuste selon la taille de ton image */
-	height: 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 200px;
+  /* Ajuste selon la taille de ton image */
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 1;
 }
 
 .image-container.gauche {
-	left: 250px;
+  left: 250px;
 }
 
 .image-container.droite {
-	right: 250px;
+  right: 250px;
 }
 
 .decorative-imagecontactgauche,
 .decorative-imagecontactdroite {
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 body.dark-mode .contactbutton {
-  background-color: #ffffff; 
-  color: #B3B04C; 
+  background-color: #ffffff;
+  color: #B3B04C;
   border: 1px solid #B3B04C;
 }
 
 body.dark-mode .contactbutton:hover {
-  background-color: #f2f2f2; 
+  background-color: #f2f2f2;
 }
 
 body.dark-mode select {
@@ -253,6 +258,7 @@ body.dark-mode select:focus {
 }
 
 @media (max-width: 1468px) {
+
   .image-container.gauche,
   .image-container.droite {
     display: none;
