@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réinitialisation du mot de passe{% endblock %}
+
+{% block body %}
+    <h1>Réinitialisation du mot de passe</h1>
+
+    {% if maskedEmail %}
+        <p>Un email de réinitialisation a été envoyé à l'adresse <strong>{{ maskedEmail }}</strong>.</p>
+    {% else %}
+        <p>Si un compte existe avec cette adresse email, vous recevrez un message pour réinitialiser votre mot de passe.</p>
+    {% endif %}
+{% endblock %}
+

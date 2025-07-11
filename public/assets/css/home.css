@@ -381,8 +381,9 @@ body.dark-mode .stress {
   height: 27vh;
 }
 
-.flexibilité {
-  background-image: url('../images/home/images2.png');
+/* FRANÇAIS - mode clair */
+body.fr .flexibilité {
+  background-image: url('../images/home/FlexfrD.webp');
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
@@ -390,14 +391,36 @@ body.dark-mode .stress {
   height: 27vh;
 }
 
-body.dark-mode .flexibilité {
-  background-image: url('../images/home/images2light.png');
+/* FRANÇAIS - mode sombre */
+body.fr.dark-mode .flexibilité {
+  background-image: url('../images/home/FlexfrL.webp');
   min-width: 300px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   height: 27vh;
 }
+
+/* ANGLAIS - mode clair */
+body.en .flexibilité {
+  background-image: url('../images/home/FlexenD.webp');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 27vh;
+}
+
+/* ANGLAIS - mode sombre */
+body.en.dark-mode .flexibilité {
+  background-image: url('../images/home/FlexenL.webp');
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 27vh;
+}
+
 
 .img-responsive {
   max-width: 500px;
