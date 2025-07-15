@@ -1,97 +1,101 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contacts - Conciergerie Gilae{% endblock %}
+{% block title %}Contacts - Conciergerie Gilae
+{% endblock %}
 
 {% block body %}
-{% if mode_edition|default(false) %}
-<div class="locale-selector">
-    <a href="{{ path('admin_formulaire', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a> | 
-    <a href="{{ path('admin_formulaire', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
-</div>
-{% endif %}
-<div class="formulaire-container">
-  <h1 class="formulaire-title elegant-underline"
-      contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}"
-      id="titre"
-      data-cle="titre">
-    {{ contact.titre|default('Contacts') }}
-  </h1>
-  <!-- Le reste du contenu -->
-</div>
+	{% if mode_edition|default(false) %}
+		<div class="locale-selector">
+			<a href="{{ path('admin_formulaire', {locale: 'fr'}) }}" class="{{ locale == 'fr' ? 'active' : '' }}">Français</a>
+			|
+			<a href="{{ path('admin_formulaire', {locale: 'en'}) }}" class="{{ locale == 'en' ? 'active' : '' }}">English</a>
+		</div>
+	{% endif %}
+	<div class="formulaire-container">
+		<h1 class="formulaire-title elegant-underline" contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}" id="titre" data-cle="titre">
+			{{ translations.titrecontact }}
+		</h1>
+		<!-- Le reste du contenu -->
+	</div>
 
-<main class="formulaire-wrapper">
+	<main class="formulaire-wrapper">
 
-    <div class="image-container gauche">
-        <div class="decorative-imageformulairegauche" alt="Décoration-gauche"></div>
-    </div>
+		<div class="image-container gauche">
+			<div class="decorative-imageformulairegauche" alt="Décoration-gauche"></div>
+		</div>
 
-    <div class="formulaire-container">
-        <div class="formulaire-content">
-            
+		<div class="formulaire-container">
+			<div
+				class="formulaire-content">
 
-            {# Données de contact #}
-            {% set contenus = contenus|default({
+
+				{# Données de contact #}
+				{% set contenus = contenus|default({
                 'email': contact.email|default('info@exemple-conciergerie.fr'),
                 'telephone': contact.telephone|default('+ 06 00 00 00 00 00'),
                 'adresse': contact.adresse|default('La exemple, Le exemple 5000')
             }) %}
 
-            <div class="formulaire-info">
-                <div class="formulaire-item">
-                    <div class="contact-icon">✉</div>
-                    <div contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}" id="email" data-cle="email">{{ contenus.email }}</div>
-                </div>
+				<div class="formulaire-info">
+					<div class="formulaire-item">
+						<div class="contact-icon">✉</div>
+						<div contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}" id="email" data-cle="email">{{ contenus.email }}</div>
+					</div>
 
-                <div class="formulaire-item">
-                    <div class="contact-icon">☎</div>
-                    <div contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}" id="telephone" data-cle="telephone">{{ contenus.telephone }}</div>
-                </div>
+					<div class="formulaire-item">
+						<div class="contact-icon">☎</div>
+						<div contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}" id="telephone" data-cle="telephone">{{ contenus.telephone }}</div>
+					</div>
 
-                <div class="formulaire-item">
-                    <div class="contact-icon">📍</div>
-                    <div contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}" id="adresse" data-cle="adresse">{{ contenus.adresse }}</div>
-                </div>
-            </div>
+					<div class="formulaire-item">
+						<div class="contact-icon">📍</div>
+						<div contenteditable="{{ mode_edition|default(false) ? 'true' : 'false' }}" id="adresse" data-cle="adresse">{{ contenus.adresse }}</div>
+					</div>
+				</div>
 
-            <button class="formulaire-button" onclick="window.location.href='/contacter'">Nous contacter</button>
-        </div>
-    </div>
+				<button class="formulaire-button" onclick="window.location.href='/contacter'">
+					{{ translations.bouttoncon }}
+				</button>
+			</div>
+		</div>
 
-    <div class="image-container droite">
-        <div class="decorative-imageformulairedroite" alt="Décoration-droite"></div>
-    </div>
+		<div class="image-container droite">
+			<div class="decorative-imageformulairedroite" alt="Décoration-droite"></div>
+		</div>
 
-</main>
+	</main>
 
-{% if mode_edition|default(false) %}
-<div class="btn-containervaliderformulaire">
-  <button id="btn-validerformulaire">Valider les modifications</button>
-</div>
-<script>
-  // Envoi automatique au blur
-  document.querySelectorAll('[contenteditable="true"]').forEach(el => {
-      el.addEventListener('blur', () => {
-          const cle = el.dataset.cle;
-          const texte = el.innerText.trim();
-          const locale = '{{ locale|default('fr') }}';
+	{% if mode_edition|default(false) %}
+		<div class="btn-containervaliderformulaire">
+			<button id="btn-validerformulaire">Valider les modifications</button>
+		</div>
+		<script>
+			// Envoi automatique au blur
+document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+el.addEventListener('blur', () => {
+const cle = el.dataset.cle;
+const texte = el.innerText.trim();
+const locale = '{{ locale|default('fr') }}';
 
-          fetch('{{ path("admin_formulaire_update") }}', {
-              method: 'POST',
-              headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify({cle: cle, texte: texte, locale: locale})
-          })
-          .then(response => response.json())
-          .then(data => {
-              if (!data.success) {
-                  alert('Erreur lors de la sauvegarde');
-              }
-          });
-      });
-  });
+fetch('{{ path("admin_formulaire_update") }}', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify(
+{cle: cle, texte: texte, locale: locale}
+)
+}).then(response => response.json()).then(data => {
+if (!data.success) {
+alert('Erreur lors de la sauvegarde');
+}
+});
+});
+});
 
-  document.getElementById('btn-validerformulaire').addEventListener('click', () => {
-    window.location.href = '{{ path('admin_gestion') }}';
-  });
-</script>
-{% endif %}
+document.getElementById('btn-validerformulaire').addEventListener('click', () => {
+window.location.href = '{{ path('admin_gestion') }}';
+});
+		</script>
+	{% endif %}
 {% endblock %}

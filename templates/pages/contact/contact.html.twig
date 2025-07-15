@@ -1,82 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gilaë - Contact
-{% endblock %}
+{% block title %}Gilaë - {{ translations.title }}{% endblock %}
 
 {% block body %}
-	<div
-		class="v1">
 
-		{# Décorations gauche et droite #}
-		<div class="image-container gauche">
-			<div class="decorative-imagecontactgauche" alt="Décoration-gauche"></div>
-		</div>
+  <div class="v1">
 
-		<div class="image-container droite">
-			<div class="decorative-imagecontactdroite" alt="Décoration-droite"></div>
-		</div>
+    <div class="image-container gauche">
+      <div class="decorative-imagecontactgauche" alt="Décoration-gauche"></div>
+    </div>
 
-		<h1 class="titrecontactformulaire elegant-underline">Nous Contacter</h1>
-		<div class="container">
+    <div class="image-container droite">
+      <div class="decorative-imagecontactdroite" alt="Décoration-droite"></div>
+    </div>
 
+    <h1 class="titrecontactformulaire elegant-underline">{{ translations.title }}</h1>
 
-			{% for label, messages in app.flashes %}
-				<div class="alert alert-{{ label }}">
-					{% for message in messages %}
-						{{ message }}
-					{% endfor %}
-				</div>
-			{% endfor %}
+    <div class="container">
+      {% for label, messages in app.flashes %}
+        <div class="alert alert-{{ label }}">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endfor %}
 
-			{{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
+      {{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
 
-			<div class="input-group">
-				<div class="icon">✉️</div>
-				<div class="nouscontacterdark-light">
-					{{ form_widget(form.fromEmail, {
-    'attr': {
-        'placeholder': 'Entrer votre adresse mail...',
-        'required': true,
-        'class': 'dark-light-input'
-    }
-}) }}
+      <div class="input-group">
+        <div class="icon">✉️</div>
+        <div class="nouscontacterdark-light">
+          {{ form_widget(form.fromEmail, {
+            'attr': {
+              'placeholder': translations.placeholder_email,
+              'required': true,
+              'class': 'dark-light-input'
+            }
+          }) }}
+          {{ form_errors(form.fromEmail) }}
+        </div>
+      </div>
 
-					{{ form_errors(form.fromEmail) }}
-				</div>
-			</div>
+      <div class="input-group">
+        <div class="icon">📞</div>
+        {{ form_widget(form.phoneNumber, {
+          'attr': {
+            'placeholder': translations.placeholder_phone,
+            'required': true,
+            'class': 'dark-light-input'
+          }
+        }) }}
+        {{ form_errors(form.phoneNumber) }}
+      </div>
 
-			<div class="input-group">
-				<div class="icon">📞</div>
-				{{ form_widget(form.phoneNumber, {
-    'attr': {
-      'placeholder': 'Entrer votre numéro de téléphone...',
-      'required': true,
-      'class': 'dark-light-input'
-    }
-  }) }}
-				{{ form_errors(form.phoneNumber) }}
-			</div>
+      <div class="input-group">
+        {{ form_widget(form.subject, {'attr': {'class': 'styled-select', 'required': true}}) }}
+        {{ form_errors(form.subject) }}
+      </div>
 
-			<div class="input-group">
-				{{ form_widget(form.subject, {'attr': {'class': 'styled-select', 'required': true}}) }}
-				{{ form_errors(form.subject) }}
-			</div>
+      <div class="textarea-group">
+        {{ form_widget(form.body, {
+          'attr': {
+            'placeholder': translations.placeholder_body,
+            'rows': 8,
+            'required': true,
+            'class': 'dark-light-input'
+          }
+        }) }}
+        {{ form_errors(form.body) }}
+      </div>
 
-			<div class="textarea-group">
-				{{ form_widget(form.body, {
-  'attr': {
-    'placeholder': 'Entrez votre demande...',
-    'rows': 8,
-    'required': true,
-    'class': 'dark-light-input'
-  }
-}) }}
-				{{ form_errors(form.body) }}
-			</div>
+      <button class="contactbutton" type="submit">{{ translations.button }}</button>
 
-			<button class="contactbutton" type="submit">Envoyez</button>
-
-			{{ form_end(form) }}
-		</div>
-	</div>
+      {{ form_end(form) }}
+    </div>
+  </div>
 {% endblock %}

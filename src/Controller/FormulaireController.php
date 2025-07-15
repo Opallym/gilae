@@ -2,44 +2,59 @@
 
 namespace App\Controller;
 
-use App\Entity\Message;
-use App\Form\MessageType;
-use App\Service\StatisticsService;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\RequestStack;
 
-final class FormulaireController extends AbstractController
+class FormulaireController extends AbstractController
 {
-    #[Route('/contacter', name: 'app_formulaire')]
+    #[Route('/contacter', name: 'contact')]
     public function index(
         Request $request,
-        StatisticsService $stats,
-        EntityManagerInterface $entityManager
+        MailerInterface $mailer,
+        RequestStack $requestStack
     ): Response {
-        $stats->recordVisit('app_contact');
+        // Récupère la locale comme dans ContactController
+        $locale = $requestStack->getCurrentRequest()->getLocale();
 
-        $message = new Message();
-        $form = $this->createForm(MessageType::class, $message);
-
+        // Crée ton formulaire
+        $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $message->setReceivedAt(new \DateTimeImmutable());
-            $message->setIsRead(false);
+            $this->addFlash('success', $locale === 'en' ? 'Message sent successfully!' : 'Message envoyé avec succès !');
 
-            $entityManager->persist($message);
-            $entityManager->flush();
+            return $this->redirectToRoute('contact');
+        }
 
-            $this->addFlash('success', 'Votre message a bien été envoyé.');
-
-            return $this->redirectToRoute('app_formulaire');
+        // Traductions manuelles comme dans ContactController
+        $translations = [];
+        if ($locale === 'en') {
+            $translations = [
+                'title' => 'Contact Us',
+                'button' => 'Send Message',
+                'placeholder_email' => 'Your email address',
+                'placeholder_phone' => 'Your phone number',
+                'placeholder_body' => 'Your message',
+            ];
+        } else {
+            $translations = [
+                'title' => 'Nous contacter',
+                'button' => 'Envoyer le message',
+                'placeholder_email' => 'Votre adresse email',
+                'placeholder_phone' => 'Votre numéro de téléphone',
+                'placeholder_body' => 'Votre message',
+            ];
         }
 
         return $this->render('pages/contact/contact.html.twig', [
             'form' => $form->createView(),
+            'translations' => $translations,
+            'locale' => $locale,
         ]);
     }
 }
